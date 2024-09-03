@@ -1,40 +1,52 @@
+"use client";
 import Image from "next/image";
 import Header from "./_components/(home)/header";
 import { IoArrowForward } from "react-icons/io5";
+import About from "./_components/(home)/about/About";
+import { useRef } from "react";
 
 export default function Home() {
+  const AboutRef = useRef<any>(null);
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24 py-32">
-      <Header />
-
-      <article className="flex flex-row gap-x-2">
-        <Image
-          src={require("../app/(assets)/images/IMG_9034.png")}
-          alt="Joshua Rashtian"
-          width={400}
-          className=" "
-          height={220}
-        />
-        <Image
-          src={require("../app/(assets)/images/IMG_9034.png")}
-          alt="Joshua Rashtian"
-          width={400}
-          height={220}
-        />
-      </article>
-      <section className="flex h-64 w-full flex-col justify-between rounded-3xl">
-        <ul>
-          <h1 className="text-6xl font-black">Joshua Rashtian.</h1>
-          <h3 className="text-3xl font-light dark:text-slate-300">
-            a nerdy and fun developer, creative.
-          </h3>
-        </ul>
-        <button className="w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105">
-          <h4 className="text-2xl">
-            Learn More About Me <IoArrowForward />
-          </h4>
-        </button>
+    <>
+      <section className="flex min-h-screen flex-col justify-between p-24 py-32">
+        <article className="flex flex-row gap-x-2">
+          <Image
+            src={require("../app/(assets)/images/IMG_9034.png")}
+            alt="Joshua Rashtian"
+            width={400}
+            className=" "
+            height={220}
+          />
+          <Image
+            src={require("../app/(assets)/images/IMG_9034.png")}
+            alt="Joshua Rashtian"
+            width={400}
+            height={220}
+          />
+        </article>
+        <section className="flex h-64 w-full flex-col justify-between rounded-3xl">
+          <ul>
+            <h1 className="text-6xl font-black">Joshua Rashtian.</h1>
+            <h3 className="text-3xl font-light dark:text-slate-300">
+              a nerdy and fun developer, creative.
+            </h3>
+          </ul>
+          <button
+            onClick={() => {
+              //@ts-ignore
+              AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
+          >
+            <h4 className="text-2xl">
+              Learn More About Me{" "}
+              <IoArrowForward className="duration-200 group-hover:translate-x-1" />
+            </h4>
+          </button>
+        </section>
       </section>
-    </main>
+      <About ref={AboutRef} />
+    </>
   );
 }
