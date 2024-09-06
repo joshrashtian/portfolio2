@@ -6,7 +6,7 @@ const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   return (
     <section
       ref={ref}
-      className="mt-24 h-screen bg-zinc-100 p-24 dark:bg-zinc-800/40"
+      className="mt-24 flex h-screen flex-col justify-center bg-zinc-100 p-24 dark:bg-zinc-800/40"
     >
       <h1 className="text-6xl font-bold">About Me</h1>
       <p className="w-1/2">

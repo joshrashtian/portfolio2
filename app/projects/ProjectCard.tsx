@@ -3,7 +3,7 @@ import { ProjectType } from "@/app/projects/ProjectIndex";
 import Image from "next/image";
 import Link from "next/link";
 import React, { createContext, useContext } from "react";
-import { IoLogoWebComponent } from "react-icons/io5";
+import { IoLogoGithub, IoLogoWebComponent } from "react-icons/io5";
 
 type ProjectProps = {
   project: ProjectType;
@@ -67,17 +67,30 @@ function useProjectContext() {
 }
 
 ProjectCard.Link = function ProjectCardLink() {
-  const { link, type } = useProjectContext();
+  const { link, source } = useProjectContext();
 
-  if (!link) return null;
+  if (!link && !source) return null;
   return (
-    <Link
-      href={link}
-      className="flex flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-100/60"
-    >
-      <IoLogoWebComponent />
-      <h1>Visit Website</h1>
-    </Link>
+    <ul className="flex w-full flex-row gap-1">
+      {link && (
+        <Link
+          href={link}
+          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70"
+        >
+          <IoLogoWebComponent />
+          <h1>Visit Website</h1>
+        </Link>
+      )}
+      {source && (
+        <Link
+          href={source}
+          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70"
+        >
+          <IoLogoGithub />
+          <h1>Source Code</h1>
+        </Link>
+      )}
+    </ul>
   );
 };
 
@@ -91,11 +104,21 @@ ProjectCard.Date = function ProjectDate() {
   }
   if (dates.length === 1)
     return (
-      <h1 className="rounded-lg bg-slate-100 p-0.5 px-2">
+      <h1 className="rounded-lg bg-zinc-50 p-0.5 px-2">
         Released {months[dates[0].getMonth()]} {dates[0].getDate()},{" "}
         {dates[0].getFullYear()}
       </h1>
     );
+};
+
+ProjectCard.Description = function ProjectDescription() {
+  const { desc } = useProjectContext();
+
+  return (
+    <ul>
+      <p className="text-wrap">{desc.slice(0, 80)}</p>
+    </ul>
+  );
 };
 
 export default ProjectCard;
