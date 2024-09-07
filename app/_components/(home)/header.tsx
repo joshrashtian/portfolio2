@@ -10,7 +10,7 @@ const Header = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
-      className="fixed left-0 top-0 flex h-20 w-full flex-row items-center gap-3 bg-zinc-200 p-3 px-5 drop-shadow-lg dark:bg-zinc-700/40"
+      className="fixed left-0 top-0 z-50 flex h-20 w-full flex-row items-center gap-3 bg-zinc-200 p-3 px-5 drop-shadow-lg dark:bg-zinc-700/80"
     >
       <Link href={"/"} className="flex flex-row gap-1">
         <Image
