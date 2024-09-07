@@ -38,11 +38,14 @@ const ProjectHistory = () => {
         ref={scrollRef}
         className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8"
       >
-        {ProjectDetails.map((project) => (
+        {ProjectDetails.sort((a, b) =>
+          a.priority === b.priority ? 0 : a.priority ? -1 : 1,
+        ).map((project) => (
           <ProjectCard project={project} key={project.id}>
             <ProjectCard.Description />
             <ProjectCard.Date />
             <ProjectCard.Link />
+            <ProjectCard.Icons />
           </ProjectCard>
         ))}
       </motion.section>

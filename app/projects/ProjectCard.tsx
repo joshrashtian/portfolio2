@@ -3,7 +3,13 @@ import { ProjectType } from "@/app/projects/ProjectIndex";
 import Image from "next/image";
 import Link from "next/link";
 import React, { createContext, useContext } from "react";
-import { IoLogoGithub, IoLogoWebComponent } from "react-icons/io5";
+import {
+  IoLogoElectron,
+  IoLogoFirebase,
+  IoLogoGithub,
+  IoLogoReact,
+  IoLogoWebComponent,
+} from "react-icons/io5";
 
 type ProjectProps = {
   project: ProjectType;
@@ -120,5 +126,35 @@ ProjectCard.Description = function ProjectDescription() {
     </ul>
   );
 };
+
+ProjectCard.Icons = function ProjectIcons() {
+  const { tools } = useProjectContext();
+
+  return (
+    <>
+      <p>Tools Used:</p>
+      <ul className="flex flex-row gap-2 text-3xl text-slate-400">
+        {tools?.map((i, a) => {
+          return IconMatches.find((e) => e.name === i)?.icon;
+        })}
+      </ul>
+    </>
+  );
+};
+
+const IconMatches = [
+  {
+    name: "ReactJS",
+    icon: <IoLogoReact />,
+  },
+  {
+    name: "Firebase",
+    icon: <IoLogoFirebase />,
+  },
+  {
+    name: "Electron",
+    icon: <IoLogoElectron />,
+  },
+];
 
 export default ProjectCard;
