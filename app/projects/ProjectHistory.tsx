@@ -36,7 +36,7 @@ const ProjectHistory = () => {
 
       <motion.section
         ref={scrollRef}
-        className="h-84 snap-point relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8"
+        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8"
       >
         {ProjectDetails.map((project) => (
           <ProjectCard project={project} key={project.id}>
