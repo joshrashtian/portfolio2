@@ -22,6 +22,7 @@ export const ProjectDetails: ProjectType[] = [
     link: "https://gamegen.games/game/axrh2STs9q6aG3WdK",
     icon: require("../(assets)/projects/Tank.png"),
     desc: "The first full game I would create, using Construct 3 Game Engine. This is a multiplayer 2 people co-op game with controller / keyboard support playable right from your browser.",
+    tools: ["Construct 3", "Photoshop"],
   },
   {
     id: 1,
@@ -68,7 +69,7 @@ export const ProjectDetails: ProjectType[] = [
     priority: true,
     link: "https://mesaconnect.io",
     desc: "Social Media Platform for Community College Students in STEM to communicate and learn, teach, and socialize together.",
-    tools: ["React Native", "Supabase"],
+    tools: ["React Native", "Supabase", "Expo"],
   },
   {
     id: 5,
