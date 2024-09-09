@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -30,6 +30,12 @@ const Socials = () => {
           href="https://www.linkedin.com/in/joshrashtian/"
         >
           <IoLogoLinkedin className="duration-300 hover:text-blue-500 hover:shadow-sm hover:shadow-blue-400/70 active:scale-90" />
+        </Link>
+        <Link
+          className="flex items-center justify-center p-0.5 text-3xl duration-300 hover:scale-125 hover:shadow-lg"
+          href="https://www.instagram.com/joshuajrashtian/"
+        >
+          <IoLogoInstagram className="rounded-xl duration-300 hover:text-pink-500 hover:shadow-sm hover:shadow-purple-600/70 active:scale-90" />
         </Link>
       </motion.section>
     </ul>

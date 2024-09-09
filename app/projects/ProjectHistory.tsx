@@ -11,6 +11,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import FeaturedProjects from "../_components/(projects)/Featured";
+import { IoHammer } from "react-icons/io5";
 
 const ProjectHistory = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,19 @@ const ProjectHistory = () => {
     clamp: false,
   });
 
+  const text = useTransform(velocity, [-7, 0, 7], [100, 0, -100], {
+    clamp: false,
+  });
+
+  const textColor = useTransform(
+    velocity,
+    [-3, 0, 3],
+    ["#fff", "#000", "#fff"],
+    {
+      clamp: false,
+    },
+  );
+
   return (
     <>
       <motion.ul
@@ -34,6 +48,12 @@ const ProjectHistory = () => {
         className="h-2 w-full origin-left bg-teal-500"
       />
 
+      <motion.h1
+        style={{ x: text, color: textColor }}
+        className="ml-3 flex flex-row items-center gap-2 text-2xl"
+      >
+        <IoHammer /> Project History
+      </motion.h1>
       <motion.section
         ref={scrollRef}
         className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8"
