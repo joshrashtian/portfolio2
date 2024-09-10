@@ -39,7 +39,7 @@ const ProjectCard = ({
 }: ProjectProps & { children?: React.ReactNode }) => {
   return (
     <ProjectCardContext.Provider value={{ project }}>
-      <ul className="flex h-72 w-[500px] snap-center flex-col justify-between gap-3 whitespace-nowrap rounded-2xl bg-white p-3 ring-0 ring-offset-4 duration-500 hover:scale-105 hover:shadow-lg hover:ring-2">
+      <ul className="flex h-72 w-[500px] snap-center flex-col justify-between gap-3 whitespace-nowrap rounded-2xl bg-white p-3 ring-0 ring-offset-transparent duration-500 hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-offset-4 dark:bg-zinc-700">
         <ul>
           <header className="flex w-[500px] flex-row items-center gap-3">
             {project.icon && (
@@ -54,7 +54,7 @@ const ProjectCard = ({
             <h1 className="text-2xl font-bold">{project.name}</h1>
           </header>
           <h2
-            className={`text-sm font-bold ${project.type === "Video Game" ? "text-green-700/70" : project.type === "Website" ? "text-blue-500/40" : "text-slate-700"} `}
+            className={`text-sm font-bold ${project.type === "Video Game" ? "text-green-700/70 dark:text-green-400" : project.type === "Website" ? "text-blue-500/40 dark:text-blue-500" : "text-slate-700 dark:text-purple-400"} `}
           >
             {project.type.toUpperCase()}
           </h2>
@@ -82,7 +82,7 @@ ProjectCard.Link = function ProjectCardLink() {
       {link && (
         <Link
           href={link}
-          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70"
+          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70 dark:bg-zinc-600 dark:hover:bg-black/50"
         >
           <IoLogoWebComponent />
           <h1>Visit Website</h1>
@@ -91,7 +91,7 @@ ProjectCard.Link = function ProjectCardLink() {
       {source && (
         <Link
           href={source}
-          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70"
+          className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70 dark:bg-zinc-600 dark:hover:bg-black/50"
         >
           <IoLogoGithub />
           <h1>Source Code</h1>
@@ -106,19 +106,21 @@ ProjectCard.Date = function ProjectDate() {
 
   if (typeof dates === "string") {
     return (
-      <h1 className="rounded-lg bg-slate-100 p-0.5 px-2">In Development</h1>
+      <h1 className="rounded-lg bg-slate-100 p-0.5 px-2 dark:bg-teal-800">
+        In Development
+      </h1>
     );
   }
   if (dates.length === 1)
     return (
-      <h1 className="rounded-lg bg-zinc-50 p-0.5 px-2">
+      <h1 className="rounded-lg bg-zinc-50 p-0.5 px-2 dark:bg-blue-400">
         Released {months[dates[0].getMonth()]} {dates[0].getDate()},{" "}
         {dates[0].getFullYear()}
       </h1>
     );
   else if (dates.length === 2)
     return (
-      <h1 className="rounded-lg bg-zinc-50 p-0.5 px-2">
+      <h1 className="rounded-lg bg-zinc-50 p-0.5 px-2 dark:bg-blue-400">
         {months[dates[0].getMonth()]} {dates[0].getDate()},{" "}
         {dates[0].getFullYear()} - {months[dates[1].getMonth()]}{" "}
         {dates[1].getDate()},{dates[1].getFullYear()}
@@ -152,8 +154,8 @@ ProjectCard.Icons = function ProjectIcons() {
               >
                 {" "}
                 {IconMatches.find((e) => e.name === i)?.icon}{" "}
-                <ul className="absolute scale-0 rounded-xl bg-white p-3 text-sm font-light duration-300 group-hover:-translate-x-3 group-hover:-translate-y-20 group-hover:scale-[0.8] group-hover:shadow-lg">
-                  <p>{i}</p>
+                <ul className="absolute scale-0 rounded-xl bg-white p-3 text-sm font-light duration-300 group-hover:-translate-x-3 group-hover:-translate-y-20 group-hover:scale-[0.8] group-hover:shadow-lg dark:bg-black">
+                  <p className="dark:text-white">{i}</p>
                 </ul>
               </ul>
             </>

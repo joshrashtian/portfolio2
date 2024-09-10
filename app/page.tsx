@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import Header from "./_components/(home)/header";
-import { IoArrowForward, IoHammer } from "react-icons/io5";
+import { IoArrowForward, IoChatbox, IoHammer } from "react-icons/io5";
 import About from "./_components/(home)/about/About";
 import { useRef } from "react";
 import Link from "next/link";
+import Blog from "./_components/(home)/blog/Blog";
 
 export default function Home() {
   const AboutRef = useRef<any>(null);
+  const BlogRef = useRef<any>(null);
   return (
     <>
       <section className="flex min-h-screen flex-col justify-between p-24 py-32">
@@ -40,6 +42,18 @@ export default function Home() {
                 <IoArrowForward className="duration-200 group-hover:translate-x-1" />
               </h4>
             </button>
+            <button
+              onClick={() => {
+                //@ts-ignore
+                BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
+            >
+              <h4 className="text-2xl">
+                Blog{" "}
+                <IoChatbox className="duration-200 group-hover:translate-x-1" />
+              </h4>
+            </button>
             <Link
               href="/projects"
               className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
@@ -53,6 +67,7 @@ export default function Home() {
         </section>
       </section>
       <About ref={AboutRef} />
+      <Blog ref={BlogRef} />
     </>
   );
 }

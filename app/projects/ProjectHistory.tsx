@@ -32,14 +32,9 @@ const ProjectHistory = () => {
     clamp: false,
   });
 
-  const textColor = useTransform(
-    velocity,
-    [-3, 0, 3],
-    ["#fff", "#000", "#fff"],
-    {
-      clamp: false,
-    },
-  );
+  const opacity = useTransform(velocity, [-3, 0, 3], [0, 1, 0], {
+    clamp: false,
+  });
 
   return (
     <>
@@ -49,14 +44,14 @@ const ProjectHistory = () => {
       />
 
       <motion.h1
-        style={{ x: text, color: textColor }}
+        style={{ x: text, opacity }}
         className="ml-3 flex flex-row items-center gap-2 text-2xl"
       >
         <IoHammer /> Project History
       </motion.h1>
       <motion.section
         ref={scrollRef}
-        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8"
+        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8 dark:bg-slate-500"
       >
         {ProjectDetails.sort((a, b) =>
           a.priority === b.priority ? 0 : a.priority ? -1 : 1,
