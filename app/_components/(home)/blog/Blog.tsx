@@ -1,13 +1,18 @@
 import { fetchBlogs } from "@/app/utils/notion";
-import { forwardRef, useEffect, useMemo } from "react";
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
+import Link from "next/link";
+import { forwardRef, useEffect, useMemo, useState } from "react";
 
 const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   // Add a display name for the component
   Blog.displayName = "Blog";
 
+  const [blog, setBlog] = useState<QueryDatabaseResponse>();
   useEffect(() => {
     async function fetchBlog() {
-      console.log(await fetchBlogs());
+      let blogs = await fetchBlogs();
+      console.log(blogs);
+      setBlog(blogs);
     }
     fetchBlog();
   }, []);
@@ -20,6 +25,17 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
         {"<"}
         <span className="dark:text-green-500">Blog</span> {" />"}
       </h1>
+      {blog?.results.map((blog) => (
+        <Link
+          href={`/blog/${blog.id}`}
+          key={blog.id}
+          className="my-4 flex flex-col"
+        >
+          <h2 className="text-4xl font-bold duration-300 hover:text-slate-500">
+            {(blog as any).properties.Name.title[0].plain_text}
+          </h2>
+        </Link>
+      ))}
     </section>
   );
 });

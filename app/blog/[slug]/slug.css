@@ -1,0 +1,30 @@
+h1 {
+    font-size: 4pc;
+    font-weight: 600;
+    text-shadow: 0 0 0.5pc rgba(100, 0, 0, 0.2);
+
+}
+
+h2 {
+    font-size: 3pc;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 2pc;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.5pc;
+    font-weight: 300;
+}
+
+pre {
+    font-size: 1.3pc;
+    font-weight: 300;
+    background-color: #f0f0f0;
+    padding: 1pc;
+    border-radius: 0.7pc;
+    color: black
+}
