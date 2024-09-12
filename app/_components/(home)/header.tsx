@@ -28,17 +28,17 @@ const Header = () => {
           height={100}
         />
       </Link>
-      <motion.ul className="flex h-full w-full flex-row items-center justify-end gap-7 px-20">
+      <motion.ul className="flex h-full w-full flex-row items-center justify-end lg:gap-7 lg:px-20">
         <Link
           href="/journey"
-          className="group flex flex-row items-center gap-2 p-0.5 transition-all duration-300 hover:scale-105 hover:text-teal-800 hover:dark:text-teal-300"
+          className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-teal-800 lg:gap-2 hover:dark:text-teal-300"
         >
           {" "}
           <IoBook className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
           journey
         </Link>
         <Link
-          className="group flex flex-row items-center gap-2 p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 hover:dark:text-orange-400"
+          className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 hover:dark:text-orange-400"
           href="/projects"
         >
           {" "}

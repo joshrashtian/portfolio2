@@ -21,11 +21,11 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       ref={ref}
       className="flex h-screen flex-col bg-zinc-100 p-24 dark:bg-zinc-800/40"
     >
-      <h1 className="text-6xl font-bold">
+      <h1 className="text-5xl font-bold lg:text-6xl">
         {"<"}
-        <span className="dark:text-green-500">Blog</span> {" />"}
+        <span className="dark:text-green-500">Journal</span> {" />"}
       </h1>
-      {blog?.results.map((blog) => (
+      {blog?.results.map((blog: any) => (
         <Link
           href={`/blog/${blog.id}`}
           key={blog.id}
