@@ -12,7 +12,7 @@ export default function Home() {
   const BlogRef = useRef<any>(null);
   return (
     <>
-      <section className="flex min-h-screen flex-col justify-between p-24 py-32">
+      <section className="flex min-h-screen flex-col justify-between p-12 py-32 lg:p-24">
         <article className="flex flex-row gap-x-2">
           <Image
             src={require("../app/(assets)/images/IMG_9034.png")}
@@ -29,15 +29,15 @@ export default function Home() {
               &quot;inspiring quote&quot;.
             </h3>
           </ul>
-          <footer className="flex flex-row gap-3">
+          <footer className="mb-20 flex flex-col gap-3 lg:flex-row">
             <button
               onClick={() => {
                 //@ts-ignore
                 AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
+              className="group w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-2xl">
+              <h4 className="text-left text-lg lg:text-2xl">
                 Learn More About Me{" "}
                 <IoArrowForward className="duration-200 group-hover:translate-x-1" />
               </h4>
@@ -47,18 +47,18 @@ export default function Home() {
                 //@ts-ignore
                 BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-2xl">
+              <h4 className="text-lg lg:text-2xl">
                 Blog{" "}
                 <IoChatbox className="duration-200 group-hover:translate-x-1" />
               </h4>
             </button>
             <Link
               href="/projects"
-              className="group w-fit rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400"
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-2xl">
+              <h4 className="text-lg lg:text-2xl">
                 My Work
                 <IoHammer className="duration-200 group-hover:translate-x-1" />
               </h4>
