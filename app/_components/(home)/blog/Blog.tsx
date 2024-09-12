@@ -29,9 +29,9 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
         <Link
           href={`/blog/${blog.id}`}
           key={blog.id}
-          className="my-4 flex flex-col"
+          className="my-4 flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/60"
         >
-          <h2 className="text-4xl font-bold duration-300 hover:text-slate-500">
+          <h2 className="p-4 text-4xl font-bold duration-300 hover:translate-x-3 hover:text-slate-500">
             {(blog as any).properties.Name.title[0].plain_text}
           </h2>
         </Link>

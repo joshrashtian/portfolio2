@@ -60,6 +60,7 @@ export const ProjectDetails: ProjectType[] = [
       "Vercel",
       "TypeScript",
       "Unsplash API",
+ 
     ],
   },
   {
@@ -97,7 +98,7 @@ export const ProjectDetails: ProjectType[] = [
     source: "https://github.com/joshrashtian/Portfolio2",
     priority: true,
     desc: "Second Generation of my Portfolio, built using NextJS and TailwindCSS.",
-    tools: ["NextJS", "TailwindCSS", "TypeScript"],
+    tools: ["NextJS", "TailwindCSS", "TypeScript", "Notion API", "Vercel"],
   },
   {
     id: 7,
