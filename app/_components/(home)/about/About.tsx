@@ -77,6 +77,7 @@ const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
           </Link>
         </div>
         <Canvas className="h-full w-1/2" camera={{ fov: 45 }}>
+          <pointLight position={[10, 20, 10]} />
           <PresentationControls global>
             <Stage environment={"apartment"}>
               <Dresser scale={0.5} />
