@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./_components/(home)/header";
 import Socials from "./_components/(global)/Socials";
 import { Analytics } from "@vercel/analytics/react";
-
+import CardContextWrapper from "./contexts/CardContext";
 const inter = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-zinc-50 dark:bg-zinc-800`}>
         <Header />
-        {children}
+        <CardContextWrapper>{children}</CardContextWrapper>
 
         <Socials />
         <Analytics mode="production" />
