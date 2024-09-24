@@ -40,7 +40,7 @@ const ProjectCard = ({
 }: ProjectProps & { children?: React.ReactNode }) => {
   return (
     <ProjectCardContext.Provider value={{ project }}>
-      <ul className="flex h-72 w-[500px] snap-center flex-col justify-between gap-3 whitespace-nowrap rounded-2xl bg-white p-3 ring-0 ring-offset-transparent duration-500 hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-offset-4 dark:bg-zinc-700">
+      <ul className="flex h-72 w-[270px] snap-center flex-col justify-between gap-0.5 whitespace-nowrap rounded-2xl bg-white p-3 ring-0 ring-offset-transparent duration-500 hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-offset-4 xl:w-[500px] xl:gap-3 dark:bg-zinc-700">
         <ul>
           <header className="flex w-[500px] flex-row items-center gap-3">
             {project.icon && (
@@ -52,7 +52,7 @@ const ProjectCard = ({
                 alt={`Project ${project.name}`}
               />
             )}
-            <h1 className="text-2xl font-bold">{project.name}</h1>
+            <h1 className="text-base font-bold xl:text-2xl">{project.name}</h1>
           </header>
           <h2
             className={`text-sm font-bold ${project.type === "Video Game" ? "text-green-700/70 dark:text-green-400" : project.type === "Website" ? "text-blue-500/40 dark:text-blue-500" : "text-slate-700 dark:text-purple-400"} `}

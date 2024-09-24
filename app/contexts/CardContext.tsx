@@ -1,7 +1,14 @@
 "use client";
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import BlogCard from "../_components/(home)/blog/BlogCard";
 import { AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 interface Card {
   title: string;
@@ -25,6 +32,8 @@ const CardContextWrapper = ({ children }: { children: React.ReactNode }) => {
     hovered: false,
   });
 
+  const pathname = usePathname();
+
   const functions = {
     card,
     CreateCard,
@@ -44,6 +53,13 @@ const CardContextWrapper = ({ children }: { children: React.ReactNode }) => {
       }
     },
   };
+
+  useEffect(() => {
+    setPosition({
+      ...position,
+      hovered: false,
+    });
+  }, [pathname]);
 
   return (
     <CardContext.Provider value={functions}>

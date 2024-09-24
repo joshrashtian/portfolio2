@@ -60,7 +60,7 @@ const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
           </ul> */}
           <Link
             href="/journey"
-            className={`z-50 flex w-72 -translate-x-16 translate-y-[450px] -rotate-6 scale-75 flex-col items-end justify-end bg-yellow-300/50 p-3 text-xl duration-300 md:w-fit lg:translate-x-16 lg:translate-y-16 lg:scale-100 ${written.className}`}
+            className={`z-50 hidden w-72 -translate-x-16 translate-y-[450px] -rotate-6 scale-75 flex-col items-end justify-end bg-yellow-300/50 p-3 text-xl duration-300 md:w-fit lg:translate-x-16 lg:translate-y-16 lg:scale-100 xl:flex ${written.className}`}
           >
             <div className="absolute h-6 w-12 -translate-y-20 translate-x-2 rotate-2 bg-slate-200/40" />
             <h3 className="group flex flex-row items-center gap-3 font-bold">

@@ -25,7 +25,7 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   return (
     <motion.section
       ref={ref}
-      className="flex h-screen flex-col bg-zinc-100 p-24 dark:bg-zinc-800/40"
+      className="flex h-screen flex-col bg-zinc-100 p-8 pb-24 xl:p-24 dark:bg-zinc-800/40"
     >
       <h1 className="mb-12 text-5xl font-bold lg:text-6xl">
         {"<"}
