@@ -13,12 +13,26 @@ const til = Titillium_Web({
   weight: ["200", "300", "400", "600", "700", "900"],
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jrtechscv.com"),
   title: "Joshua Rashtian",
   description: "Computer Scientist, Creative.",
+  category: "portfolio",
+  icons: {
+    icon: "./(assets)/jjr.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Joshua Rashtian",
+    description: "Computer Scientist, Creative.",
+    creator: "@joshrashtian",
+    images: ["./(assets)/joshrashtian.png"],
+  },
   openGraph: {
+    siteName: "Joshua Rashtian",
+    type: "website",
     title: "Hub of Joshua Rashtian",
     description: "Computer Scientist, Creative.",
-    images: ["./assets/joshrashtian.png"],
+    images: "./assets/joshrashtian.png",
   },
 };
 

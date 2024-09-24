@@ -60,7 +60,7 @@ const HeaderMenuContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [version, setVersion] = useState("");
+  const [version, setVersion] = useState("Loading...");
   const value = {
     menuOpen,
     toggleMenu: () => setMenuOpen(!menuOpen),
