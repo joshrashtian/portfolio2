@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   IoArrowForward,
   IoLogoGithub,
@@ -9,6 +9,7 @@ import {
   IoLogoLinkedin,
   IoNavigate,
 } from "react-icons/io5";
+import { getVersion } from "../utils/version";
 
 interface HeaderMenuContextType {
   menuOpen: boolean;
@@ -59,12 +60,19 @@ const HeaderMenuContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [version, setVersion] = useState("");
   const value = {
     menuOpen,
     toggleMenu: () => setMenuOpen(!menuOpen),
   };
 
+  useEffect(() => {
+    async function fetchVersion() {
+      const version = await getVersion();
+      setVersion(version);
+    }
+    fetchVersion();
+  }, []);
   return (
     <HeaderMenuContext.Provider value={value}>
       <section className={`${menuOpen ? "blur-sm invert" : ""} duration-1000`}>
@@ -108,6 +116,9 @@ const HeaderMenuContextProvider = ({
                 ))}
               </div>
             </ul>
+            <div className="fixed bottom-0 left-0 z-40 w-screen bg-black/70 p-8 text-white">
+              <p>Version (via GitHub): {version}</p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -6,6 +6,7 @@ import Socials from "./_components/(global)/Socials";
 import { Analytics } from "@vercel/analytics/react";
 import CardContextWrapper from "./contexts/CardContext";
 import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
+import { getVersion } from "./utils/version";
 const inter = Outfit({ subsets: ["latin"] });
 const til = Titillium_Web({
   subsets: ["latin"],
