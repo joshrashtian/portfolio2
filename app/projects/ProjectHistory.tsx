@@ -51,7 +51,7 @@ const ProjectHistory = () => {
       </motion.h1>
       <motion.section
         ref={scrollRef}
-        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8 dark:bg-slate-500"
+        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8 xl:gap-4 dark:bg-slate-500"
       >
         {ProjectDetails.sort((a, b) =>
           a.priority === b.priority ? 0 : a.priority ? -1 : 1,
