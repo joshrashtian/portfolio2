@@ -13,7 +13,7 @@ const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const dark: boolean = useMemo(() => {
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    if (typeof window === "undefined") return false;
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
