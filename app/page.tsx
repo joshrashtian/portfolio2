@@ -78,6 +78,16 @@ export default function Home() {
                 <IoHammer className="duration-200 group-hover:translate-x-1" />
               </h4>
             </Link>
+            <Link
+              href="/Resume.docx"
+              download
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+            >
+              <h4 className="text-lg lg:text-2xl">
+                Download Resume
+                <IoHammer className="duration-200 group-hover:translate-x-1" />
+              </h4>
+            </Link>
           </footer>
         </section>
       </section>
