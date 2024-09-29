@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import CardContextWrapper from "./contexts/CardContext";
 import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
 import { getVersion } from "./utils/version";
+import DarkModeProvider from "./contexts/DarkModeContext";
 const inter = Outfit({ subsets: ["latin"] });
 const til = Titillium_Web({
   subsets: ["latin"],
@@ -45,11 +46,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${til.className} bg-zinc-50 dark:bg-zinc-800`}>
         <CardContextWrapper>
-          <HeaderMenuContextProvider>
-            {children}
-            <Header />
-            <Socials />
-          </HeaderMenuContextProvider>
+          <DarkModeProvider>
+            <HeaderMenuContextProvider>
+              {children}
+              <Header />
+              <Socials />
+            </HeaderMenuContextProvider>
+          </DarkModeProvider>
         </CardContextWrapper>
 
         <Analytics mode="production" />

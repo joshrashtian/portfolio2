@@ -5,14 +5,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { IoBook, IoHammer, IoMenu } from "react-icons/io5";
 import { useHeader } from "@/app/contexts/HeaderMenuContext";
+import { useDarkMode } from "@/app/contexts/DarkModeContext";
 const Header = () => {
   const Menu = useHeader();
   const { scrollY } = useScroll();
-
+  const { dark } = useDarkMode();
   const color = useTransform(
     scrollY,
     [0, 400, 800],
-    ["#fff", "#fff", "rgb(228 228 231)"],
+    dark ? ["#222", "#111", "#000"] : ["#fff", "#fff", "rgb(228 228 231)"],
   );
 
   const shadowOpacity = useTransform(scrollY, [0, 400, 800], [0, 0.3, 1]);
