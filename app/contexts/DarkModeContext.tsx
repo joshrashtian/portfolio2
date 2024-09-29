@@ -20,7 +20,7 @@ const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({
     ) {
       return true;
     } else return false;
-  }, [window.matchMedia]);
+  }, []);
 
   return (
     <DarkModeContext.Provider value={{ dark }}>
