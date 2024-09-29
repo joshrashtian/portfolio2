@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
-import Header from "./_components/(home)/header";
 import { IoArrowForward, IoChatbox, IoHammer } from "react-icons/io5";
 import About from "./_components/(home)/about/About";
 import { useRef } from "react";
 import Link from "next/link";
 import Blog from "./_components/(home)/blog/Blog";
+import Skillset from "./_components/(home)/Skillset";
+import React from "react";
 
 export default function Home() {
   const AboutRef = useRef<any>(null);
   const BlogRef = useRef<any>(null);
+  const SkillRef = useRef<any>(null);
+
   return (
     <>
       <section className="flex min-h-screen flex-col justify-between p-12 py-32 lg:p-24">
@@ -54,6 +57,18 @@ export default function Home() {
                 <IoChatbox className="duration-200 group-hover:translate-x-1" />
               </h4>
             </button>
+            <button
+              onClick={() => {
+                //@ts-ignore
+                SkillRef?.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+            >
+              <h4 className="text-lg lg:text-2xl">
+                My Skillset{" "}
+                <IoChatbox className="duration-200 group-hover:translate-x-1" />
+              </h4>
+            </button>
             <Link
               href="/projects"
               className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
@@ -67,6 +82,7 @@ export default function Home() {
         </section>
       </section>
       <About ref={AboutRef} />
+      <Skillset ref={SkillRef} />
       <Blog ref={BlogRef} />
     </>
   );
