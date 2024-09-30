@@ -29,6 +29,10 @@ const items = [
     name: "Projects",
     href: "/projects",
   },
+  {
+    name: "Resume",
+    href: "/resume.pdf",
+  },
 ];
 
 const socials = [
@@ -86,7 +90,7 @@ const HeaderMenuContextProvider = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             onClick={() => setMenuOpen(false)}
-            className={`no-scrollbar fixed left-0 top-0 z-40 flex h-screen w-screen flex-col items-start justify-start overflow-y-scroll bg-black/70 p-8 duration-500 lg:p-16 xl:p-24`}
+            className={`no-scrollbar fixed left-0 top-0 z-40 flex h-screen w-screen flex-col items-start justify-start overflow-y-scroll bg-black/70 p-8 duration-500 lg:p-12`}
           >
             <h1 className="flex flex-row gap-2 text-4xl font-bold text-white">
               <IoNavigate /> Navigation

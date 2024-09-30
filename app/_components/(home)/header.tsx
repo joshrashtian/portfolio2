@@ -10,6 +10,7 @@ const Header = () => {
   const Menu = useHeader();
   const { scrollY } = useScroll();
   const { dark } = useDarkMode();
+
   const color = useTransform(
     scrollY,
     [0, 400, 800],
@@ -23,7 +24,7 @@ const Header = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
       style={{ backgroundColor: color, boxShadow: shadowOpacity }}
-      className="fixed left-0 top-0 z-30 flex h-20 w-full flex-row items-center gap-3 p-3 px-5 dark:bg-zinc-700/80"
+      className={`fixed left-0 top-0 z-30 flex h-20 w-full flex-row items-center gap-3 p-3 px-5 dark:bg-zinc-700/80`}
     >
       <Link href={"/"} className="flex flex-row gap-1">
         <Image

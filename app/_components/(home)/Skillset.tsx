@@ -11,7 +11,7 @@ const Skillset = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     target: ref2,
     offset: ["start end", "center start"],
   });
-  const y = useTransform(scrollYProgress, [0, 0.4, 1], [0, 200, 1000]);
+  const y = useTransform(scrollYProgress, [0, 0.4, 1], [-100, 0, 600]);
   const scale = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
 
   const heightTopText = useTransform(scrollYProgress, [0.5, 0.6], [-100, 0]);
@@ -24,7 +24,7 @@ const Skillset = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     <motion.main
       style={{ opacity: scrollYProgress, translateY: y, scale }}
       ref={ref2}
-      className="my-24 mb-[1500px] flex h-96 flex-col p-10 lg:p-24"
+      className="my-24 mb-[1000px] flex h-96 flex-col p-10 lg:p-24"
     >
       <motion.ul
         className="flex w-full flex-row flex-wrap gap-6 rounded-lg bg-slate-100 p-2 text-slate-400 lg:w-fit lg:p-5"

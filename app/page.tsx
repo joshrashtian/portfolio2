@@ -15,20 +15,22 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col justify-between p-12 py-32 lg:p-24">
+      <section className="flex min-h-[120vh] flex-col justify-center p-12 lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
         <article className="flex flex-row gap-x-2">
           <Image
             src={require("../app/(assets)/images/IMG_9034.png")}
             alt="Joshua Rashtian"
-            width={400}
-            className="rounded-[3rem] duration-500 hover:scale-105"
-            height={220}
+            width={300}
+            className="scale-[0.8] rounded-[3rem] duration-500 lg:scale-100 lg:hover:scale-105"
+            height={150}
           />
         </article>
         <section className="flex h-64 w-full flex-col justify-between rounded-3xl">
           <ul>
-            <h1 className="text-6xl font-black">Joshua Rashtian.</h1>
-            <h3 className="text-3xl font-light dark:text-slate-300">
+            <h1 className="text-3xl font-black lg:text-6xl">
+              Joshua Rashtian.
+            </h1>
+            <h3 className="text-lg font-light lg:text-3xl dark:text-slate-300">
               &quot;inspiring quote&quot;.
             </h3>
           </ul>
@@ -75,16 +77,6 @@ export default function Home() {
             >
               <h4 className="text-lg lg:text-2xl">
                 My Work
-                <IoHammer className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </Link>
-            <Link
-              href="/Resume.docx"
-              download
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
-            >
-              <h4 className="text-lg lg:text-2xl">
-                Download Resume
                 <IoHammer className="duration-200 group-hover:translate-x-1" />
               </h4>
             </Link>
