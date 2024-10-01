@@ -16,7 +16,6 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   useEffect(() => {
     async function fetchBlog() {
       let blogs = await fetchBlogs();
-      console.log(blogs);
       setBlog(blogs);
     }
     fetchBlog();
