@@ -27,7 +27,7 @@ const Socials = () => {
           duration: 1.2,
           type: "spring",
         }}
-        className={`z-50 flex ${contact ? "h-96 items-end lg:w-[500px]" : "h-[56px] w-96"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 bg-white px-10 pb-2 shadow-xl duration-300 dark:border-zinc-800 dark:bg-zinc-600 dark:shadow-md dark:shadow-blue-700/50`}
+        className={`z-50 flex ${contact ? "h-[400px] items-end lg:w-[500px]" : "h-[56px] w-96"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 bg-white px-10 pb-2 shadow-xl duration-300 dark:border-zinc-800 dark:bg-zinc-600 dark:shadow-md dark:shadow-blue-700/50`}
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
         <ul className="flex flex-row items-center justify-center gap-3">
