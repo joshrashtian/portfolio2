@@ -11,6 +11,7 @@ const Contact = () => {
     message: null,
     subject: null,
   });
+
   return (
     <motion.ul
       initial={{ opacity: 0, scaleY: 0 }}
@@ -18,8 +19,10 @@ const Contact = () => {
       exit={{ opacity: 0, scaleY: 0 }}
       transition={{
         duration: 0.3,
+        opacity: { duration: 0.5 },
+        ease: "easeInOut",
       }}
-      className="m-2 h-full w-full origin-bottom-right rounded-3xl bg-zinc-100/40 p-2"
+      className="m-2 h-full w-full origin-bottom-right rounded-3xl bg-zinc-100/40 p-5"
     >
       <h1 className="text-xl font-bold">Contact Information</h1>
       <p className="flex flex-row items-center gap-2 text-xl font-semibold">

@@ -28,8 +28,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   let properties = (info as any).properties;
   return (
-    <div className="min-h-screen p-10 pt-24 lg:p-24">
-      <h1>{(info as any).properties.Name.title[0].plain_text}</h1>
+    <div className="slug min-h-screen p-10 pt-24 lg:p-24">
+      <h1 className="text-4xl font-bold">
+        {(info as any).properties.Name.title[0].plain_text}
+      </h1>
       <ul className="flex flex-col items-center justify-center gap-3 rounded-2xl bg-zinc-200/40 p-3 px-5 text-xl lg:flex-row lg:p-1">
         <h4>
           Published {(info as any).properties.Published.date.start.toString()}

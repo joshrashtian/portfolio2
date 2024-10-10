@@ -25,12 +25,13 @@ const Socials = () => {
           y: { delay: 0.5 },
           opacity: { delay: 0.2, duration: 1.2 },
           duration: 1.2,
-          type: "spring",
         }}
-        className={`z-50 flex ${contact ? "h-[400px] items-end lg:w-[500px]" : "h-[56px] w-96"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 bg-white px-10 pb-2 shadow-xl duration-300 dark:border-zinc-800 dark:bg-zinc-600 dark:shadow-md dark:shadow-blue-700/50`}
+        className={`z-50 flex ${contact ? "h-[450px] items-end lg:w-[500px]" : "h-[56px] w-96"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 bg-white px-10 pb-2 shadow-xl duration-500 dark:border-zinc-800 dark:bg-zinc-600 dark:shadow-md dark:shadow-blue-700/50`}
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
-        <ul className="flex flex-row items-center justify-center gap-3">
+        <ul
+          className={`flex flex-row items-center justify-center transition-all delay-200 duration-1000 ${contact && "rounded-3xl bg-zinc-200/40 p-2 px-5 text-teal-600"} gap-3`}
+        >
           <Link
             className="flex items-center justify-center rounded-md p-0.5 text-3xl duration-300 hover:scale-125 hover:shadow-lg"
             href="https://github.com/joshrashtian"

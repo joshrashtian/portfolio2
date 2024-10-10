@@ -20,22 +20,13 @@ const written = Indie_Flower({
 
 // eslint-disable-next-line react/display-name
 const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
-  const AboutDetails = useMemo(
-    () => [
-      {
-        title: "Who Am I?",
-        desc: "My name is Joshua Rashtian.",
-      },
-    ],
-    [],
-  );
-
   function Dresser(props: any) {
     const { scene } = useGLTF("/dresser.glb");
 
     scene.rotation.y = Math.PI / -1.6;
     return <primitive object={scene} {...props} />;
   }
+
   return (
     <section
       ref={ref}
