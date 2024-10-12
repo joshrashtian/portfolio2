@@ -4,6 +4,7 @@ import { notion } from "@/app/utils/notion-client";
 import { NotionRenderer } from "@notion-render/client";
 import { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { useRouter } from "next/navigation";
+import { Inter } from "next/font/google";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const info = await notion.pages.retrieve({
@@ -28,7 +29,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   let properties = (info as any).properties;
   return (
-    <div className="slug min-h-screen p-10 pt-24 lg:p-24">
+    <div className={`slug min-h-screen p-10 pt-24 lg:p-24`}>
       <h1 className="text-4xl font-bold">
         {(info as any).properties.Name.title[0].plain_text}
       </h1>

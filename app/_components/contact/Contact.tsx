@@ -45,21 +45,21 @@ const Contact = () => {
         }}
       >
         <input
-          className="h-8 w-full bg-zinc-100 p-2"
+          className="h-8 w-full rounded-md bg-zinc-100 p-2 duration-1000 focus:text-purple-500 dark:bg-zinc-500 dark:text-white focus:dark:text-pink-300"
           placeholder="Subject..."
           type="text"
           onChange={(e) => setEmail({ ...email, subject: e.target.value })}
           required
         />
         <input
-          className="h-8 w-full bg-zinc-100 p-2"
+          className="h-8 w-full rounded-md bg-zinc-100 p-2 duration-1000 focus:text-purple-500 dark:bg-zinc-500 dark:text-white focus:dark:text-pink-300"
           placeholder="Email..."
           type="email"
           onChange={(e) => setEmail({ ...email, email: e.target.value })}
           required
         />
         <textarea
-          className="h-20 w-full resize-none overflow-y-scroll bg-zinc-100 p-2"
+          className="h-20 w-full resize-none overflow-y-scroll rounded-md bg-zinc-100 p-2 duration-1000 focus:text-purple-500 dark:bg-zinc-500 dark:text-white focus:dark:text-pink-300"
           placeholder="Message..."
           required
           onChange={(e) => setEmail({ ...email, message: e.target.value })}

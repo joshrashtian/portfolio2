@@ -96,17 +96,22 @@ const HeaderMenuContextProvider = ({
               <IoNavigate /> Navigation
             </h1>
             <ul className="mt-10 flex flex-col gap-2 font-semibold">
-              {items.map((item) => (
-                <Link
+              {items.map((item, index) => (
+                <motion.ul
+                  initial={{ x: -30, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  exit={{ x: 30, opacity: 0 }}
                   key={item.name}
-                  href={item.href}
-                  className="group rounded-lg duration-200 hover:bg-white/20"
+                  className="group hover:bg-white/20"
                 >
-                  <p className="flex -translate-x-12 flex-row items-center p-4 text-2xl text-white duration-300 group-hover:translate-x-3 group-hover:text-teal-200/70">
-                    <IoArrowForward className="origin-left scale-0 duration-100 ease-linear group-hover:-translate-x-3 group-hover:scale-100" />{" "}
-                    {item.name}
-                  </p>
-                </Link>
+                  <Link href={item.href} className="rounded-lg duration-200">
+                    <p className="flex -translate-x-12 flex-row items-center p-4 text-2xl text-white duration-300 group-hover:translate-x-3 group-hover:text-teal-200/70">
+                      <IoArrowForward className="origin-left scale-0 duration-100 ease-linear group-hover:-translate-x-3 group-hover:scale-100" />{" "}
+                      {item.name}
+                    </p>
+                  </Link>
+                </motion.ul>
               ))}
               <ul className="my-2 h-[1px] w-full bg-white" />
               <div className="flex flex-col gap-2">

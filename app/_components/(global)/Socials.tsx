@@ -30,7 +30,7 @@ const Socials = () => {
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
         <ul
-          className={`flex flex-row items-center justify-center transition-all delay-200 duration-1000 ${contact && "rounded-3xl bg-zinc-200/40 p-2 px-5 text-teal-600"} gap-3`}
+          className={`flex flex-row items-center justify-center transition-all delay-200 duration-1000 ${contact && "rounded-3xl bg-zinc-200/40 p-2 px-5 text-teal-600 dark:bg-zinc-700 dark:text-pink-200"} gap-3`}
         >
           <Link
             className="flex items-center justify-center rounded-md p-0.5 text-3xl duration-300 hover:scale-125 hover:shadow-lg"
@@ -52,7 +52,7 @@ const Socials = () => {
           </Link>
           <ul className="h-5 w-0.5 bg-slate-200" />
           <button
-            className="group flex items-center justify-center gap-1 rounded-full text-xl duration-300 hover:scale-105 hover:bg-zinc-100 hover:text-blue-500 lg:p-1 lg:px-1.5"
+            className="group flex items-center justify-center gap-1 rounded-full text-xl duration-300 hover:scale-105 hover:bg-zinc-100 hover:text-blue-500 lg:p-1 lg:px-1.5 dark:hover:bg-black"
             onClick={() => setContact(!contact)}
           >
             <IoSparkles className="rounded-xl duration-300 active:scale-90" />

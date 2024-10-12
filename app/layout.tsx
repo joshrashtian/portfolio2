@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${til.className} bg-zinc-50 dark:bg-zinc-800`}>
+      <body className={`${inter.className} bg-zinc-50 dark:bg-zinc-800`}>
         <CardContextWrapper>
           <DarkModeProvider>
             <HeaderMenuContextProvider>

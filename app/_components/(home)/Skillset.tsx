@@ -27,7 +27,7 @@ const Skillset = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       className="my-24 mb-[1000px] flex h-96 flex-col p-10 lg:p-24"
     >
       <motion.ul
-        className="flex w-full flex-row flex-wrap gap-6 rounded-lg bg-slate-100 p-2 text-slate-400 lg:w-fit lg:p-5"
+        className="flex w-full flex-row flex-wrap gap-6 rounded-lg bg-slate-100 p-2 text-slate-400 lg:w-fit lg:p-5 dark:bg-zinc-800"
         style={{ y: ulHeight, opacity: ulOpacity }}
       >
         <IoLogoJavascript className="text-3xl lg:text-6xl" />
