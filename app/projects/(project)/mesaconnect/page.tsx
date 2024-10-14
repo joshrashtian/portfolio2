@@ -28,16 +28,19 @@ const inter = Inter({ subsets: ["latin"] });
 const MESAConnectPage = () => {
   const firstRef = useRef(null);
   const scrollRef = useRef(null);
-  const [video] = useState(() => {
-    if (!document) return;
-    const vid = document.createElement("video");
-    vid.src = "/polls.mp4";
-    vid.crossOrigin = "Anonymous";
-    vid.loop = true;
-    vid.muted = true;
-    vid.play();
-    return vid;
-  });
+  const [video] = useState(
+    document
+      ? () => {
+          const vid = document.createElement("video");
+          vid.src = "/polls.mp4";
+          vid.crossOrigin = "Anonymous";
+          vid.loop = true;
+          vid.muted = true;
+          vid.play();
+          return vid;
+        }
+      : null,
+  );
 
   return (
     <>
