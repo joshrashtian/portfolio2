@@ -29,6 +29,7 @@ const MESAConnectPage = () => {
   const firstRef = useRef(null);
   const scrollRef = useRef(null);
   const [video] = useState(() => {
+    if (!document) return;
     const vid = document.createElement("video");
     vid.src = "/polls.mp4";
     vid.crossOrigin = "Anonymous";
@@ -106,8 +107,12 @@ const MESAConnectPage = () => {
             <mesh position={[-0.7, 0, -1]}>
               <planeGeometry args={[8, 5]} />
               <meshStandardMaterial emissive="#BBB" side={DoubleSide}>
-                <videoTexture attach="map" args={[video]} />
-                <videoTexture attach="emissiveMap" args={[video]} />
+                {video && (
+                  <>
+                    <videoTexture attach="map" args={[video]} />
+                    <videoTexture attach="emissiveMap" args={[video]} />{" "}
+                  </>
+                )}
               </meshStandardMaterial>
             </mesh>
           </Canvas>
