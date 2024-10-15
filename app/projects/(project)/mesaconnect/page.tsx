@@ -29,7 +29,8 @@ const MESAConnectPage = () => {
   const firstRef = useRef(null);
   const scrollRef = useRef(null);
   const [video] = useState(() => {
-    const vid = document?.createElement("video");
+    if (typeof document === "undefined") return null;
+    const vid = document.createElement("video");
     vid.src = "/polls.mp4";
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
