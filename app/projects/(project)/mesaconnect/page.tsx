@@ -83,19 +83,19 @@ const MESAConnectPage = () => {
         </h1>
 
         <div className="flex min-h-full w-full flex-col lg:flex-row">
-          <ul className="my-12 flex flex-col items-center gap-3 rounded-3xl bg-white py-12 shadow-lg lg:w-1/3 lg:px-3">
+          <ul className="my-12 flex flex-col items-center gap-3 rounded-3xl bg-white py-12 shadow-lg lg:w-1/3 lg:px-3 dark:bg-zinc-700">
             <h3 className="flex flex-row items-center gap-2 text-center text-3xl font-bold">
               <IoPeople /> Socialize.
             </h3>
             <ol className="flex cursor-default flex-col gap-1 px-3 font-light">
-              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70">
+              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70 dark:bg-zinc-600 dark:hover:bg-zinc-600/60">
                 Showcase yourself and display your various achievements.
               </li>
 
-              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70">
+              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70 dark:bg-zinc-600 dark:hover:bg-zinc-600/60">
                 Connect with other MESA students and alumni.
               </li>
-              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70">
+              <li className="rounded-xl bg-zinc-100 p-2 duration-300 hover:bg-zinc-200/70 dark:bg-zinc-600 dark:hover:bg-zinc-600/60">
                 Share lessons and tips to other students.
               </li>
             </ol>
@@ -133,9 +133,9 @@ const MESAConnectPage = () => {
               scale: 1,
               reverse: true,
             }}
-            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-green-500 hover:text-green-800"
+            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-green-500 hover:text-green-800 dark:bg-zinc-700 dark:hover:text-green-400"
           >
-            <IoGitBranch className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100" />
+            <IoGitBranch className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
             <h4 className="text-3xl">Open Source</h4>
             <p className="mt-4 text-wrap text-center font-light">
               In order to preserve the app long-term and to build community,
@@ -149,9 +149,9 @@ const MESAConnectPage = () => {
               scale: 1,
               reverse: true,
             }}
-            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-orange-500 hover:text-orange-800"
+            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-orange-500 hover:text-orange-800 dark:bg-zinc-700 dark:hover:text-orange-400"
           >
-            <IoSchool className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100" />
+            <IoSchool className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
             <h4 className="text-3xl">Quiz Questions</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Ask others questions / get feedback on Personal Projects.
@@ -164,9 +164,9 @@ const MESAConnectPage = () => {
               scale: 1,
               reverse: true,
             }}
-            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-blue-500 hover:text-blue-800"
+            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-blue-500 hover:text-blue-800 dark:bg-zinc-700 dark:hover:text-blue-400"
           >
-            <BsPersonGear className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100" />
+            <BsPersonGear className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
             <h4 className="text-3xl">Showcase Yourself</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Add various blocks and components to your page to express
@@ -180,9 +180,9 @@ const MESAConnectPage = () => {
               scale: 1,
               reverse: true,
             }}
-            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-red-500 hover:text-red-800"
+            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-red-500 hover:text-red-800 dark:bg-zinc-700 dark:hover:text-red-400"
           >
-            <IoNewspaper className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100" />
+            <IoNewspaper className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
             <h4 className="text-3xl">Goings On</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Get information of what might be going on in your field with other
@@ -196,9 +196,9 @@ const MESAConnectPage = () => {
               scale: 1,
               reverse: true,
             }}
-            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-yellow-500 hover:text-yellow-800"
+            className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-yellow-500 hover:text-yellow-800 dark:bg-zinc-700 dark:hover:text-yellow-400"
           >
-            <IoSettings className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100" />
+            <IoSettings className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
             <h4 className="text-3xl">Accessibility</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Simpilicity + Accessibility To Deliver A Polished, User-Friendly
