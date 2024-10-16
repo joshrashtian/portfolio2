@@ -22,6 +22,12 @@ const nextConfig = {
                 port: "",
                 pathname: "/**",
             },
+            {
+                hostname: "512pixels.net",
+                 protocol: "https",
+                port: "",
+                pathname: "/**",
+            }
         ],
     },
 };

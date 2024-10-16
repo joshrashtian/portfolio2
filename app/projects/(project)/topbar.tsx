@@ -51,7 +51,9 @@ const TopBarProjects = () => {
             duration: 0.8,
           }}
         >
-          <Image src={selected.img} alt="selected" width={30} height={30} />
+          {selected.img && (
+            <Image src={selected.img} alt="selected" width={30} height={30} />
+          )}
           <p className="font-black dark:text-slate-300">{selected?.name}</p>
           <ul className="h-1 w-1 rounded-full bg-zinc-800 dark:bg-slate-300" />
 
