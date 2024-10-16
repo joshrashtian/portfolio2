@@ -14,6 +14,7 @@ const index = [
     name: "MESAConnect",
     link: "https://mesaconnect.io",
     img: MesaIcon,
+    linkin: "https://www.linkedin.com/company/mesa-connect",
   },
 ];
 

@@ -16,7 +16,7 @@ const Socials = () => {
   const [contact, setContact] = useState(false);
 
   return (
-    <ul className="fixed bottom-0 flex w-full items-center justify-center">
+    <ul className="fixed bottom-0 z-50 flex w-full items-center justify-center">
       <motion.section
         initial={{ y: 70, opacity: 0 }}
         animate={{ y: -30, opacity: 1 }}
@@ -26,7 +26,7 @@ const Socials = () => {
           opacity: { delay: 0.2, duration: 1.2 },
           duration: 1.2,
         }}
-        className={`z-50 flex ${contact ? "h-[450px] items-end lg:w-[500px]" : "h-[56px] w-96"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 bg-white px-10 pb-2 shadow-xl duration-500 dark:border-zinc-800 dark:bg-zinc-600 dark:shadow-md dark:shadow-blue-700/50`}
+        className={`z-50 flex ${contact ? "h-[450px] items-end bg-white lg:w-[500px] dark:bg-zinc-800" : "h-[56px] w-96 bg-purple-300/40 dark:bg-slate-700/30"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 border-transparent px-10 pb-2 shadow-xl backdrop-blur-2xl backdrop-brightness-75 backdrop-hue-rotate-90 duration-500 hover:border-purple-500/40 dark:border-zinc-800 dark:shadow-md dark:hover:border-purple-200`}
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
         <ul
@@ -52,7 +52,7 @@ const Socials = () => {
           </Link>
           <ul className="h-5 w-0.5 bg-slate-200" />
           <button
-            className="group flex items-center justify-center gap-1 rounded-full text-xl duration-300 hover:scale-105 hover:bg-zinc-100 hover:text-blue-500 lg:p-1 lg:px-1.5 dark:hover:bg-black"
+            className="group flex items-center justify-center gap-1 rounded-full text-xl duration-300 hover:scale-105 hover:bg-zinc-100/30 hover:text-blue-500 lg:p-1 lg:px-1.5 dark:hover:bg-black"
             onClick={() => setContact(!contact)}
           >
             <IoSparkles className="rounded-xl duration-300 active:scale-90" />
