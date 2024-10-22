@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Titillium_Web } from "next/font/google";
+import {
+  Inter,
+  Merriweather,
+  Merriweather_Sans,
+  Outfit,
+  Titillium_Web,
+} from "next/font/google";
 import "./globals.css";
 import Header from "./_components/(home)/header";
 import Socials from "./_components/(global)/Socials";
@@ -9,7 +15,7 @@ import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
 import { getVersion } from "./utils/version";
 import DarkModeProvider from "./contexts/DarkModeContext";
 const inter = Outfit({ subsets: ["latin"] });
-const til = Titillium_Web({
+const a = Titillium_Web({
   subsets: ["latin"],
   weight: ["200", "300", "400", "600", "700", "900"],
 });

@@ -10,15 +10,15 @@ const FeaturedProjects = () => {
       <IoArchive className="ml-4 text-5xl" />
       <h2 className="ml-4 text-2xl font-semibold">Case Studies</h2>
 
-      <ul className="grid w-full grid-cols-1 gap-3 scroll-smooth whitespace-nowrap bg-zinc-100/30 p-3 xl:grid-cols-3">
+      <ul className="grid w-full grid-cols-1 gap-3 scroll-smooth whitespace-nowrap bg-zinc-100/30 p-3 xl:grid-cols-3 dark:bg-black">
         <FeaturedCard
           href="/projects/mesaconnect"
-          className="group flex flex-col justify-between border-2 bg-gradient-to-br from-orange-50 to-zinc-100"
+          className="group flex flex-col justify-between border-2 bg-gradient-to-br from-orange-50 to-zinc-100 dark:from-orange-700 dark:to-zinc-800"
         >
           <ul className="relative h-72 w-full rounded-lg">
             <Link
               href={"https://mesaconnect.io"}
-              className="absolute bottom-2 right-2 z-50 translate-y-3 text-3xl text-white opacity-0 drop-shadow-2xl duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+              className="absolute bottom-2 right-2 z-50 translate-y-3 text-3xl text-white opacity-0 drop-shadow-2xl duration-300 hover:text-blue-400 group-hover:translate-y-0 group-hover:opacity-100"
             >
               <IoNavigate />
             </Link>

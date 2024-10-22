@@ -22,9 +22,9 @@ export default function Home() {
     <>
       <section className="flex min-h-[120vh] flex-col justify-center p-12 lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          <ul className="absolute inset-3 bg-gradient-to-br from-blue-900 to-purple-900 blur-xl dark:from-blue-300 dark:to-pink-400" />
+          <ul className="absolute -inset-1 bg-gradient-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
 
-          <div className="relative flex w-full flex-row gap-x-2 rounded-3xl bg-gradient-to-tr from-slate-500 to-blue-500 p-4 text-slate-100 shadow-2xl dark:from-blue-950 dark:to-purple-950">
+          <div className="relative flex w-full flex-row gap-x-2 rounded-3xl bg-gradient-to-tr from-black to-blue-500/80 p-4 text-slate-100 shadow-2xl dark:from-blue-950 dark:to-black/80">
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
               alt="Joshua Rashtian"
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </article>
         <section className="flex h-64 w-full flex-col justify-between rounded-3xl lg:mt-10">
-          <footer className="mb-20 flex flex-col gap-3 lg:flex-row lg:justify-center">
+          <footer className="mb-20 mt-7 flex flex-col gap-3 lg:flex-row lg:justify-center">
             <button
               onClick={() => {
                 //@ts-ignore
@@ -52,7 +52,7 @@ export default function Home() {
               }}
               className="group w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-left text-lg lg:text-2xl">
+              <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Learn More About Me{" "}
                 <IoArrowForward className="duration-200 group-hover:translate-x-1" />
               </h4>
@@ -64,7 +64,7 @@ export default function Home() {
               }}
               className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-lg lg:text-2xl">
+              <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Blog{" "}
                 <IoChatbox className="duration-200 group-hover:translate-x-1" />
               </h4>
@@ -76,7 +76,7 @@ export default function Home() {
               }}
               className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-lg lg:text-2xl">
+              <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Skillset{" "}
                 <IoHammer className="duration-200 group-hover:translate-x-1" />
               </h4>
@@ -85,7 +85,7 @@ export default function Home() {
               href="/projects"
               className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
             >
-              <h4 className="text-lg lg:text-2xl">
+              <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Work
                 <IoClipboard className="duration-200 group-hover:translate-x-1" />
               </h4>
