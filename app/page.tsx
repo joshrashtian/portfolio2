@@ -6,40 +6,53 @@ import {
   IoClipboard,
   IoHammer,
 } from "react-icons/io5";
-import About from "./_components/(home)/about/About";
 import { useRef } from "react";
 import Link from "next/link";
-import Blog from "./_components/(home)/blog/Blog";
-import Skillset from "./_components/(home)/Skillset";
 import React from "react";
+import TitleComponent from "./_components/(home)/TitleComponent";
+import dynamic from "next/dynamic";
+import { BsDownload } from "react-icons/bs";
+import { FaDownload } from "react-icons/fa6";
 
 export default function Home() {
   const AboutRef = useRef<any>(null);
   const BlogRef = useRef<any>(null);
   const SkillRef = useRef<any>(null);
 
+  const BlogDynamic = dynamic(() => import("./_components/(home)/blog/Blog"));
+  const SkillsDynamic = dynamic(() => import("./_components/(home)/Skillset"));
+  const AboutDynamic = dynamic(
+    () => import("./_components/(home)/about/About"),
+  );
   return (
     <>
-      <section className="flex min-h-[120vh] flex-col justify-center p-12 lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
+      <section className="flex min-h-[120vh] flex-col justify-center p-3 lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          <ul className="absolute -inset-1 bg-gradient-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
+          <ul className="absolute inset-2 bg-gradient-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
 
-          <div className="relative flex w-full flex-row gap-x-2 rounded-3xl bg-gradient-to-tr from-black to-blue-500/80 p-4 text-slate-100 shadow-2xl dark:from-blue-950 dark:to-black/80">
+          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-gradient-to-tr from-zinc-50 to-slate-200/80 pr-3 text-slate-100 shadow-2xl lg:p-4 dark:from-slate-950 dark:to-black/80">
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
               alt="Joshua Rashtian"
               width={200}
+              priority
               className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
               height={150}
+              placeholder="blur"
+              blurDataURL=""
             />
-            <ul className="relative flex flex-col justify-end">
-              <h1 className="text-3xl font-black drop-shadow-[0_2.0px_3px_rgba(0,0,0,0.8)] lg:text-6xl">
-                Joshua Rashtian.
-              </h1>
-              <h3 className="text-lg font-light text-slate-50 lg:text-3xl dark:text-slate-300">
+            <ul className="relative flex flex-col justify-end gap-3 lg:p-3">
+              <TitleComponent />
+              <h3 className="text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300">
                 Software Developer / Full Stack Engineer / Computer Science
                 Student
               </h3>
+              <Link
+                href={"/resume.pdf"}
+                className="flex w-fit flex-row items-center gap-2 rounded-lg border-2 border-slate-200 bg-gradient-to-r from-[#B597F6] to-[#96C6EA] p-1 px-3 text-white duration-300 hover:border-purple-400 dark:from-[#EF566A] dark:to-[#627AF7]"
+              >
+                <FaDownload /> Download Resume
+              </Link>
             </ul>
           </div>
         </article>
@@ -50,7 +63,7 @@ export default function Home() {
                 //@ts-ignore
                 AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+              className="group w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Learn More About Me{" "}
@@ -62,7 +75,7 @@ export default function Home() {
                 //@ts-ignore
                 BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Blog{" "}
@@ -74,7 +87,7 @@ export default function Home() {
                 //@ts-ignore
                 SkillRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Skillset{" "}
@@ -83,7 +96,7 @@ export default function Home() {
             </button>
             <Link
               href="/projects"
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:scale-105 hover:border-purple-400 lg:w-fit"
+              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Work
@@ -93,9 +106,12 @@ export default function Home() {
           </footer>
         </section>
       </section>
-      <About ref={AboutRef} />
-      <Skillset ref={SkillRef} />
-      <Blog ref={BlogRef} />
+      <ul ref={AboutRef} />
+      <AboutDynamic />
+      <ul ref={SkillRef} />
+      <SkillsDynamic />
+      <ul ref={BlogRef} />
+      <BlogDynamic />
     </>
   );
 }
