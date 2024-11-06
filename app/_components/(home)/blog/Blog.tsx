@@ -57,6 +57,25 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
             </Link>
           </motion.div>
         ))}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.5,
+
+            ease: "easeInOut",
+          }}
+        >
+          <Link
+            href={`/blog`}
+            className="flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/30 active:scale-90"
+          >
+            <h2 className="group flex -translate-x-12 flex-row p-4 text-4xl duration-300 hover:translate-x-3 hover:text-slate-500">
+              <IoArrowForward className="origin-left scale-0 duration-100 ease-linear group-hover:-translate-x-3 group-hover:scale-100" />{" "}
+              More Blog Posts
+            </h2>
+          </Link>
+        </motion.div>
       </div>
     </motion.section>
   );

@@ -21,3 +21,23 @@ export async function fetchBlogs() {
   });
   return res;
 }
+
+export async function fetchBlogsByNumber(number: number) {
+  let res = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID!,
+    filter: {
+      property: "Status",
+      select: {
+        equals: "Published",
+      },
+    },
+    sorts: [
+      {
+        property: "Published",
+        direction: "descending",
+      },
+    ],
+    page_size: number,
+  });
+  return res;
+}
