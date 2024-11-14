@@ -1,10 +1,16 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Ubuntu_Mono } from "next/font/google";
+const space = Ubuntu_Mono({
+  weight: "700",
+  style: "normal",
+  subsets: ["latin"],
+});
 const TitleComponent = () => {
   return (
-    <div className="flex h-16 w-full flex-col lg:flex-row">
-      <h1 className="flex flex-row">
+    <div className="flex h-16 w-full flex-col lg:flex-row lg:gap-2">
+      <h1 className={`flex flex-row ${space.className} font-bold`}>
         {`Joshua`.split("").map((char, i) => (
           <motion.span
             initial={{
@@ -38,7 +44,7 @@ const TitleComponent = () => {
         ))}
       </h1>
       <ul className="mx-1" />
-      <h1 className="flex flex-row">
+      <h1 className={`flex flex-row ${space.className} font-bold`}>
         {`Rashtian.`.split("").map((char, i) => (
           <motion.span
             initial={{

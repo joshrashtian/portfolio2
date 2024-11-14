@@ -4,7 +4,10 @@ import {
   IoArrowForward,
   IoChatbox,
   IoClipboard,
+  IoCode,
   IoHammer,
+  IoPin,
+  IoSchool,
 } from "react-icons/io5";
 import { useRef } from "react";
 import Link from "next/link";
@@ -13,6 +16,13 @@ import TitleComponent from "./_components/(home)/TitleComponent";
 import dynamic from "next/dynamic";
 import { BsDownload } from "react-icons/bs";
 import { FaDownload } from "react-icons/fa6";
+import { Space_Mono } from "next/font/google";
+
+const Space = Space_Mono({
+  weight: ["400", "700"],
+  style: "normal",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   const AboutRef = useRef<any>(null);
@@ -43,10 +53,27 @@ export default function Home() {
             />
             <ul className="relative flex flex-col justify-end gap-3 lg:p-3">
               <TitleComponent />
-              <h3 className="text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300">
-                Software Developer / Full Stack Engineer / Computer Science
-                Student
+              <h3
+                className={`text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
+              >
+                Full Stack Engineer / Media Creator / Computer Science Student
               </h3>
+              <ol className={`${Space.className} font-black`}>
+                <h4
+                  className={`flex ${Space.className} flex-row items-center gap-2 font-extralight text-slate-700 lg:text-xl dark:text-slate-300`}
+                >
+                  Information At A Glance
+                </h4>
+                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
+                  <IoCode /> 3 Years of Exprience
+                </p>
+                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
+                  <IoSchool /> Studying At College of the Canyons
+                </p>
+                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
+                  <IoPin /> Los Angeles, CA
+                </p>
+              </ol>
               <Link
                 href={"/resume.pdf"}
                 className="flex w-fit flex-row items-center gap-2 rounded-lg border-2 border-slate-200 bg-gradient-to-r from-[#B597F6] to-[#96C6EA] p-1 px-3 text-white duration-300 hover:border-purple-400 dark:from-[#EF566A] dark:to-[#627AF7]"
