@@ -1,29 +1,76 @@
-slug:h1 {
-    font-size: 4pc;
-    font-weight: 600;
-    text-shadow: 0 0 0.5pc rgba(100, 0, 0, 0.2);
+.title {
+  font-size: 4pc;
+  font-weight: 700;
+  text-shadow: 0 8px 1pc rgba(0, 0, 0, 0.23);
+  background: hsla(280, 84%, 41%, 1);
+  background: radial-gradient(
+    circle,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  background: -moz-radial-gradient(
+    circle,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    hsla(280, 84%, 41%, 1) 0%,
+    hsla(218, 97%, 56%, 1) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#8711C1", endColorstr="#2472FC", GradientType=1 );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-slug:h2 {
-    font-size: 3pc;
-    font-weight: 500;
+.slug h2 {
+  font-size: 3pc;
+  font-weight: 500;
 }
 
-slug:h3 {
-    font-size: 2pc;
-    font-weight: 400;
+.slug h3 {
+  font-size: 2pc;
+  font-weight: 400;
 }
 
-slug:p {
-    font-size: 1.5pc;
-    font-weight: 300;
+.slug p {
+  font-size: 1.5pc;
+  font-weight: 200;
+  color: #333;
 }
 
 slug:pre {
-    font-size: 1.3pc;
-    font-weight: 300;
-    background-color: #f0f0f0;
-    padding: 1pc;
-    border-radius: 0.7pc;
-    color: black
+  font-size: 1.3pc;
+  font-weight: 300;
+  background-color: #f0f0f0;
+  padding: 1pc;
+  border-radius: 0.7pc;
+  color: gray;
+}
+.notion-bulleted_list_item {
+  display: list-item;
+  color: #333;
+  font-weight: 600;
+  list-style-type: circle;
+  padding: 10px;
+  padding-left: 20px;
+  background-color: #f0f0f0;
+  list-style-position: inside;
+}
+
+.notion-bulleted_list_item:hover {
+  background-color: #e0e0e0;
+  animation: both 0.5s;
+  transition-duration: 300ms;
+}
+
+.notion-bulleted_list {
+  gap: 0.5pc;
+  flex-direction: column;
+  display: flex;
+}
+
+.notion-color-default {
+  color: #333;
 }

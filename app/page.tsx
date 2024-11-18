@@ -17,6 +17,7 @@ import dynamic from "next/dynamic";
 import { BsDownload } from "react-icons/bs";
 import { FaDownload } from "react-icons/fa6";
 import { Space_Mono } from "next/font/google";
+import General from "./_components/(home)/General";
 
 const Space = Space_Mono({
   weight: ["400", "700"],
@@ -83,6 +84,7 @@ export default function Home() {
             </ul>
           </div>
         </article>
+
         <section className="flex h-64 w-full flex-col justify-between rounded-3xl lg:mt-10">
           <footer className="mb-20 mt-7 flex flex-col gap-3 lg:flex-row lg:justify-center">
             <button
@@ -133,10 +135,12 @@ export default function Home() {
           </footer>
         </section>
       </section>
+
       <ul ref={AboutRef} />
       <AboutDynamic />
       <ul ref={SkillRef} />
       <SkillsDynamic />
+      <General />
       <ul ref={BlogRef} />
       <BlogDynamic />
     </>

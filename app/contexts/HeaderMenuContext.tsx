@@ -30,6 +30,10 @@ const items = [
     href: "/projects",
   },
   {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
     name: "Resume",
     href: "/resume.pdf",
   },
