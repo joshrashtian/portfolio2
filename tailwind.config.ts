@@ -22,6 +22,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      dropShadow: {
+        glow: [
+         "0 0px 20px rgba(255,255, 255, 0.35)",
+         "0 0px 65px rgba(255, 255,255, 0.2)"
+        ],
+      
+        microglow: [
+         "0 0px 30px rgba(255,255, 255, 0.3)",
+         "0 0px 85px rgba(255, 255,255, 0.10)"
+        ],
+      
+    
+    }
+
     },
   },
   plugins: [],

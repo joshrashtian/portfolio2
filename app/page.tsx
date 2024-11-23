@@ -55,7 +55,7 @@ export default function Home() {
             <ul className="relative flex flex-col justify-end gap-3 lg:p-3">
               <TitleComponent />
               <h3
-                className={`text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
+                className={`drop-shadow-glow text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
               >
                 Full Stack Engineer / Media Creator / Computer Science Student
               </h3>
@@ -92,7 +92,7 @@ export default function Home() {
                 //@ts-ignore
                 AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
+              className="drop-shadow-glow group w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Learn More About Me{" "}
@@ -104,7 +104,7 @@ export default function Home() {
                 //@ts-ignore
                 BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
+              className="drop-shadow-glow group flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 Blog{" "}
@@ -116,7 +116,7 @@ export default function Home() {
                 //@ts-ignore
                 SkillRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
+              className="drop-shadow-glow group flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Skillset{" "}
@@ -125,7 +125,7 @@ export default function Home() {
             </button>
             <Link
               href="/projects"
-              className="group flex w-full flex-col rounded-2xl border-2 border-dashed p-4 transition-all ease-out hover:border-purple-400 lg:w-fit lg:hover:scale-105"
+              className="drop-shadow-glow group flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg lg:text-2xl">
                 My Work

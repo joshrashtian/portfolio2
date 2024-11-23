@@ -46,8 +46,8 @@ const CardContextWrapper = ({ children }: { children: React.ReactNode }) => {
         });
       } else {
         setPosition({
-          x: e.clientX,
-          y: e.clientY,
+          x: e.clientX + 20,
+          y: e.clientY + 20,
           hovered: true,
         });
       }

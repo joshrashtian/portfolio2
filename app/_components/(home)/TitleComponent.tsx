@@ -9,7 +9,7 @@ const space = Ubuntu_Mono({
 });
 const TitleComponent = () => {
   return (
-    <div className="flex h-16 w-full flex-col lg:flex-row lg:gap-2">
+    <div className="drop-shadow-glow flex h-16 w-full flex-col lg:flex-row lg:gap-2">
       <h1 className={`flex flex-row ${space.className} font-bold`}>
         {`Joshua`.split("").map((char, i) => (
           <motion.span

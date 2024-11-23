@@ -24,12 +24,11 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   return (
     <motion.section
       ref={ref}
-      className="flex h-screen flex-col bg-zinc-100 p-8 pb-24 xl:p-24 dark:bg-zinc-800/40"
+      className="flex h-screen min-h-fit flex-col bg-zinc-100 p-8 pb-24 xl:p-24 dark:bg-zinc-800/40"
     >
-      <h1 className="mb-12 text-5xl font-bold lg:text-6xl">
+      <h1 className="drop-shadow-microglow mb-12 text-5xl font-bold lg:text-6xl">
         {"<"}
-        <span className="text-green-700 dark:text-green-500">Journal</span>{" "}
-        {" />"}
+        <span className="text-green-700 dark:text-rose-500">Journal</span> {">"}
       </h1>
       <div className="flex flex-col gap-1">
         {blog?.results.map((blog: any, index: number) => (
@@ -48,9 +47,9 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
               onMouseMove={(e) => hovered(e)}
               onMouseOver={() => CreateCard(blog.properties)}
               onMouseLeave={() => hovered(null)}
-              className="flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/30 active:scale-90"
+              className="drop-shadow-microglow flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/30 active:scale-90 dark:hover:bg-transparent"
             >
-              <h2 className="group flex -translate-x-12 flex-row p-4 text-4xl duration-300 hover:translate-x-3 hover:text-slate-500">
+              <h2 className="group flex -translate-x-12 flex-row p-4 text-4xl duration-300 hover:translate-x-3 hover:text-slate-500 dark:hover:text-rose-500">
                 <IoArrowForward className="origin-left scale-0 duration-100 ease-linear group-hover:-translate-x-3 group-hover:scale-100" />{" "}
                 {(blog as any).properties.Name.title[0].plain_text}
               </h2>
@@ -68,7 +67,7 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
         >
           <Link
             href={`/blog`}
-            className="flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/30 active:scale-90"
+            className="flex flex-col rounded-3xl duration-300 hover:bg-zinc-200/30 active:scale-90 dark:hover:bg-zinc-800/10"
           >
             <h2 className="group flex -translate-x-12 flex-row p-4 text-4xl duration-300 hover:translate-x-3 hover:text-slate-500">
               <IoArrowForward className="origin-left scale-0 duration-100 ease-linear group-hover:-translate-x-3 group-hover:scale-100" />{" "}
@@ -77,6 +76,10 @@ const Blog = forwardRef((props, ref: React.Ref<HTMLElement>) => {
           </Link>
         </motion.div>
       </div>
+      <h1 className="drop-shadow-microglow mt-12 text-5xl font-bold lg:text-6xl">
+        {"</"}
+        <span className="text-green-700 dark:text-rose-500">Journal</span> {">"}
+      </h1>
     </motion.section>
   );
 });

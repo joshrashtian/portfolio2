@@ -9,7 +9,7 @@ const BlogCard = () => {
 
   return (
     <motion.div
-      className="fixed top-0 flex h-fit w-fit flex-col items-center rounded-lg bg-white p-2 shadow-lg"
+      className="fixed top-0 flex h-fit w-fit flex-col items-center rounded-lg bg-white p-2 shadow-lg dark:bg-zinc-900"
       style={{
         translateX: `${position?.x}px`,
         translateY: `${position?.y}px`,

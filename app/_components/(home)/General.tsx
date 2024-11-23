@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import {
   IoLogoCss3,
   IoLogoElectron,
@@ -11,19 +11,25 @@ import {
   IoLogoPython,
   IoLogoReact,
   IoLogoVercel,
+  IoSchool,
 } from "react-icons/io5";
 import { Ubuntu_Mono } from "next/font/google";
+import { BiMath } from "react-icons/bi";
 
 const Mono = Ubuntu_Mono({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
-const General = () => {
+const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   return (
-    <section className="flex flex-col p-10 lg:p-24">
-      <h1 className="mb-3 text-3xl font-bold">Quick Information</h1>
+    <section className="flex h-screen flex-col justify-center p-10 lg:p-24">
+      <h1 className="drop-shadow-glow mb-3 text-3xl font-bold">
+        Quick Information
+      </h1>
       <article className="flex flex-row gap-4">
-        <ol className={`w-full rounded-3xl bg-zinc-100 ${Mono.className} p-4`}>
+        <ol
+          className={`w-full rounded-3xl bg-zinc-100 dark:bg-zinc-900/80 dark:fill-zinc-100 ${Mono.className} p-4`}
+        >
           <h5 className="text-xl">Langauges / Frameworks:</h5>
           <li className="flex flex-row gap-2 text-4xl text-zinc-700">
             <IoLogoHtml5 />
@@ -361,13 +367,31 @@ const General = () => {
           </li>
         </ol>
 
-        {/*
-          <ol
-            className={`w-full rounded-3xl bg-zinc-100 ${Mono.className} p-4`}
-          ></ol> */}
+        <ol
+          className={`w-full rounded-3xl bg-zinc-100 p-4 dark:bg-zinc-900/80 dark:fill-zinc-100`}
+        >
+          <h5 className="font-bold">Education:</h5>
+          <li className="flex flex-row items-center gap-3 rounded-md p-2 px-5 text-3xl dark:bg-zinc-700/50">
+            <IoSchool />
+            <article className="drop-shadow-glow leading-snug">
+              <h6 className="text-lg font-bold">
+                College of the Canyons - Valencia, CA
+              </h6>
+              <p className="text-base font-extralight">
+                Associate&apos;s Degree / Computer Science
+              </p>
+              <p className="flex flex-row items-center gap-1 text-base font-thin">
+                <BiMath />
+                Learned Calculus, Physics, Java, React
+              </p>
+            </article>
+          </li>
+        </ol>
       </article>
     </section>
   );
-};
+});
+
+General.displayName = "GeneralHome";
 
 export default General;
