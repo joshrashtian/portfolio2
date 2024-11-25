@@ -41,3 +41,11 @@ body {
     }
 }
 
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../app/(assets)/fonts/PPNeueMontreal-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+

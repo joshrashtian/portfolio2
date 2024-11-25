@@ -37,7 +37,6 @@
 .slug p {
   font-size: 1.5pc;
   font-weight: 200;
-  color: #333;
 }
 
 slug:pre {
@@ -46,7 +45,6 @@ slug:pre {
   background-color: #f0f0f0;
   padding: 1pc;
   border-radius: 0.7pc;
-  color: gray;
 }
 .notion-bulleted_list_item {
   display: list-item;
@@ -73,4 +71,34 @@ slug:pre {
 
 .notion-color-default {
   color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion-code {
+    font-size: 1pc;
+    font-weight: 300;
+    background-color: #333b3c;
+    padding: 2pc;
+    border-radius: 0.7pc;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .notion-code {
+    font-size: 1pc;
+    font-weight: 300;
+    background-color: #efefec;
+    padding: 2pc;
+    border-radius: 0.7pc;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.notion-code::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }

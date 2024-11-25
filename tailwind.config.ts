@@ -11,6 +11,9 @@ const config: Config = {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
+      fontFamily: {
+        "nenue": ["PPNeueMontreal", "sans-serif"],
+      },
       keyframes: {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
@@ -26,6 +29,11 @@ const config: Config = {
         glow: [
          "0 0px 20px rgba(255,255, 255, 0.35)",
          "0 0px 65px rgba(255, 255,255, 0.2)"
+        ],
+
+         glowcyan: [
+         "0 0px 20px rgba(122,183, 187, 0.5)",
+         "0 0px 65px rgba(122, 183,187, 0.3)"
         ],
       
         microglow: [
