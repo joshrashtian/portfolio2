@@ -1,6 +1,7 @@
 "use client";
-import React, { forwardRef, useState } from "react";
+import React, { createContext, forwardRef, useContext, useState } from "react";
 import {
+  IoClose,
   IoLogoCss3,
   IoLogoElectron,
   IoLogoFirebase,
@@ -17,9 +18,11 @@ import {
   IoSchool,
 } from "react-icons/io5";
 import { Ubuntu_Mono } from "next/font/google";
-import { BiMath } from "react-icons/bi";
+import { BiMath, BiSolidSchool } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaSchool } from "react-icons/fa6";
+import { IconType } from "react-icons";
+import { Degrees } from "@/app/utils/eduindex";
 
 const Mono = Ubuntu_Mono({
   weight: ["400", "700"],
@@ -33,8 +36,8 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     index[0],
   );
   return (
-    <motion.section className="flex h-screen flex-col p-10 lg:p-24">
-      <header className="font-nenue mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 dark:bg-zinc-900">
+    <motion.section className="flex h-screen flex-col p-10 font-nenue lg:p-24">
+      <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 font-nenue dark:bg-zinc-900">
         {index.map((item: any, index) => (
           <button
             className={`flex w-48 items-center justify-center rounded-md ${item === state ? "bg-white shadow-sm dark:bg-zinc-800/50" : " "} p-0.5 duration-500`}
@@ -404,6 +407,8 @@ function Skills() {
 }
 
 function Education() {
+  const modal = useGeneral();
+
   return (
     <motion.ol
       key="education"
@@ -413,39 +418,119 @@ function Education() {
       exit={{ opacity: 0, x: 100 }}
       className={`flex flex-col gap-3`}
     >
-      <li className="relative flex flex-row items-center gap-3 rounded-md p-2 px-5 text-3xl dark:bg-zinc-700/50">
-        <IoSchool />
-        <article className="leading-snug drop-shadow-glow">
-          <h6 className="text-lg font-bold">
-            College of the Canyons - Valencia, CA
-          </h6>
-          <p className="text-base font-extralight">
-            Associate&apos;s Degree / Computer Science
-          </p>
-          <p className="flex flex-row items-center gap-1 text-base font-thin">
-            <BiMath />
-            Learned Calculus, Physics, Java, React
-          </p>
-        </article>
-        <IoOpenOutline className="absolute right-4 top-4 text-lg" />
-      </li>
-      <li className="relative flex flex-row items-center gap-3 rounded-md p-2 px-5 text-3xl dark:bg-zinc-700/50">
-        <FaSchool />
-        <article className="leading-snug drop-shadow-glow">
-          <h6 className="text-lg font-bold">
-            West Ranch High School - Valencia, CA
-          </h6>
-          <p className="text-base font-extralight">High School Diploma</p>
-          <p className="flex flex-row items-center gap-1 text-base font-thin">
-            <BiMath />
-            Learned JavaScript, Premiere Pro, After Effects. Participated in
-            West Ranch TV.
-          </p>
-        </article>
-        <IoOpenOutline className="absolute right-4 top-4 text-lg" />
-      </li>
+      {Degrees.map((item, index) => {
+        return (
+          <li
+            className="relative flex flex-row items-center gap-3 rounded-md bg-zinc-200/40 p-2 px-5 text-3xl dark:bg-zinc-700/50"
+            key={item.degree}
+          >
+            <item.icon />
+            <article className="leading-snug drop-shadow-glow">
+              <h6 className="text-lg font-bold">{item.title}</h6>
+              <p className="text-base font-extralight">{item.degree}</p>
+              <p className="flex flex-row items-center gap-1 text-base font-thin">
+                <item.descriptionIcon />
+                {item.description}
+              </p>
+            </article>
+            <button
+              onClick={() => {
+                modal.setOpen(item);
+              }}
+            >
+              <IoOpenOutline className="absolute right-4 top-4 text-lg" />
+            </button>
+          </li>
+        );
+      })}
     </motion.ol>
   );
+}
+
+export type GeneralModalProps = {
+  title: string;
+  degree: string;
+  icon: IconType;
+  descriptionIcon: IconType;
+  description?: string;
+  data: {};
+  time: string;
+  skills?: string[];
+  classes?: string[];
+  clubs?: {
+    role: string;
+    name: string;
+    responsibilities: string;
+  }[];
+};
+
+const GeneralContext = createContext<any>({});
+
+export function GeneralProvider({ children }: { children: any }): any {
+  const [open, setOpen] = useState<GeneralModalProps | null>();
+  return (
+    <GeneralContext.Provider value={{ open, setOpen }}>
+      {children}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.7 }}
+            exit={{ y: "100%" }}
+            className="fixed left-0 top-0 z-30 flex h-full w-full flex-col bg-white p-40 font-nenue"
+          >
+            <IoSchool className="text-5xl" />
+            <div className="flex flex-row items-end justify-between">
+              <ol className="flex flex-col">
+                <h1 className="text-3xl font-bold">{open.title}</h1>
+                <h2 className="text-2xl font-semibold">{open.degree}</h2>
+              </ol>
+              <h2 className="text-2xl">{open.time}</h2>
+            </div>
+            <div className="my-4 h-0.5 w-full bg-zinc-800" />
+            <h5>{open.description}</h5>
+            <div className="grid grid-cols-2 gap-2">
+              {open.classes && (
+                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6">
+                  <h6 className="text-xl font-bold">Class Highlights</h6>
+                  {open.classes.map((e: string) => (
+                    <p className="rounded-lg bg-zinc-200/30 p-4 px-8" key={e}>
+                      {e}
+                    </p>
+                  ))}
+                </div>
+              )}
+              {open.clubs && (
+                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6">
+                  <h6 className="text-xl font-bold">Roles on Campus</h6>
+                  {open.clubs.map((e) => (
+                    <div
+                      key={e.role}
+                      className="rounded-lg bg-zinc-200/30 p-4 px-8"
+                    >
+                      <p className="font-bold">{e.name}</p>
+                      <p>{e.role}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button
+              className="absolute right-12 top-12 z-40 text-3xl"
+              onClick={() => setOpen(null)}
+            >
+              <IoClose />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </GeneralContext.Provider>
+  );
+}
+
+export function useGeneral() {
+  return useContext(GeneralContext);
 }
 
 General.displayName = "GeneralHome";

@@ -30,22 +30,36 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
+  .no-scrollbar {
+    -ms-overflow-style: none;
 
-      scrollbar-width: none;
-    }
+    scrollbar-width: none;
+  }
+}
+
+
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../app/(assets)/fonts/PPNeueMontreal-Thin.otf");
+  font-weight: lighter;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'PPNeueMontreal';
-  src: url('../app/(assets)/fonts/PPNeueMontreal-Medium.otf');
+  font-family: "PPNeueMontreal";
+  src: url("../app/(assets)/fonts/PPNeueMontreal-Medium.otf");
   font-weight: normal;
   font-style: normal;
-  
 }
 
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../app/(assets)/fonts/PPNeueMontreal-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}

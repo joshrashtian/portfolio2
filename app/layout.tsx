@@ -14,6 +14,7 @@ import CardContextWrapper from "./contexts/CardContext";
 import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
 import { getVersion } from "./utils/version";
 import DarkModeProvider from "./contexts/DarkModeContext";
+import { GeneralProvider } from "./_components/(home)/General";
 const inter = Outfit({ subsets: ["latin"] });
 const a = Titillium_Web({
   subsets: ["latin"],
@@ -54,9 +55,11 @@ export default function RootLayout({
         <CardContextWrapper>
           <DarkModeProvider>
             <HeaderMenuContextProvider>
-              {children}
-              <Header />
-              <Socials />
+              <GeneralProvider>
+                {children}
+                <Header />
+                <Socials />
+              </GeneralProvider>
             </HeaderMenuContextProvider>
           </DarkModeProvider>
         </CardContextWrapper>
