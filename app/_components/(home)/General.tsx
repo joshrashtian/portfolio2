@@ -23,6 +23,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaSchool } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import { Degrees } from "@/app/utils/eduindex";
+import { WorkIndex } from "@/app/utils/workindex";
 
 const Mono = Ubuntu_Mono({
   weight: ["400", "700"],
@@ -52,6 +53,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       <AnimatePresence mode="sync">
         {state === "Skills" && <Skills />}
         {state === "Education" && <Education />}
+        {state === "Work" && <Work />}
       </AnimatePresence>
     </motion.section>
   );
@@ -447,6 +449,47 @@ function Education() {
   );
 }
 
+function Work() {
+  const modal = useGeneral();
+
+  return (
+    <motion.ol
+      key="Work"
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0, x: 100 }}
+      className={`flex flex-col gap-3`}
+    >
+      {WorkIndex.map((item, index) => {
+        return (
+          <li
+            className="relative flex flex-row items-center gap-3 rounded-md bg-zinc-200/40 p-2 px-5 text-3xl dark:bg-zinc-700/50"
+            key={item.degree}
+          >
+            <item.icon />
+            <article className="leading-snug drop-shadow-glow">
+              <h6 className="text-lg font-bold">{item.title}</h6>
+              <p className="text-base font-extralight">{item.degree}</p>
+              <p className="flex flex-row items-center gap-1 text-base font-thin">
+                <item.descriptionIcon />
+                {item.description}
+              </p>
+            </article>
+            <button
+              onClick={() => {
+                modal.setOpen(item);
+              }}
+            >
+              <IoOpenOutline className="absolute right-4 top-4 text-lg" />
+            </button>
+          </li>
+        );
+      })}
+    </motion.ol>
+  );
+}
+
 export type GeneralModalProps = {
   title: string;
   degree: string;
@@ -478,7 +521,7 @@ export function GeneralProvider({ children }: { children: any }): any {
             animate={{ y: 0 }}
             transition={{ duration: 0.7 }}
             exit={{ y: "100%" }}
-            className="fixed left-0 top-0 z-30 flex h-full w-full flex-col bg-white p-40 font-nenue"
+            className="fixed left-0 top-0 z-30 flex h-full w-full flex-col bg-white p-40 font-nenue dark:bg-zinc-800"
           >
             <IoSchool className="text-5xl" />
             <div className="flex flex-row items-end justify-between">
@@ -488,26 +531,29 @@ export function GeneralProvider({ children }: { children: any }): any {
               </ol>
               <h2 className="text-2xl">{open.time}</h2>
             </div>
-            <div className="my-4 h-0.5 w-full bg-zinc-800" />
+            <div className="my-4 h-0.5 w-full bg-zinc-800 dark:bg-white" />
             <h5>{open.description}</h5>
             <div className="grid grid-cols-2 gap-2">
               {open.classes && (
-                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6">
+                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6 dark:bg-zinc-900/80">
                   <h6 className="text-xl font-bold">Class Highlights</h6>
                   {open.classes.map((e: string) => (
-                    <p className="rounded-lg bg-zinc-200/30 p-4 px-8" key={e}>
+                    <p
+                      className="rounded-lg bg-zinc-200/30 p-4 px-8 dark:bg-zinc-700/30"
+                      key={e}
+                    >
                       {e}
                     </p>
                   ))}
                 </div>
               )}
               {open.clubs && (
-                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6">
+                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6 dark:bg-zinc-900/80">
                   <h6 className="text-xl font-bold">Roles on Campus</h6>
                   {open.clubs.map((e) => (
                     <div
                       key={e.role}
-                      className="rounded-lg bg-zinc-200/30 p-4 px-8"
+                      className="rounded-lg bg-zinc-200/30 p-4 px-8 dark:bg-zinc-700/30"
                     >
                       <p className="font-bold">{e.name}</p>
                       <p>{e.role}</p>
