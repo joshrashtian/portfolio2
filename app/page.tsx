@@ -40,9 +40,9 @@ export default function Home() {
     <>
       <section className="relative flex min-h-[120vh] flex-col p-3 text-center lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          <ul className="absolute inset-2 bg-gradient-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
+          <ul className="absolute inset-2 bg-linear-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
 
-          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-gradient-to-tr from-zinc-50 to-slate-200/80 pr-3 text-slate-100 shadow-2xl lg:p-4 dark:from-slate-950 dark:to-black/80">
+          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-linear-to-tr from-zinc-50 to-slate-200/80 pr-3 text-slate-100 shadow-2xl lg:p-4 dark:from-slate-950 dark:to-black/80">
             {/* 
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
@@ -51,7 +51,7 @@ export default function Home() {
               priority
               className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
               height={150}
-              placeholder="blur"
+              placeholder="blur-sm"
               blurDataURL=""
             /> */}
             <ul className="relative flex w-full flex-col items-center gap-3 text-center lg:p-3">
@@ -77,7 +77,7 @@ export default function Home() {
               </ol>
               <Link
                 href={"/resume.pdf"}
-                className="flex w-fit flex-row items-center gap-2 rounded-lg border-2 border-slate-200 bg-gradient-to-r from-[#B597F6] to-[#96C6EA] p-1 px-3 text-white duration-300 hover:border-purple-400 dark:from-[#EF566A] dark:to-[#627AF7]"
+                className="flex w-fit flex-row items-center gap-2 rounded-lg border-2 border-slate-200 bg-linear-to-r from-[#B597F6] to-[#96C6EA] p-1 px-3 text-white duration-300 hover:border-purple-400 dark:from-[#EF566A] dark:to-[#627AF7]"
               >
                 <FaDownload /> Download Resume
               </Link>

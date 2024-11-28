@@ -36,7 +36,7 @@ const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       {/* Wii model by libblekibble, TV model by Timothy Ahene */}
       <ul className="flex h-full flex-col lg:flex-row">
         <div className="mt-4 flex w-full flex-col justify-center gap-2 lg:w-1/2">
-          <ul className="rounded-3xl rounded-tl-3xl border-2 border-zinc-100 bg-gradient-to-tr from-blue-700 to-purple-700 p-6 text-base text-white ring-purple-500 duration-500 hover:ring-2 lg:text-lg">
+          <ul className="rounded-3xl rounded-tl-3xl border-2 border-zinc-100 bg-linear-to-tr from-blue-700 to-purple-700 p-6 text-base text-white ring-purple-500 duration-500 hover:ring-2 lg:text-lg">
             <IoLocation className="text-3xl" />
             <p>Who Am I?</p>
             <p className="text-zinc-300">
@@ -46,7 +46,7 @@ const About = forwardRef((props, ref: React.Ref<HTMLElement>) => {
               Born and raised inside of Los Angeles County, California.
             </p>
           </ul>
-          {/*<ul className="rounded-3xl rounded-tl-3xl border-2 border-zinc-100 bg-gradient-to-br from-blue-600 to-green-700 p-6 text-white ring-purple-500 duration-500 hover:ring-2">
+          {/*<ul className="rounded-3xl rounded-tl-3xl border-2 border-zinc-100 bg-linear-to-br from-blue-600 to-green-700 p-6 text-white ring-purple-500 duration-500 hover:ring-2">
             <p></p>
           </ul> */}
           <Link

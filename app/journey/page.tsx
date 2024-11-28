@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Simulator from "../_components/(journey)/Simulator";
 const JourneyCanvas = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-3 bg-gradient-to-b from-black to-zinc-800 p-24 pb-72 text-center text-slate-50">
+    <main className="flex min-h-screen flex-col items-center gap-3 bg-linear-to-b from-black to-zinc-800 p-24 pb-72 text-center text-slate-50">
       <h1 className="mt-10 text-6xl font-black text-white drop-shadow-md">
         Where I Started
       </h1>

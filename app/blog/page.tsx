@@ -34,7 +34,7 @@ const BlogPage = async () => {
                   )
                 }
               </ul>
-              <ul className="relative h-16 w-full rounded-b-3xl p-3 duration-300 group-hover:dark:bg-black/50">
+              <ul className="relative h-16 w-full rounded-b-3xl p-3 duration-300 dark:group-hover:bg-black/50">
                 <h3 className="font-bold">
                   {
                     //@ts-ignore

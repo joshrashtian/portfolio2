@@ -54,7 +54,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             (e: { name: string; id: string }) => (
               <p
                 key={e.id}
-                className="rounded-sm bg-zinc-200 p-1 px-4 text-base capitalize"
+                className="rounded-xs bg-zinc-200 p-1 px-4 text-base capitalize"
               >
                 {e.name}
               </p>

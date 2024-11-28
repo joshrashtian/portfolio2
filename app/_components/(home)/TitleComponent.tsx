@@ -39,7 +39,7 @@ const TitleComponent = () => {
               color: { delay: 0.2 * i + 1 },
             }}
             key={i}
-            className="inline-flex bg-gradient-to-r from-[#B429F9] to-[#239EAB] bg-clip-text text-4xl font-bold text-black drop-shadow-2xl lg:text-6xl dark:text-white"
+            className="inline-flex bg-linear-to-r from-[#B429F9] to-[#239EAB] bg-clip-text text-4xl font-bold text-black drop-shadow-2xl lg:text-6xl dark:text-white"
           >
             {char}
           </motion.span>
@@ -66,7 +66,7 @@ const TitleComponent = () => {
               color: { delay: 0.2 * i + 2.5 },
             }}
             key={i}
-            className="inline-flex bg-gradient-to-r from-[#B429F9] to-[#239EAB] bg-clip-text text-4xl font-bold text-black drop-shadow-2xl lg:text-6xl dark:text-white"
+            className="inline-flex bg-linear-to-r from-[#B429F9] to-[#239EAB] bg-clip-text text-4xl font-bold text-black drop-shadow-2xl lg:text-6xl dark:text-white"
           >
             {char === "_" ? `\n` : char}
           </motion.span>

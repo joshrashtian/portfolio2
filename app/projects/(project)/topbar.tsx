@@ -41,7 +41,7 @@ const TopBarProjects = () => {
           width: { delay: 3, duration: 1 },
           duration: 1.2,
         }}
-        className={`z-50 flex h-10 flex-row items-center justify-center gap-2 place-self-center rounded-3xl bg-white px-10 shadow-sm drop-shadow-xl duration-500 hover:bg-slate-100 dark:bg-zinc-600 dark:text-white dark:hover:bg-slate-800`}
+        className={`z-50 flex h-10 flex-row items-center justify-center gap-2 place-self-center rounded-3xl bg-white px-10 shadow-xs drop-shadow-xl duration-500 hover:bg-slate-100 dark:bg-zinc-600 dark:text-white dark:hover:bg-slate-800`}
       >
         <motion.ul
           className="flex flex-row items-center justify-center gap-2"

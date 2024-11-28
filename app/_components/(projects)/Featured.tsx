@@ -13,7 +13,7 @@ const FeaturedProjects = () => {
       <ul className="grid w-full grid-cols-1 gap-3 scroll-smooth whitespace-nowrap bg-zinc-100/30 p-3 xl:grid-cols-3">
         <FeaturedCard
           href="/projects/mesaconnect"
-          className="group flex flex-col justify-between border-2 bg-gradient-to-br from-orange-50 to-zinc-100"
+          className="group flex flex-col justify-between border-2 bg-linear-to-br from-orange-50 to-zinc-100"
         >
           <ul className="relative h-72 w-full rounded-lg">
             <Link
@@ -22,7 +22,7 @@ const FeaturedProjects = () => {
             >
               <IoNavigate />
             </Link>
-            <ul className="absolute z-40 h-full w-full bg-gradient-to-t from-black/40 via-transparent to-zinc-500/40" />
+            <ul className="absolute z-40 h-full w-full bg-linear-to-t from-black/40 via-transparent to-zinc-500/40" />
             <Image
               src={require("../../(assets)/images/mesaconnectbanner.png")}
               fill

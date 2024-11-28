@@ -36,19 +36,19 @@ const Socials = () => {
             className="flex items-center justify-center rounded-md p-0.5 text-3xl duration-300 hover:scale-125 hover:shadow-lg"
             href="https://github.com/joshrashtian"
           >
-            <IoLogoGithub className="rounded-full duration-300 hover:shadow-sm hover:shadow-white/50 active:scale-90" />
+            <IoLogoGithub className="rounded-full duration-300 hover:shadow-xs hover:shadow-white/50 active:scale-90" />
           </Link>
           <Link
             className="flex items-center justify-center p-0.5 text-3xl duration-300 hover:scale-125 hover:shadow-lg"
             href="https://www.linkedin.com/in/joshrashtian/"
           >
-            <IoLogoLinkedin className="duration-300 hover:text-blue-500 hover:shadow-sm hover:shadow-blue-400/70 active:scale-90" />
+            <IoLogoLinkedin className="duration-300 hover:text-blue-500 hover:shadow-xs hover:shadow-blue-400/70 active:scale-90" />
           </Link>
           <Link
             className="flex items-center justify-center text-3xl duration-300 hover:scale-125"
             href="https://www.instagram.com/joshuajrashtian/"
           >
-            <IoLogoInstagram className="rounded-lg duration-300 hover:text-pink-500 hover:shadow-sm hover:shadow-purple-600/70 active:scale-90" />
+            <IoLogoInstagram className="rounded-lg duration-300 hover:text-pink-500 hover:shadow-xs hover:shadow-purple-600/70 active:scale-90" />
           </Link>
           <ul className="h-5 w-0.5 bg-slate-200" />
           <button

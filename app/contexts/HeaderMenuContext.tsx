@@ -83,7 +83,7 @@ const HeaderMenuContextProvider = ({
   }, []);
   return (
     <HeaderMenuContext.Provider value={value}>
-      <section className={`${menuOpen ? "blur-sm invert" : ""} duration-1000`}>
+      <section className={`${menuOpen ? "blur-xs invert" : ""} duration-1000`}>
         {children}
       </section>
       <AnimatePresence>

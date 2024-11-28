@@ -10,7 +10,7 @@ const FeaturedCard = ({
   return (
     <Link
       href={href}
-      className={`flex h-64 min-h-64 w-96 snap-center flex-col justify-between gap-3 whitespace-nowrap rounded-sm bg-white pb-2 drop-shadow-lg duration-500 hover:scale-105 hover:shadow-lg focus:scale-95 xl:h-80 xl:w-full ${props.className}`}
+      className={`flex h-64 min-h-64 w-96 snap-center flex-col justify-between gap-3 whitespace-nowrap rounded-xs bg-white pb-2 drop-shadow-lg duration-500 hover:scale-105 hover:shadow-lg focus:scale-95 xl:h-80 xl:w-full ${props.className}`}
     >
       {children}
     </Link>

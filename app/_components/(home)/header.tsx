@@ -47,14 +47,14 @@ const Header = () => {
         <ul className="hidden gap-7 duration-300 xl:flex">
           <Link
             href="/journey"
-            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-teal-800 lg:gap-2 hover:dark:text-teal-300"
+            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-teal-800 lg:gap-2 dark:hover:text-teal-300"
           >
             {" "}
             <IoPerson className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
             journey
           </Link>
           <Link
-            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 hover:dark:text-orange-400"
+            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
             href="/projects"
           >
             {" "}
@@ -62,7 +62,7 @@ const Header = () => {
             projects
           </Link>
           <Link
-            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 hover:dark:text-orange-400"
+            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
             href="/projects"
           >
             {" "}

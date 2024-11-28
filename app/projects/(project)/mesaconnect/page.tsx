@@ -75,7 +75,7 @@ const MESAConnectPage = () => {
         </ol>
       </div>
       <section
-        className="min-h-screen bg-gradient-to-tl from-orange-200 to-teal-500 p-24 py-52"
+        className="min-h-screen bg-linear-to-tl from-orange-200 to-teal-500 p-24 py-52"
         ref={firstRef}
       >
         <h1 className="text-4xl font-bold text-white drop-shadow-lg">
@@ -118,13 +118,13 @@ const MESAConnectPage = () => {
           </Canvas>
         </div>
       </section>
-      <section className="flex min-h-screen flex-col gap-10 bg-gradient-to-tl from-zinc-200 to-slate-700 p-12 py-52 lg:p-24">
+      <section className="flex min-h-screen flex-col gap-10 bg-linear-to-tl from-zinc-200 to-slate-700 p-12 py-52 lg:p-24">
         <h1 className="text-4xl font-bold text-white drop-shadow-lg">
           A wide toolset of features.
         </h1>
         <motion.section
           ref={scrollRef}
-          className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap rounded-2xl bg-gradient-to-br from-zinc-100/30 to-slate-300/30 p-8 px-8 shadow-lg backdrop-blur-lg backdrop-brightness-100 xl:gap-4 dark:bg-slate-500"
+          className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap rounded-2xl bg-linear-to-br from-zinc-100/30 to-slate-300/30 p-8 px-8 shadow-lg backdrop-blur-lg backdrop-brightness-100 xl:gap-4 dark:bg-slate-500"
         >
           <Tilt
             options={{
@@ -135,7 +135,7 @@ const MESAConnectPage = () => {
             }}
             className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-green-500 hover:text-green-800 dark:bg-zinc-700 dark:hover:text-green-400"
           >
-            <IoGitBranch className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
+            <IoGitBranch className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-800" />
             <h4 className="text-3xl">Open Source</h4>
             <p className="mt-4 text-wrap text-center font-light">
               In order to preserve the app long-term and to build community,
@@ -151,7 +151,7 @@ const MESAConnectPage = () => {
             }}
             className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-orange-500 hover:text-orange-800 dark:bg-zinc-700 dark:hover:text-orange-400"
           >
-            <IoSchool className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
+            <IoSchool className="rounded-full p-1 text-7xl duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-800" />
             <h4 className="text-3xl">Quiz Questions</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Ask others questions / get feedback on Personal Projects.
@@ -166,7 +166,7 @@ const MESAConnectPage = () => {
             }}
             className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-blue-500 hover:text-blue-800 dark:bg-zinc-700 dark:hover:text-blue-400"
           >
-            <BsPersonGear className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
+            <BsPersonGear className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-800" />
             <h4 className="text-3xl">Showcase Yourself</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Add various blocks and components to your page to express
@@ -182,7 +182,7 @@ const MESAConnectPage = () => {
             }}
             className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-red-500 hover:text-red-800 dark:bg-zinc-700 dark:hover:text-red-400"
           >
-            <IoNewspaper className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
+            <IoNewspaper className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-800" />
             <h4 className="text-3xl">Goings On</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Get information of what might be going on in your field with other
@@ -198,7 +198,7 @@ const MESAConnectPage = () => {
             }}
             className="group flex h-96 min-w-72 snap-center flex-col items-center justify-center rounded-2xl border-4 bg-white p-3 duration-300 hover:border-yellow-500 hover:text-yellow-800 dark:bg-zinc-700 dark:hover:text-yellow-400"
           >
-            <IoSettings className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 group-hover:dark:bg-slate-800" />
+            <IoSettings className="rounded-xl p-1 text-7xl duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-800" />
             <h4 className="text-3xl">Accessibility</h4>
             <p className="mt-4 text-wrap text-center font-light">
               Simpilicity + Accessibility To Deliver A Polished, User-Friendly

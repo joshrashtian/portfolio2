@@ -41,7 +41,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 font-nenue dark:bg-zinc-900">
         {index.map((item: any, index) => (
           <button
-            className={`flex w-48 items-center justify-center rounded-md ${item === state ? "bg-white shadow-sm dark:bg-zinc-800/50" : " "} p-0.5 duration-500`}
+            className={`flex w-48 items-center justify-center rounded-md ${item === state ? "bg-white shadow-xs dark:bg-zinc-800/50" : " "} p-0.5 duration-500`}
             key={item}
             onClick={() => setState(item)}
           >
