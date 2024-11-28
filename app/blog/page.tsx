@@ -15,10 +15,10 @@ const BlogPage = async () => {
           return (
             <Link
               href={`/blog/${blog.id}`}
-              className="group flex h-48 flex-col justify-between rounded-3xl bg-zinc-100 ring-zinc-300 duration-300 hover:ring-2 dark:bg-zinc-700"
+              className="group relative flex h-48 flex-col justify-between rounded-3xl bg-zinc-100 ring-zinc-300 duration-300 hover:ring-2 dark:bg-zinc-700"
               key={blog.id}
             >
-              <ul className="relative h-24 w-full">
+              <ul className="relative h-32 w-full">
                 {
                   //@ts-ignore
                   blog.properties.coverImage.files[0] && (
@@ -34,7 +34,7 @@ const BlogPage = async () => {
                   )
                 }
               </ul>
-              <ul className="relative h-16 w-full rounded-b-3xl p-3 duration-300 dark:group-hover:bg-black/50">
+              <ul className="absolute bottom-0 max-h-16 w-full rounded-b-3xl p-3 duration-700 group-hover:h-fit group-hover:max-h-40 dark:group-hover:bg-black/50">
                 <h3 className="font-bold">
                   {
                     //@ts-ignore
