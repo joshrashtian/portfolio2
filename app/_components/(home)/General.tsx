@@ -37,8 +37,8 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     index[0],
   );
   return (
-    <motion.section className="flex h-screen flex-col p-10 font-nenue lg:p-24">
-      <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 font-nenue dark:bg-zinc-900">
+    <motion.section className="font flex h-screen flex-col p-10 lg:p-24">
+      <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 dark:bg-zinc-900">
         {index.map((item: any, index) => (
           <button
             className={`flex w-48 items-center justify-center rounded-md ${item === state ? "bg-white shadow-xs dark:bg-zinc-800/50" : " "} p-0.5 duration-500`}
@@ -423,11 +423,13 @@ function Education() {
       {Degrees.map((item, index) => {
         return (
           <li
-            className="relative flex flex-row items-center gap-3 rounded-md bg-zinc-200/40 p-2 px-5 text-3xl dark:bg-zinc-700/50"
+            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl dark:bg-zinc-700/50"
             key={item.degree}
           >
-            <item.icon />
-            <article className="leading-snug drop-shadow-glow">
+            <ul className="ml-4 text-4xl">
+              {item.svg ? <item.svg /> : <item.icon />}
+            </ul>
+            <article className="drop-shadow-glow leading-snug">
               <h6 className="text-lg font-bold">{item.title}</h6>
               <p className="text-base font-extralight">{item.degree}</p>
               <p className="flex flex-row items-center gap-1 text-base font-thin">
@@ -440,7 +442,7 @@ function Education() {
                 modal.setOpen(item);
               }}
             >
-              <IoOpenOutline className="absolute right-4 top-4 text-lg" />
+              <IoOpenOutline className="absolute top-4 right-4 text-lg" />
             </button>
           </li>
         );
@@ -464,11 +466,13 @@ function Work() {
       {WorkIndex.map((item, index) => {
         return (
           <li
-            className="relative flex flex-row items-center gap-3 rounded-md bg-zinc-200/40 p-2 px-5 text-3xl dark:bg-zinc-700/50"
+            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl dark:bg-zinc-700/50"
             key={item.degree}
           >
-            <item.icon />
-            <article className="leading-snug drop-shadow-glow">
+            <ul className="ml-4 text-4xl">
+              <item.icon />
+            </ul>
+            <article className="drop-shadow-glow leading-snug">
               <h6 className="text-lg font-bold">{item.title}</h6>
               <p className="text-base font-extralight">{item.degree}</p>
               <p className="flex flex-row items-center gap-1 text-base font-thin">
@@ -481,7 +485,7 @@ function Work() {
                 modal.setOpen(item);
               }}
             >
-              <IoOpenOutline className="absolute right-4 top-4 text-lg" />
+              <IoOpenOutline className="absolute top-4 right-4 text-lg" />
             </button>
           </li>
         );
@@ -491,6 +495,7 @@ function Work() {
 }
 
 export type GeneralModalProps = {
+  svg?: any;
   title: string;
   degree: string;
   icon: IconType;
@@ -521,9 +526,13 @@ export function GeneralProvider({ children }: { children: any }): any {
             animate={{ y: 0 }}
             transition={{ duration: 0.7 }}
             exit={{ y: "100%" }}
-            className="fixed left-0 top-0 z-30 flex h-full w-full flex-col bg-white p-40 font-nenue dark:bg-zinc-800"
+            className="font-nenue fixed top-0 left-0 z-30 flex h-full w-full flex-col bg-white p-40 dark:bg-zinc-800"
           >
-            <IoSchool className="text-5xl" />
+            {open.svg ? (
+              <open.svg className="scale-110" />
+            ) : (
+              <open.icon className="text-5xl" />
+            )}
             <div className="flex flex-row items-end justify-between">
               <ol className="flex flex-col">
                 <h1 className="text-3xl font-bold">{open.title}</h1>
@@ -563,7 +572,7 @@ export function GeneralProvider({ children }: { children: any }): any {
               )}
             </div>
             <button
-              className="absolute right-12 top-12 z-40 text-3xl"
+              className="absolute top-12 right-12 z-40 text-3xl"
               onClick={() => setOpen(null)}
             >
               <IoClose />
