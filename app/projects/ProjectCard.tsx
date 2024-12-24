@@ -12,6 +12,7 @@ import {
   IoLogoVercel,
   IoLogoWebComponent,
 } from "react-icons/io5";
+import { Tilt } from "react-tilt";
 
 type ProjectProps = {
   project: ProjectType;
@@ -40,7 +41,10 @@ const ProjectCard = ({
 }: ProjectProps & { children?: React.ReactNode }) => {
   return (
     <ProjectCardContext.Provider value={{ project }}>
-      <ul className="flex h-72 w-[270px] snap-center flex-col justify-between gap-0.5 whitespace-nowrap rounded-2xl bg-white p-3 ring-0 ring-offset-transparent duration-500 hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-offset-4 xl:w-[500px] xl:gap-3 dark:bg-zinc-700">
+      <Tilt
+        options={{ max: 25, scale: 1.01, speed: 1000 }}
+        className="flex h-72 w-[270px] snap-center flex-col justify-between gap-0.5 rounded-2xl bg-white p-3 whitespace-nowrap ring-0 ring-offset-transparent duration-500 hover:ring-2 hover:shadow-lg hover:ring-offset-4 xl:w-[500px] xl:gap-3 dark:bg-zinc-700"
+      >
         <ul>
           <header className="flex w-[500px] flex-row items-center gap-3">
             {project.icon && (
@@ -61,7 +65,7 @@ const ProjectCard = ({
           </h2>
         </ul>
         <ul className="flex flex-col gap-0.5">{children}</ul>
-      </ul>
+      </Tilt>
     </ProjectCardContext.Provider>
   );
 };

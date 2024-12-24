@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Sora } from "next/font/google";
-const space = Sora({
-  weight: ["400", "700"],
+import { Norican, Pacifico } from "next/font/google";
+const space = Norican({
+  weight: ["400"],
   style: "normal",
   subsets: ["latin"],
 });
 const TitleComponent = () => {
   return (
     <div
-      className={`flex h-16 w-full flex-col items-center justify-center drop-shadow-glow lg:flex-row lg:gap-2`}
+      className={`${space.className} drop-shadow-glow flex h-16 w-full flex-col items-center justify-center lg:flex-row lg:gap-0.5`}
     >
       <h1 className={`flex flex-row`}>
-        {`Joshua`.split("").map((char, i) => (
+        {`joshua`.split("").map((char, i) => (
           <motion.span
             initial={{
               opacity: 0,
@@ -47,7 +47,7 @@ const TitleComponent = () => {
       </h1>
       <ul className="mx-1" />
       <h1 className={`flex flex-row font-bold`}>
-        {`Rashtian.`.split("").map((char, i) => (
+        {`rashtian.`.split("").map((char, i) => (
           <motion.span
             initial={{
               opacity: 0,
@@ -57,7 +57,7 @@ const TitleComponent = () => {
             animate={{
               opacity: 1,
               y: 0,
-              color: i < 3 ? "#B474CD" : "#9375DF",
+              color: i < 4 ? "#B474CD" : "#9375DF",
             }}
             transition={{
               type: "spring",

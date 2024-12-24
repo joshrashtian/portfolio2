@@ -47,11 +47,11 @@ const ProjectHistory = () => {
         style={{ x: text, opacity }}
         className="ml-3 flex flex-row items-center gap-2 text-2xl"
       >
-        <IoHammer /> Project History
+        <IoHammer /> Project Archive
       </motion.h1>
       <motion.section
         ref={scrollRef}
-        className="h-84 snap-point no-scrollbar relative flex snap-x flex-row gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap bg-zinc-100 p-4 px-8 xl:gap-4 dark:bg-slate-500"
+        className="snap-point no-scrollbar font-nenue relative flex h-84 snap-x flex-row gap-2 overflow-x-scroll scroll-smooth bg-zinc-100 p-4 px-8 whitespace-nowrap xl:gap-4 dark:bg-slate-900"
       >
         {ProjectDetails.sort((a, b) =>
           a.priority === b.priority ? 0 : a.priority ? -1 : 1,

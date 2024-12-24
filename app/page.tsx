@@ -38,11 +38,11 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[120vh] flex-col p-3 text-center lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-32">
+      <section className="relative flex min-h-[120vh] flex-col text-center lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-40">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          <ul className="absolute inset-2 bg-linear-to-br from-blue-400 to-red-400 blur-xl dark:from-blue-300 dark:to-pink-400" />
+          <ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
 
-          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-linear-to-tr from-zinc-50 to-slate-200/80 pr-3 text-slate-100 shadow-2xl lg:p-4 dark:from-slate-950 dark:to-black/80">
+          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-linear-to-tr from-zinc-50 to-slate-200/80 pt-20 pr-3 text-slate-100 shadow-2xl lg:p-4 lg:pt-4 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
             {/* 
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
@@ -54,10 +54,10 @@ export default function Home() {
               placeholder="blur-sm"
               blurDataURL=""
             /> */}
-            <ul className="relative flex w-full flex-col items-center gap-3 text-center lg:p-3">
+            <ul className="relative flex w-full flex-col items-center justify-center gap-3 p-6 text-center lg:p-3">
               <TitleComponent />
               <h3
-                className={`text-base font-extralight text-slate-700 drop-shadow-glow md:text-2xl lg:text-3xl dark:text-slate-300`}
+                className={`drop-shadow-glow text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
               >
                 Full Stack Engineer / Media Creator / Computer Science Student
               </h3>
@@ -86,13 +86,13 @@ export default function Home() {
         </article>
 
         <section className="flex h-64 w-full flex-col justify-between rounded-3xl lg:mt-10">
-          <footer className="mb-20 mt-7 flex w-full flex-col gap-6 lg:flex-row lg:justify-center">
+          <footer className="mt-7 mb-20 flex w-full flex-col gap-6 lg:flex-row lg:justify-center">
             <button
               onClick={() => {
                 //@ts-ignore
                 AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="hover:drop-shadow-glowcyan group w-full flex-col rounded-2xl border-dashed p-4 drop-shadow-glow transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
+              className="hover:drop-shadow-glowcyan group drop-shadow-glow w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
                 Learn More About Me{" "}
@@ -104,7 +104,7 @@ export default function Home() {
                 //@ts-ignore
                 BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="hover:drop-shadow-glowcyan group flex w-full flex-col rounded-2xl border-dashed p-4 drop-shadow-glow transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
+              className="hover:drop-shadow-glowcyan group drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
                 Blog{" "}
@@ -116,7 +116,7 @@ export default function Home() {
                 //@ts-ignore
                 SkillRef?.current?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="hover:drop-shadow-glowcyan group flex w-full flex-col rounded-2xl border-dashed p-4 drop-shadow-glow transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
+              className="hover:drop-shadow-glowcyan group drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
                 My Skillset{" "}
@@ -125,7 +125,7 @@ export default function Home() {
             </button>
             <Link
               href="/projects"
-              className="hover:drop-shadow-glowcyan drop-shadow-glowcyan group flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:drop-shadow-glow dark:hover:text-purple-300"
+              className="hover:drop-shadow-glowcyan drop-shadow-glowcyan group dark:drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
             >
               <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
                 My Work
