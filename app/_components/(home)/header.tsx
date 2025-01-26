@@ -24,7 +24,7 @@ const Header = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
       style={{ backgroundColor: color, boxShadow: shadowOpacity }}
-      className={`fixed left-0 top-0 z-30 flex h-20 w-full flex-row items-center gap-3 p-3 px-5 dark:bg-zinc-700/80`}
+      className={`fixed top-0 left-0 z-30 flex h-20 w-full flex-row items-center gap-3 p-3 px-5 dark:bg-zinc-700/80`}
     >
       <Link href={"/"} className="flex flex-row gap-1">
         <Image
@@ -63,7 +63,7 @@ const Header = () => {
           </Link>
           <Link
             className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
-            href="/projects"
+            href="/blog"
           >
             {" "}
             <IoBook className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}

@@ -3,6 +3,7 @@ import { ProjectType } from "@/app/projects/ProjectIndex";
 import Image from "next/image";
 import Link from "next/link";
 import React, { createContext, useContext } from "react";
+import { BiWorld } from "react-icons/bi";
 import {
   IoLogoElectron,
   IoLogoFirebase,
@@ -89,7 +90,7 @@ ProjectCard.Link = function ProjectCardLink() {
           href={link}
           className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70 dark:bg-zinc-600 dark:hover:bg-black/50"
         >
-          <IoLogoWebComponent />
+          <BiWorld />
           <h1>Visit Website</h1>
         </Link>
       )}

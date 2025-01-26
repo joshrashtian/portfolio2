@@ -10,7 +10,7 @@ const space = Norican({
 const TitleComponent = () => {
   return (
     <div
-      className={`${space.className} drop-shadow-glow flex h-16 w-full flex-col items-center justify-center lg:flex-row lg:gap-0.5`}
+      className={`${space.className} drop-shadow-glow flex h-16 w-full flex-col lg:flex-row lg:gap-0.5`}
     >
       <h1 className={`flex flex-row`}>
         {`joshua`.split("").map((char, i) => (

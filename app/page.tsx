@@ -38,11 +38,11 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[120vh] flex-col text-center lg:min-h-[80vh] lg:justify-between lg:p-24 lg:py-40">
+      <section className="relative flex min-h-screen flex-col gap-10 text-center lg:justify-end lg:px-24">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          <ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
-
-          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl bg-linear-to-tr from-zinc-50 to-slate-200/80 pt-20 pr-3 text-slate-100 shadow-2xl lg:p-4 lg:pt-4 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
+          {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
+           */}
+          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl pt-20 pr-3 text-slate-100 lg:p-4 lg:pt-4 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
             {/* 
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
@@ -54,10 +54,10 @@ export default function Home() {
               placeholder="blur-sm"
               blurDataURL=""
             /> */}
-            <ul className="relative flex w-full flex-col items-center justify-center gap-3 p-6 text-center lg:p-3">
+            <ul className="relative flex w-full flex-col justify-end gap-3 text-center lg:p-3">
               <TitleComponent />
               <h3
-                className={`drop-shadow-glow text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
+                className={`drop-shadow-glow text-left text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
               >
                 Full Stack Engineer / Media Creator / Computer Science Student
               </h3>
@@ -85,8 +85,8 @@ export default function Home() {
           </div>
         </article>
 
-        <section className="flex h-64 w-full flex-col justify-between rounded-3xl lg:mt-10">
-          <footer className="mt-7 mb-20 flex w-full flex-col gap-6 lg:flex-row lg:justify-center">
+        <section className="flex h-64 w-full flex-col justify-between rounded-3xl">
+          <footer className="mt-7 mb-20 flex w-full flex-col gap-6 lg:flex-row">
             <button
               onClick={() => {
                 //@ts-ignore
