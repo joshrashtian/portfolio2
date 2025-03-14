@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import React from "react";
 import { ProjectDetails } from "../../ProjectIndex";
+import Navigation from "./navigation";
 
 const GameLoadingPage = ({ params }: { params: { game: string } }) => {
   const gameId = params.game;
@@ -16,8 +17,9 @@ const GameLoadingPage = ({ params }: { params: { game: string } }) => {
     );
   }
   return (
-    <div className="flex h-screen flex-col items-start justify-start p-5 pt-24">
-      <h1 className="font-nenue text-4xl font-bold">{game.name}</h1>
+    <div className="font-nenue flex h-screen flex-col items-start justify-start gap-5 p-5 py-24 text-2xl">
+      <Navigation />
+
       <p className="text-sm text-gray-500">
         {game.desc} /{" "}
         {game.dates[0]

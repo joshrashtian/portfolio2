@@ -52,9 +52,15 @@ export const ProjectDetails: ProjectType[] = [
     dates: [new Date("2019-9-10")],
     type: "Video Game",
     icon: require("../(assets)/projects/MarioLegacyIcon.png"),
-    link: "https://gamegen.games/game/BjEpaGDJ2ksndAhKn",
+
     desc: "A dream game for me to make as a kid. A simple 2D Mario Fan Game using the Construct 3 Game Engine.",
     tools: ["Construct 3", "Photoshop"],
+    gameRoute: "/games/supermariolegacy/index.html",
+    gameId: "supermariolegacy",
+    gameIcons: [
+      GiGamepad, 
+      
+    ],
   },
   {
     id: 3,
@@ -121,5 +127,35 @@ export const ProjectDetails: ProjectType[] = [
     desc: "A dream game for me to make as a kid. A simple 2D Mario Fan Game using the Construct 3 Game Engine.",
     tools: ["Construct 3", "Photoshop"],
     gameId: "mariolegacy2",
+  },
+   {
+    id: 8,
+    name: "Tankzone 2 Concept",
+    dates: [new Date("2018-10-17")],
+    type: "Video Game",
+    icon: require("../(assets)/projects/Tank.png"),
+    desc: "The first full game I would create, using Construct 3 Game Engine. This is a multiplayer 2 people co-op game with controller / keyboard support playable right from your browser.",
+    tools: ["Construct 3", "Photoshop"],
+    gameRoute: "/games/tankzoneiiconcept/index.html",
+    gameId: "tankzoneiiconcept",
+    gameIcons: [
+      GiGamepad, 
+      IoPeople,
+    ],
+  },
+  {
+    id: 9,
+    name: "Ragdoll Racing",
+    dates: [new Date("2018-5-12")],
+    type: "Video Game",
+   
+    desc: "The first full game I would create, using Construct 3 Game Engine. This is a multiplayer 2 people co-op game with controller / keyboard support playable right from your browser.",
+    tools: ["Construct 3", "Photoshop"],
+    gameRoute: "/games/ragdollracing/index.html",
+    gameId: "ragdollracing",
+    gameIcons: [
+      GiGamepad, 
+      IoPeople,
+    ],
   },
 ];
