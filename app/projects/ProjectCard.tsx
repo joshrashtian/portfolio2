@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { createContext, useContext } from "react";
 import { BiWorld } from "react-icons/bi";
+import { GiGamepad } from "react-icons/gi";
 import {
   IoLogoElectron,
   IoLogoFirebase,
@@ -104,6 +105,21 @@ ProjectCard.Link = function ProjectCardLink() {
         </Link>
       )}
     </ul>
+  );
+};
+
+ProjectCard.GameLink = function ProjectCardLink() {
+  const { gameRoute, gameId } = useProjectContext();
+
+  if (!gameRoute || !gameId) return null;
+  return (
+    <Link
+      href={`/projects/game/${gameId}`}
+      className="flex w-full flex-row items-center gap-2 rounded-xl bg-zinc-100 p-2 duration-500 hover:scale-[1.02] hover:bg-zinc-300/70 dark:bg-zinc-600 dark:hover:bg-black/50"
+    >
+      <GiGamepad />
+      <h1>Play Game</h1>
+    </Link>
   );
 };
 

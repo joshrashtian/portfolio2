@@ -2,6 +2,7 @@
 import React, { createContext, forwardRef, useContext, useState } from "react";
 import {
   IoClose,
+  IoLogoApple,
   IoLogoCss3,
   IoLogoElectron,
   IoLogoFirebase,
@@ -13,6 +14,7 @@ import {
   IoLogoPython,
   IoLogoReact,
   IoLogoVercel,
+  IoLogoWindows,
   IoOpen,
   IoOpenOutline,
   IoSchool,
@@ -24,6 +26,7 @@ import { FaSchool } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import { Degrees } from "@/app/utils/eduindex";
 import { WorkIndex } from "@/app/utils/workindex";
+import { DiLinux } from "react-icons/di";
 
 const Mono = Ubuntu_Mono({
   weight: ["400", "700"],
@@ -199,6 +202,9 @@ function Skills() {
       </li>
       <h5 className="text-xl">Tools:</h5>
       <li className="flex flex-row gap-2 fill-zinc-700 text-4xl text-zinc-700">
+        <IoLogoApple />
+        <IoLogoWindows />
+        <DiLinux />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           role="img"

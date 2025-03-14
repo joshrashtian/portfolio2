@@ -60,6 +60,7 @@ const ProjectHistory = () => {
             <ProjectCard.Description />
             <ProjectCard.Date />
             <ProjectCard.Link />
+            <ProjectCard.GameLink />
             <ProjectCard.Icons />
           </ProjectCard>
         ))}
