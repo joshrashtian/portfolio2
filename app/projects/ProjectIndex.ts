@@ -67,6 +67,7 @@ export const ProjectDetails: ProjectType[] = [
     name: "MESA Connect",
     type: "Website",
     dates: "In-Development",
+    icon: require("../(assets)/images/icons/mesalogo.png"),
     priority: true,
     link: "https://mesaconnect.io",
     desc: "Social Media Platform for Community College Students in STEM to communicate and learn, teach, and socialize together.",
@@ -83,6 +84,7 @@ export const ProjectDetails: ProjectType[] = [
   {
     id: 4,
     name: "MESA Mobile",
+    icon: require("../(assets)/images/icons/mesalogo.png"),
     type: "Mobile App",
     dates: "In-Development",
     priority: true,

@@ -26,7 +26,7 @@ const Socials = () => {
           opacity: { delay: 0.2, duration: 1.2 },
           duration: 1.2,
         }}
-        className={`z-50 flex ${contact ? "h-[450px] items-center bg-white lg:w-[500px] dark:bg-zinc-800" : "h-[56px] w-96 bg-purple-300/40 dark:bg-slate-700/30"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 border-transparent px-10 pb-2 shadow-xl backdrop-blur-2xl backdrop-brightness-75 backdrop-hue-rotate-90 duration-500 hover:border-purple-500/40 dark:border-zinc-800 dark:shadow-md dark:hover:border-purple-200`}
+        className={`z-50 flex ${contact ? "h-[450px] items-center bg-white lg:w-[500px] dark:bg-zinc-800" : "h-[56px] w-96 dark:bg-slate-700/30"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 border-transparent bg-zinc-100/90 px-10 pb-2 shadow-xl backdrop-blur-2xl backdrop-brightness-75 backdrop-hue-rotate-90 duration-500 dark:border-zinc-800 dark:shadow-md`}
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
         <ul

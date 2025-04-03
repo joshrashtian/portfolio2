@@ -18,6 +18,7 @@ import { BsDownload } from "react-icons/bs";
 import { FaDownload } from "react-icons/fa6";
 import { Space_Mono } from "next/font/google";
 import General from "./_components/(home)/General";
+import { motion } from "framer-motion";
 
 const Space = Space_Mono({
   weight: ["400", "700"],
@@ -38,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-screen flex-col gap-10 text-center lg:justify-end lg:px-24">
+      <motion.section className="relative flex min-h-screen flex-col gap-10 text-center lg:justify-end lg:px-24">
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
           {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
            */}
@@ -134,7 +135,7 @@ export default function Home() {
             </Link>
           </footer>
         </section>
-      </section>
+      </motion.section>
       <ul ref={AboutRef} />
       <General />
       {/*

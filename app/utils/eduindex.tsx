@@ -7,6 +7,7 @@ export const Degrees: GeneralModalProps[] = [
     title: "College of the Canyons",
     degree: "Associate's Degree For Transfer - Computer Science",
     icon: IoSchool,
+    location: "Valencia, CA",
     svg: () => (
       <svg
         className="h-12 w-20 fill-black dark:fill-white"
@@ -72,6 +73,7 @@ export const Degrees: GeneralModalProps[] = [
   {
     title: "West Ranch High School",
     degree: "High School Diploma",
+    location: "Valencia, CA",
     icon: BiSolidSchool,
     description:
       "Learned JavaScript, After Effects, Premiere Pro. Editor for West Ranch TV.",

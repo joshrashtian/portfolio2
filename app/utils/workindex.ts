@@ -7,14 +7,16 @@ export const WorkIndex: GeneralModalProps[] = [{
     title: "MESA",
     degree: "Computer Science Intern",
     time: "February 2024 - present",
+    location: "Valencia, CA",
     icon: BiSolidSchool,
     descriptionIcon: FaComputer,
-    description: "Marketing and software development for a local pizza restaurant.",
+    description: "Teaching students about Computer Science and Software Developer of MESA Mobile App and Connect Service. ",
     data: {}
 }, {
     title: "Pizza diMarco",
     degree: "Head of Marketing / Lead Software Developer",
     time: "August 2023 - present",
+    location: "Valencia, CA",
     icon: IoPizza,
     descriptionIcon: IoAnalytics,
     description: "Marketing and software development for a local pizza restaurant.",

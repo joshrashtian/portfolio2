@@ -53,7 +53,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
         ))}
       </header>
 
-      <AnimatePresence mode="sync">
+      <AnimatePresence>
         {state === "Skills" && <Skills />}
         {state === "Education" && <Education />}
         {state === "Work" && <Work />}
@@ -437,10 +437,15 @@ function Education() {
             </ul>
             <article className="drop-shadow-glow leading-snug">
               <h6 className="text-lg font-bold">{item.title}</h6>
-              <p className="text-base font-extralight">{item.degree}</p>
+              <p className="text-base font-extralight">
+                {item.degree} : {item.location}
+              </p>
               <p className="flex flex-row items-center gap-1 text-base font-thin">
                 <item.descriptionIcon />
                 {item.description}
+              </p>
+              <p className="absolute top-4 right-12 text-base font-extralight opacity-0 lg:opacity-100">
+                {item.time}
               </p>
             </article>
             <button
@@ -505,6 +510,7 @@ export type GeneralModalProps = {
   title: string;
   degree: string;
   icon: IconType;
+  location: string;
   descriptionIcon: IconType;
   description?: string;
   data: {};
