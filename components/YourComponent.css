@@ -1,0 +1,7 @@
+.heading {
+  font-size: var(--fs-xlarge);
+}
+
+.body-text {
+  font-size: var(--fs-base);
+} 
