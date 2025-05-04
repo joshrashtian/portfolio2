@@ -5,11 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
+
 const BlogPage = async () => {
   const res = await fetchBlogsByNumber(10);
+
   return (
     <main className="min-h-full p-10 pt-24 lg:p-24">
       <h1 className="mb-4 text-5xl font-bold">My Journal</h1>
+
+      <Link href={`/blog/video`}>
+        <h2 className="mb-4 text-3xl font-bold">My Videos</h2>
+      </Link>
       <ol className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
         {res.results.map((blog) => {
           return (

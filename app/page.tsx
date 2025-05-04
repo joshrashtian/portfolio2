@@ -6,6 +6,7 @@ import {
   IoClipboard,
   IoCode,
   IoHammer,
+  IoLogoYoutube,
   IoPin,
   IoSchool,
 } from "react-icons/io5";
@@ -131,6 +132,15 @@ export default function Home() {
               <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
                 My Work
                 <IoClipboard className="duration-200 group-hover:translate-x-1" />
+              </h4>
+            </Link>
+            <Link
+              href="/video"
+              className="hover:drop-shadow-glowcyan drop-shadow-glowcyan group dark:drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
+            >
+              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
+                Youtube Videos
+                <IoLogoYoutube className="duration-200 group-hover:translate-x-1" />
               </h4>
             </Link>
           </footer>
