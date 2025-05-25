@@ -34,9 +34,9 @@ export default function Home() {
 
   const BlogDynamic = dynamic(() => import("./_components/(home)/blog/Blog"));
   const SkillsDynamic = dynamic(() => import("./_components/(home)/Skillset"));
-  /*const AboutDynamic = dynamic(
+  const AboutDynamic = dynamic(
     () => import("./_components/(home)/about/About"),
-  );*/
+  );
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function Home() {
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
           {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
            */}
-          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl pt-20 pr-3 text-slate-100 lg:p-4 lg:pt-4 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
+          <div className="text-slate-100dark:from-black relative flex w-full flex-row items-center gap-x-2 rounded-3xl p-4 pt-20 pr-3 dark:to-black/80 lg:dark:from-slate-950">
             {/* 
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
@@ -148,9 +148,9 @@ export default function Home() {
       </motion.section>
       <ul ref={AboutRef} />
       <General />
-      {/*
+
       <ul ref={AboutRef} />
-      <AboutDynamic /> */}
+      <AboutDynamic />
       <ul ref={SkillRef} />
       <SkillsDynamic />
 

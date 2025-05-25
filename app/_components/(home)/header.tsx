@@ -3,7 +3,13 @@ import Image from "next/image";
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { IoBook, IoHammer, IoJournal, IoMenu, IoPerson } from "react-icons/io5";
+import {
+  IoBook,
+  IoGameController,
+  IoHammer,
+  IoMenu,
+  IoPerson,
+} from "react-icons/io5";
 import { useHeader } from "@/app/contexts/HeaderMenuContext";
 import { useDarkMode } from "@/app/contexts/DarkModeContext";
 const Header = () => {
@@ -68,6 +74,14 @@ const Header = () => {
             {" "}
             <IoBook className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
             journal
+          </Link>
+          <Link
+            className="group flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
+            href="/projects/game"
+          >
+            {" "}
+            <IoGameController className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
+            games
           </Link>
         </ul>
         <ul className="flex gap-7">

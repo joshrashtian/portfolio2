@@ -18,6 +18,7 @@ import { Tilt } from "react-tilt";
 
 type ProjectProps = {
   project: ProjectType;
+  type: "list" | "cards";
 };
 
 export const months = [
@@ -40,15 +41,26 @@ const ProjectCardContext = createContext<ProjectProps | undefined>(undefined);
 const ProjectCard = ({
   project,
   children,
-}: ProjectProps & { children?: React.ReactNode }) => {
+  type,
+}: ProjectProps & { children?: React.ReactNode; type: "list" | "cards" }) => {
   return (
-    <ProjectCardContext.Provider value={{ project }}>
+    <ProjectCardContext.Provider value={{ project, type }}>
       <Tilt
-        options={{ max: 25, scale: 1.01, speed: 1000 }}
-        className="flex h-72 w-[270px] snap-center flex-col justify-between gap-0.5 rounded-2xl bg-white p-3 whitespace-nowrap ring-0 ring-offset-transparent duration-500 hover:ring-2 hover:shadow-lg hover:ring-offset-4 xl:w-[500px] xl:gap-3 dark:bg-zinc-700"
+        options={{
+          max: type === "cards" ? 25 : 0,
+          scale: 1.01,
+          speed: 1000,
+        }}
+        className={`flex h-72 snap-center flex-col justify-between gap-0.5 rounded-2xl bg-white p-3 whitespace-nowrap ring-0 ring-offset-transparent duration-500 hover:ring-2 hover:shadow-lg hover:ring-offset-4 xl:gap-3 dark:bg-zinc-700 ${
+          type === "cards" ? "w-[270px] xl:w-[500px]" : "w-full"
+        }`}
       >
         <ul>
-          <header className="flex w-[500px] flex-row items-center gap-3">
+          <header
+            className={`flex flex-row items-center gap-3 ${
+              type === "cards" ? "w-[500px]" : "w-full"
+            }`}
+          >
             {project.icon && (
               <Image
                 width={48}
@@ -78,6 +90,12 @@ function useProjectContext() {
   if (!context) throw new Error("Does Not Have Wrapper");
 
   return context.project;
+}
+
+function useProjectType() {
+  const context = useContext(ProjectCardContext);
+  if (!context) throw new Error("Does Not Have Wrapper");
+  return context.type;
 }
 
 ProjectCard.Link = function ProjectCardLink() {
@@ -152,10 +170,13 @@ ProjectCard.Date = function ProjectDate() {
 
 ProjectCard.Description = function ProjectDescription() {
   const { desc } = useProjectContext();
+  const type = useProjectType();
 
   return (
     <ul>
-      <p className="text-wrap">{desc.slice(0, 80)}</p>
+      <p className="text-wrap">
+        {type === "cards" ? desc.slice(0, 80) + "..." : desc}
+      </p>
     </ul>
   );
 };

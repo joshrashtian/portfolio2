@@ -40,7 +40,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     index[0],
   );
   return (
-    <motion.section className="font flex h-screen flex-col p-10 lg:p-24">
+    <motion.section className="font flex flex-col p-10 lg:p-24">
       <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 dark:bg-zinc-900">
         {index.map((item: any, index) => (
           <button

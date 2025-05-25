@@ -144,8 +144,29 @@ const JourneyCanvas = () => {
                 (2023)
               </p>
             </li>
+            <li className="ml-3 flex h-fit w-full flex-col text-left">
+              <h1 className="text-2xl font-bold">2023</h1>
+              <p>
+                In 2023 I would end up graduating from West Ranch High School. I
+                was eager to start my college journey, and I would opt to go to
+                my local community college named College of the Canyons. During
+                this time, I started to learn Java in the class, and mastering
+                JavaScript, React, React Native, NextJS, and even some python
+                off campus.
+              </p>
+            </li>
+            <li className="ml-3 flex h-fit w-full flex-col text-left">
+              <h1 className="text-2xl font-bold">2024</h1>
+              <p>
+                I would start my journey with an internship with MESA at College
+                of the Canyons, as a software engineer as well as a educator.
+                During this time, I started working on my MESA Connect and MESA
+                Mobile projects.
+              </p>
+            </li>
           </ol>
         </section>
+        {/* 
         <ul className="my-4 flex h-16 w-full items-center justify-center rounded-3xl border-2 border-orange-500/60 bg-orange-400/40">
           <IoWarning className="text-3xl" />
           <p className="flex flex-row gap-2">
@@ -154,12 +175,15 @@ const JourneyCanvas = () => {
             to see my skillset over here.
           </p>
         </ul>
+        */}
         {/*
         <ul className="animate-infinite-scroll inline-flex w-1/2 flex-row justify-center gap-5 self-center">
           
           
         </ul>*/}
+        {/*
         <Simulator />
+        */}
       </section>
     </main>
   );

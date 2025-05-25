@@ -50,7 +50,7 @@ export const Degrees: GeneralModalProps[] = [
     ),
     description: "Learned Calculus, Physics, Java, React",
     descriptionIcon: BiMath,
-    time: "June 2023 - May 2025",
+    time: "June 2023 - May 2026",
     data: {},
     skills: ["ReactJS", "Java", "JavaScript", "Calculus", "Physics", "Spanish"],
     classes: [
