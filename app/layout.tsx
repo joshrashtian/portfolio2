@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  Figtree,
   Inter,
   Merriweather,
   Merriweather_Sans,
@@ -15,11 +16,11 @@ import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
 import { getVersion } from "./utils/version";
 import DarkModeProvider from "./contexts/DarkModeContext";
 import { GeneralProvider } from "./_components/(home)/General";
-const inter = Outfit({ subsets: ["latin"] });
-const a = Titillium_Web({
+const inter = Figtree({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "900"],
+  weight: ["400", "700", "900", "300", "500", "600", "800"],
 });
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://jrtechscv.com"),
   title: "Joshua Rashtian",
