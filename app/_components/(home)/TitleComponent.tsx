@@ -7,7 +7,7 @@ export default function TitleComponent() {
 
   return (
     <div className={`relative inline-block`}>
-      <h1 className="h-16 bg-gradient-to-r from-[#B429F9] to-[#239EAB] bg-clip-text text-left text-4xl font-extrabold text-transparent lg:text-6xl">
+      <h1 className="h-20 bg-gradient-to-r from-[#8126af] to-red-500 bg-clip-text text-left text-4xl font-extrabold text-transparent lg:text-7xl">
         {text}
       </h1>
     </div>

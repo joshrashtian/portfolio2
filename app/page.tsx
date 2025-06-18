@@ -20,12 +20,7 @@ import { FaDownload } from "react-icons/fa6";
 import { Figtree, Space_Mono } from "next/font/google";
 import General from "./_components/(home)/General";
 import { motion } from "framer-motion";
-
-const Space = Figtree({
-  weight: ["400", "700"],
-  style: "normal",
-  subsets: ["latin"],
-});
+import ImageStack from "./_components/(home)/ImageStack";
 
 export default function Home() {
   const AboutRef = useRef<any>(null);
@@ -40,48 +35,13 @@ export default function Home() {
 
   return (
     <>
-      <motion.section className="relative flex min-h-screen flex-col gap-10 text-center lg:justify-end lg:px-24">
-        <div className="flex flex-row items-center gap-x-2">
-          <Image
-            src={require("./(assets)/images/IMG_9034.png")}
-            alt="Joshua Rashtian"
-            width={190}
-            height={190}
-            priority
-            className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
-            placeholder="blur"
-            blurDataURL=""
-          />
-          <Image
-            src={require("./(assets)/images/STNAward.png")}
-            alt="Joshua Rashtian"
-            width={250}
-            height={250}
-            priority
-            className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
-          />
-          <Image
-            src={require("./(assets)/images/DSC00182.jpeg")}
-            alt="Joshua Rashtian"
-            width={500}
-            height={300}
-            priority
-            className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
-          />
-          <Image
-            src={require("./(assets)/images/IMG_0810.jpg")}
-            alt="Joshua Rashtian"
-            width={250}
-            height={250}
-            priority
-            className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
-          />
-        </div>
+      <motion.section className="relative flex min-h-[120vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24 2xl:min-h-[100vh]">
+        <ImageStack />
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
           {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
            */}
 
-          <div className="relative flex w-full flex-row items-center gap-x-2 rounded-3xl text-slate-100 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
+          <div className="relative flex w-full flex-row items-center justify-center gap-x-3 rounded-3xl text-slate-100 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
             {/* 
             <Image
               src={require("../app/(assets)/images/IMG_9034.png")}
@@ -94,21 +54,28 @@ export default function Home() {
               blurDataURL=""
             /> */}
             <ul
-              className={`${Space.className} relative flex w-full flex-col justify-end gap-3`}
+              className={`relative flex w-full flex-col items-center justify-center gap-3`}
             >
               <TitleComponent />
               <h3
-                className={`drop-shadow-glow text-left text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
+                className={`drop-shadow-glow text-center text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
               >
-                Full Stack Engineer / Media Creator / Computer Science Student
+                living and capturing each moment, then using that to build the
+                best tomorrow.
               </h3>
-              <ol className={`${Space.className} text-left font-black`}>
+              <h4 className="text-center text-base font-extralight text-slate-700 md:text-xl lg:text-2xl dark:text-slate-300">
+                student, developer, and creator.
+              </h4>
+              <ol
+                className={`flex flex-row items-center justify-center gap-x-2 font-black`}
+              >
                 <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
                   <IoCode /> 3 Years of Exprience
                 </p>
                 <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
                   <IoSchool /> Studying At College of the Canyons
                 </p>
+
                 <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
                   <IoPin /> Los Angeles, CA
                 </p>
