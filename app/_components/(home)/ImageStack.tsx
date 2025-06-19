@@ -21,7 +21,7 @@ export default function ImageStack() {
         className="snap-center rounded-3xl shadow-stone-300 duration-500 hover:shadow-2xl lg:scale-100 lg:hover:scale-105"
       />
       <Image
-        src={require("../../(assets)/images/DSC00182.jpeg")}
+        src={require("../../(assets)/images/DSC00182.JPEG")}
         alt="Joshua Rashtian"
         width={500}
         height={300}
