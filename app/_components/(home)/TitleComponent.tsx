@@ -42,7 +42,18 @@ export default function TitleComponent() {
             type: "spring",
             ease: "easeIn",
           }}
-          className="animate-gradient bg-300% active:drop-shadow-3xl h-20 translate-y-7 bg-gradient-to-r from-[#8126af] via-red-500 to-blue-600 bg-clip-text text-left text-4xl font-bold text-transparent drop-shadow-lg duration-300 active:scale-110 active:mix-blend-difference lg:translate-y-0 lg:text-7xl"
+          whileDrag={{
+            scale: 1.1,
+          }}
+          drag
+          dragConstraints={{
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          dragElastic={0.1}
+          className="animate-gradient bg-300% active:drop-shadow-3xl h-20 translate-y-7 bg-gradient-to-r from-[#8126af] via-red-500 to-blue-600 bg-clip-text text-left text-4xl font-bold text-transparent drop-shadow-lg select-none active:mix-blend-difference lg:translate-y-0 lg:text-7xl"
         >
           {textVariants[index]}
         </motion.h1>

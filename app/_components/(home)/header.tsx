@@ -24,7 +24,7 @@ const Header = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
         style={{ boxShadow: shadowOpacity }}
-        className="relative flex h-20 w-full items-center gap-3 rounded-3xl bg-slate-100/70 p-3 px-5 drop-shadow-lg backdrop-blur-xl lg:w-1/2 dark:bg-zinc-700/80"
+        className="relative flex h-20 w-full items-center justify-between gap-3 bg-slate-100/70 p-3 drop-shadow-lg backdrop-blur-xl md:rounded-3xl lg:h-16 lg:w-1/2 lg:px-10 dark:bg-zinc-700/80"
       >
         <Link href={"/"} className="flex flex-row gap-1">
           <Image
@@ -36,7 +36,7 @@ const Header = () => {
           />
         </Link>
 
-        <motion.ul className="flex h-full w-full items-center justify-end text-white mix-blend-difference lg:gap-7 lg:px-10">
+        <motion.ul className="flex h-full items-center justify-end text-white mix-blend-difference lg:gap-7 lg:px-10">
           <ul className="hidden gap-7 duration-300 xl:flex">
             <Link
               href="/journey"
@@ -71,18 +71,17 @@ const Header = () => {
               games
             </Link>
           </ul>
-          <ul className="flex gap-7">
-            <button
-              onClick={() => {
-                Menu.toggleMenu();
-              }}
-            >
-              <IoMenu
-                className={`text-2xl duration-300 hover:scale-105 hover:text-orange-500`}
-              />
-            </button>
-          </ul>
         </motion.ul>
+
+        <button
+          onClick={() => {
+            Menu.toggleMenu();
+          }}
+        >
+          <IoMenu
+            className={`text-2xl duration-300 hover:scale-105 hover:text-orange-500`}
+          />
+        </button>
       </motion.header>
     </div>
   );

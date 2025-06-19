@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-      <motion.section className="relative flex min-h-[120vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24 2xl:min-h-[100vh]">
+      <motion.section className="relative flex min-h-[100vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24 2xl:min-h-[100vh]">
         <ImageStack />
         <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
           {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
@@ -58,7 +58,7 @@ export default function Home() {
             >
               <TitleComponent />
               <h3
-                className={`drop-shadow-glow text-center text-base font-extralight text-slate-700 md:text-2xl lg:text-3xl dark:text-slate-300`}
+                className={`drop-shadow-glow text-center text-base font-extralight text-slate-700 selection:bg-purple-300/20 md:text-2xl lg:text-3xl dark:text-slate-300 dark:selection:bg-slate-300/20`}
               >
                 living and capturing each moment, then using that to build the
                 best tomorrow.
@@ -89,70 +89,9 @@ export default function Home() {
             </ul>
           </div>
         </article>
-
-        <section className="flex h-64 w-full flex-col justify-between rounded-3xl">
-          <footer className="mt-7 mb-20 flex w-full flex-col gap-6 lg:flex-row">
-            <button
-              onClick={() => {
-                //@ts-ignore
-                AboutRef?.current?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:drop-shadow-glowcyan group drop-shadow-glow w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
-            >
-              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
-                Learn More About Me{" "}
-                <IoArrowForward className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </button>
-            <button
-              onClick={() => {
-                //@ts-ignore
-                BlogRef?.current?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:drop-shadow-glowcyan group drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
-            >
-              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
-                Blog{" "}
-                <IoChatbox className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </button>
-            <button
-              onClick={() => {
-                //@ts-ignore
-                SkillRef?.current?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:drop-shadow-glowcyan group drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
-            >
-              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
-                My Skillset{" "}
-                <IoHammer className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </button>
-            <Link
-              href="/projects"
-              className="hover:drop-shadow-glowcyan drop-shadow-glowcyan group dark:drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
-            >
-              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
-                My Work
-                <IoClipboard className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </Link>
-            <Link
-              href="/video"
-              className="hover:drop-shadow-glowcyan drop-shadow-glowcyan group dark:drop-shadow-glow flex w-full flex-col rounded-2xl border-dashed p-4 transition-all ease-out hover:border-purple-400 hover:text-purple-700 lg:w-fit lg:hover:scale-105 dark:hover:text-purple-300"
-            >
-              <h4 className="flex flex-row items-center gap-3 text-left text-lg md:flex-col-reverse lg:justify-center lg:text-2xl">
-                Youtube Videos
-                <IoLogoYoutube className="duration-200 group-hover:translate-x-1" />
-              </h4>
-            </Link>
-          </footer>
-        </section>
       </motion.section>
-      <ul ref={AboutRef} />
       <General />
 
-      <ul ref={AboutRef} />
       <AboutDynamic />
       <ul ref={SkillRef} />
       <SkillsDynamic />
