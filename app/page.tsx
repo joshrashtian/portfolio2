@@ -1,103 +1,134 @@
 "use client";
-import Image from "next/image";
-import {
-  IoArrowForward,
-  IoChatbox,
-  IoClipboard,
-  IoCode,
-  IoHammer,
-  IoLogoYoutube,
-  IoPin,
-  IoSchool,
-} from "react-icons/io5";
-import { useRef } from "react";
-import Link from "next/link";
-import React from "react";
-import TitleComponent from "./_components/(home)/TitleComponent";
-import dynamic from "next/dynamic";
-import { BsDownload } from "react-icons/bs";
-import { FaDownload } from "react-icons/fa6";
-import { Figtree, Space_Mono } from "next/font/google";
-import General from "./_components/(home)/General";
-import { motion } from "framer-motion";
 import ImageStack from "./_components/(home)/ImageStack";
+import TitleComponent from "./_components/(home)/TitleComponent";
+import General from "./_components/(home)/General";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { FaDownload } from "react-icons/fa6";
+import { IoCode, IoSchool, IoPin } from "react-icons/io5";
+import Link from "next/link";
+import Skills from "./_components/(home)/Skillset";
+import Blog from "./_components/(home)/blog/Blog";
 
 export default function Home() {
-  const AboutRef = useRef<any>(null);
-  const BlogRef = useRef<any>(null);
-  const SkillRef = useRef<any>(null);
+  // 1. Create refs for every "page section" you want a dot for:
+  const HeroRef = useRef<HTMLElement>(null);
+  const AboutRef = useRef<HTMLElement>(null);
+  const SkillRef = useRef<HTMLElement>(null);
+  const BlogRef = useRef<HTMLElement>(null);
 
-  const BlogDynamic = dynamic(() => import("./_components/(home)/blog/Blog"));
-  const SkillsDynamic = dynamic(() => import("./_components/(home)/Skillset"));
-  const AboutDynamic = dynamic(
-    () => import("./_components/(home)/about/About"),
-  );
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // 2. Active section state
+  const [active, setActive] = useState(0);
+
+  // 3. Put them in an array for easy mapping
+  const sections = [
+    { ref: HeroRef, label: "Home" },
+    { ref: AboutRef, label: "About" },
+    { ref: SkillRef, label: "Skills" },
+    { ref: BlogRef, label: "Blog" },
+  ];
+
+  // 4. IntersectionObserver to detect which section is in view
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = sections.findIndex(
+              (s) => s.ref.current === entry.target,
+            );
+            if (idx >= 0) setActive(idx);
+          }
+        });
+      },
+      { threshold: 0.6 }, // 60% of the section must be visible
+    );
+
+    sections.forEach((sec) => {
+      if (sec.ref.current) obs.observe(sec.ref.current);
+    });
+
+    return () => {
+      sections.forEach((sec) => {
+        if (sec.ref.current) obs.unobserve(sec.ref.current);
+      });
+    };
+  }, []);
 
   return (
     <>
-      <motion.section className="relative flex min-h-[100vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24 2xl:min-h-[100vh]">
+      {/* NAVIGATION */}
+      <div className="fixed top-1/2 right-4 z-50 flex -translate-y-1/2 transform flex-col gap-3">
+        {sections.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              sections[i].ref.current?.scrollIntoView({ behavior: "smooth" });
+              setActive(i);
+            }}
+            className={`h-2 w-2 rounded-full transition-all ${active === i ? "scale-150 bg-indigo-600" : "bg-gray-400"} `}
+            aria-label={`Go to ${sections[i].label}`}
+          />
+        ))}
+      </div>
+
+      {/* PAGE SECTIONS */}
+      <motion.section
+        ref={HeroRef}
+        className="relative flex min-h-[100vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24"
+      >
         <ImageStack />
-        <article className="relative flex flex-row gap-x-2 rounded-3xl border-zinc-800/30">
-          {/*<ul className="absolute inset-2 bg-linear-to-tl from-blue-400 to-red-400 blur-xl lg:bg-linear-to-br dark:from-blue-300 dark:to-red-300 lg:dark:to-pink-400" />
-           */}
-
-          <div className="relative flex w-full flex-row items-center justify-center gap-x-3 rounded-3xl text-slate-100 dark:from-black dark:to-black/80 lg:dark:from-slate-950">
-            {/* 
-            <Image
-              src={require("../app/(assets)/images/IMG_9034.png")}
-              alt="Joshua Rashtian"
-              width={200}
-              priority
-              className="scale-[0.8] rounded-3xl duration-500 lg:scale-100 lg:hover:scale-105"
-              height={150}
-              placeholder="blur-sm"
-              blurDataURL=""
-            /> */}
-            <ul
-              className={`relative flex w-full flex-col items-center justify-center gap-3`}
+        <article className="mx-auto max-w-5xl rounded-3xl bg-white/5 p-6 text-slate-100">
+          <ul
+            className={`relative flex w-full flex-col items-center justify-center gap-3`}
+          >
+            <TitleComponent />
+            <h3 className="drop-shadow-glow text-center text-base font-extralight text-slate-700 selection:bg-purple-300/20 md:text-2xl lg:text-3xl dark:text-slate-300 dark:selection:bg-slate-300/20">
+              living and capturing each moment, then using that to build the
+              best tomorrow.
+            </h3>
+            <h4 className="text-center text-base font-extralight text-slate-700 md:text-xl lg:text-2xl dark:text-slate-300">
+              student, developer, and creator.
+            </h4>
+            <div className="flex justify-center gap-6 text-slate-400">
+              <p className="flex items-center gap-2">
+                <IoCode />5 Years Experience
+              </p>
+              <p className="flex items-center gap-2">
+                <IoSchool />
+                College of the Canyons
+              </p>
+              <p className="flex items-center gap-2">
+                <IoPin />
+                Los Angeles, CA
+              </p>
+            </div>
+            <Link
+              href="/resume.pdf"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-400 px-4 py-2 font-medium text-white duration-300 hover:scale-105 hover:border-purple-500 hover:opacity-90 hover:ring-2 hover:ring-purple-500 hover:ring-offset-2"
             >
-              <TitleComponent />
-              <h3
-                className={`drop-shadow-glow text-center text-base font-extralight text-slate-700 selection:bg-purple-300/20 md:text-2xl lg:text-3xl dark:text-slate-300 dark:selection:bg-slate-300/20`}
-              >
-                living and capturing each moment, then using that to build the
-                best tomorrow.
-              </h3>
-              <h4 className="text-center text-base font-extralight text-slate-700 md:text-xl lg:text-2xl dark:text-slate-300">
-                student, developer, and creator.
-              </h4>
-              <ol
-                className={`flex flex-row items-center justify-center gap-x-2 font-black`}
-              >
-                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
-                  <IoCode /> 5 Years of Exprience
-                </p>
-                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
-                  <IoSchool /> Studying At College of the Canyons
-                </p>
-
-                <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
-                  <IoPin /> Los Angeles, CA
-                </p>
-              </ol>
-              <Link
-                href={"/resume.pdf"}
-                className="flex w-fit flex-row items-center gap-2 rounded-lg border-2 border-slate-200 bg-linear-to-r from-[#B597F6] to-[#96C6EA] p-1 px-3 text-white duration-300 hover:border-purple-400 dark:from-[#EF566A] dark:to-[#627AF7]"
-              >
-                <FaDownload /> Download Resume
-              </Link>
-            </ul>
-          </div>
+              <FaDownload /> Download Resume
+            </Link>
+          </ul>
         </article>
       </motion.section>
-      <General />
 
-      <AboutDynamic />
-      <ul ref={SkillRef} />
-      <SkillsDynamic />
+      <motion.section ref={scrollRef}>
+        <section ref={AboutRef}>
+          <General />
+        </section>
 
-      <ul ref={BlogRef} />
-      <BlogDynamic />
+        <section ref={SkillRef}>
+          <Skills />
+        </section>
+
+        <section ref={BlogRef}>
+          <Blog />
+        </section>
+      </motion.section>
     </>
   );
 }

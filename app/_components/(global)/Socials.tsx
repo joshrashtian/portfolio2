@@ -19,14 +19,14 @@ const Socials = () => {
     <ul className="fixed bottom-0 z-50 flex w-full items-center justify-center">
       <motion.section
         initial={{ y: 70, opacity: 0 }}
-        animate={{ y: -30, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
         transition={{
           y: { delay: 0.5 },
           opacity: { delay: 0.2, duration: 1.2 },
           duration: 1.2,
         }}
-        className={`z-50 flex ${contact ? "h-[450px] items-center bg-white lg:w-[500px] dark:bg-zinc-800" : "h-[56px] w-96 dark:bg-slate-700/30"} -translate-y-10 flex-col items-center justify-end gap-2 place-self-center rounded-3xl border-2 border-transparent bg-zinc-100/90 px-10 pb-2 shadow-xl backdrop-blur-2xl backdrop-brightness-75 backdrop-hue-rotate-90 duration-500 dark:border-zinc-800 dark:shadow-md`}
+        className={`z-50 flex ${contact ? "h-[450px] w-full items-center bg-white lg:w-[500px] dark:bg-zinc-800" : "h-[56px] w-full lg:w-96 dark:bg-slate-700/30"} flex-col items-center justify-end gap-2 place-self-center border-2 border-transparent bg-zinc-100/90 px-10 pb-2 shadow-xl backdrop-blur-2xl backdrop-brightness-75 backdrop-hue-rotate-90 duration-500 lg:-translate-y-10 lg:rounded-3xl dark:border-zinc-800 dark:shadow-md`}
       >
         <AnimatePresence>{contact && <Contact />}</AnimatePresence>
         <ul

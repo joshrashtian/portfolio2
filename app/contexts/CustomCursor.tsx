@@ -47,17 +47,17 @@ const CustomCursor = ({
   const variants = {
     default: { scale: 1.5, borderColor: "#fff" },
     focus: { scale: 2, borderColor: "#fff" },
-    click: { scale: 1.4, borderColor: "#fff" },
+    click: { scale: 1.2, borderColor: "#fff" },
   };
 
   return (
     <div className="cursor-none">
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] h-4 w-4 rounded-full border border-dashed bg-transparent mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] h-6 w-6 rounded-full border border-dashed bg-transparent mix-blend-difference"
         style={{ x: position.x, y: position.y }}
         variants={variants}
         animate={variant}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        transition={{ type: "spring" }}
       />
       {children}
     </div>

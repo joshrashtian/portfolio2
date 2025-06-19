@@ -33,31 +33,76 @@ const Mono = Ubuntu_Mono({
   subsets: ["latin"],
 });
 
-const index = ["Skills", "Education", "Work"];
+const tabs = ["Skills", "Education", "Work"];
 
 const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
   const [state, setState] = useState<"Skills" | "Education" | "Work" | any>(
-    index[0],
+    tabs[0],
   );
   return (
-    <motion.section className="font flex flex-col p-10 lg:p-24">
-      <header className="mb-4 flex flex-row items-center justify-center gap-3 rounded-2xl bg-zinc-200/30 p-2 dark:bg-zinc-900">
-        {index.map((item: any, index) => (
+    <motion.section ref={ref} className="p-10 lg:p-24">
+      <div className="relative flex w-full items-center justify-center space-x-4 rounded-full">
+        {/* moving highlight */}
+        <AnimatePresence>
+          <motion.div
+            key={state}
+            layoutId="highlight"
+            className="animate-gradient absolute inset-0 w-full rounded-t-full bg-gradient-to-r from-zinc-200 to-zinc-400 shadow-lg duration-300"
+            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+          />
+        </AnimatePresence>
+
+        {/* tab buttons */}
+        {tabs.map((tab) => (
           <button
-            className={`flex w-48 items-center justify-center rounded-md ${item === state ? "bg-white shadow-xs dark:bg-zinc-800/50" : " "} p-0.5 duration-500`}
-            key={item}
-            onClick={() => setState(item)}
+            key={tab}
+            onClick={() => setState(tab)}
+            className={`relative z-10 w-full px-6 py-2 text-lg font-medium transition-colors ${
+              state === tab
+                ? "text-white"
+                : "text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+            }`}
           >
-            {item}
+            {tab}
           </button>
         ))}
-      </header>
+      </div>
 
-      <AnimatePresence>
-        {state === "Skills" && <Skills />}
-        {state === "Education" && <Education />}
-        {state === "Work" && <Work />}
-      </AnimatePresence>
+      <div className="h-fit overflow-x-hidden rounded-b-3xl bg-zinc-100 p-2 duration-300">
+        {/* content */}
+        <AnimatePresence mode="wait">
+          {state === "Skills" && (
+            <motion.div
+              key="skills"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Skills />
+            </motion.div>
+          )}
+          {state === "Education" && (
+            <motion.div
+              key="education"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Education />
+            </motion.div>
+          )}
+          {state === "Work" && (
+            <motion.div
+              key="work"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Work />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.section>
   );
 });
@@ -70,7 +115,7 @@ function Skills() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0, x: 100 }}
-      className={`w-full rounded-3xl bg-zinc-100 dark:bg-zinc-900/80 dark:fill-zinc-100 ${Mono.className} p-4`}
+      className={`w-full rounded-b-3xl dark:bg-zinc-900/80 dark:fill-zinc-100 ${Mono.className} p-4`}
     >
       <h5 className="text-xl">Langauges / Frameworks:</h5>
       <li className="flex flex-row gap-2 text-4xl text-zinc-700">
@@ -424,12 +469,12 @@ function Education() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0, x: 100 }}
-      className={`flex flex-col gap-3`}
+      className={`flex flex-col gap-3 px-4 pb-4`}
     >
       {Degrees.map((item, index) => {
         return (
           <li
-            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl dark:bg-zinc-700/50"
+            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl first:rounded-t-none dark:bg-zinc-700/50"
             key={item.degree}
           >
             <ul className="ml-4 text-4xl">

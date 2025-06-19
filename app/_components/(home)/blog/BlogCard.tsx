@@ -9,16 +9,16 @@ const BlogCard = () => {
 
   return (
     <motion.div
-      className="fixed top-0 flex h-fit w-fit flex-col items-center rounded-lg bg-white p-2 shadow-lg dark:bg-zinc-900"
+      className="fixed top-0 flex h-fit w-fit flex-col rounded-lg bg-purple-50/50 p-3 shadow-lg backdrop-blur-lg dark:bg-zinc-900"
       style={{
-        translateX: `${position?.x}px`,
-        translateY: `${position?.y}px`,
+        translateX: position?.x,
+        translateY: position?.y,
       }}
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        translateX: `${position?.x + 10}px`,
-        translateY: `${position?.y + 10}px`,
+        translateX: position?.x,
+        translateY: position?.y - 50,
       }}
       exit={{ opacity: 0 }}
       transition={{
@@ -34,7 +34,7 @@ const BlogCard = () => {
           height={100}
         />
       )}
-      <h1>{card.Name.title[0].plain_text}</h1>
+      <h1 className="text-lg font-semibold">{card.Name.title[0].plain_text}</h1>
       <p className="text-sm text-zinc-500">
         {card.Type.select.name} - {card.Published.date.start}
       </p>
