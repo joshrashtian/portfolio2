@@ -16,9 +16,10 @@ import HeaderMenuContextProvider from "./contexts/HeaderMenuContext";
 import { getVersion } from "./utils/version";
 import DarkModeProvider from "./contexts/DarkModeContext";
 import { GeneralProvider } from "./_components/(home)/General";
+import CustomCursor from "./contexts/CustomCursor";
 const inter = Figtree({
   subsets: ["latin"],
-  weight: ["400", "700", "900", "300", "500", "600", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -53,19 +54,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-zinc-50 dark:bg-zinc-800`}>
-        <CardContextWrapper>
-          <DarkModeProvider>
-            <HeaderMenuContextProvider>
-              <GeneralProvider>
-                {children}
-                <Header />
-                <Socials />
-              </GeneralProvider>
-            </HeaderMenuContextProvider>
-          </DarkModeProvider>
-        </CardContextWrapper>
+        <CustomCursor>
+          <CardContextWrapper>
+            <DarkModeProvider>
+              <HeaderMenuContextProvider>
+                <GeneralProvider>
+                  {children}
+                  <Header />
+                  <Socials />
+                </GeneralProvider>
+              </HeaderMenuContextProvider>
+            </DarkModeProvider>
+          </CardContextWrapper>
 
-        <Analytics mode="production" />
+          <Analytics mode="production" />
+        </CustomCursor>
       </body>
     </html>
   );

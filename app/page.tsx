@@ -70,7 +70,7 @@ export default function Home() {
                 className={`flex flex-row items-center justify-center gap-x-2 font-black`}
               >
                 <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
-                  <IoCode /> 3 Years of Exprience
+                  <IoCode /> 5 Years of Exprience
                 </p>
                 <p className="flex flex-row items-center gap-2 font-extralight text-slate-500 lg:text-lg dark:text-slate-300">
                   <IoSchool /> Studying At College of the Canyons

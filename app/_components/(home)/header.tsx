@@ -28,18 +28,11 @@ const Header = () => {
       >
         <Link href={"/"} className="flex flex-row gap-1">
           <Image
-            width={40}
+            width={52}
             height={40}
             alt="icon"
             className="h-8 w-8 self-center transition-transform hover:scale-110"
             src={require("../../(assets)/jjr.png")}
-          />
-          <Image
-            src={require("../../(assets)/joshrashtian.png")}
-            className="translate-y-1"
-            alt="Logo"
-            width={200}
-            height={100}
           />
         </Link>
 
