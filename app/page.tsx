@@ -87,8 +87,7 @@ export default function Home() {
           >
             <TitleComponent />
             <h3 className="drop-shadow-glow text-center text-base font-extralight text-slate-700 selection:bg-purple-300/20 md:text-2xl lg:text-3xl dark:text-slate-300 dark:selection:bg-slate-300/20">
-              living and capturing each moment, then using that to build the
-              best tomorrow.
+              embracing the revolution, one line of code at a time.
             </h3>
             <h4 className="text-center text-base font-extralight text-slate-700 md:text-xl lg:text-2xl dark:text-slate-300">
               student, developer, and creator.
