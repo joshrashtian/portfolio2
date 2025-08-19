@@ -9,7 +9,7 @@ const BlogPage = async () => {
   const res = await fetchBlogsByNumber(10);
 
   return (
-    <main className="min-h-full p-10 pt-24 lg:p-24">
+    <main className="min-h-full p-6 pt-24 sm:p-8 lg:p-12 xl:p-16 2xl:p-24">
       <h1 className="mb-4 text-5xl font-bold">My Journal</h1>
 
       <Link href={`/video`}>

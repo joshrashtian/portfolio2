@@ -44,7 +44,7 @@ const Skillset = forwardRef((props, ref: React.Ref<HTMLElement>) => {
       <motion.main
         style={{ opacity: scrollYProgress, translateY: y, scale }}
         ref={ref2}
-        className="my-24 mb-[1000px] flex h-96 flex-col p-10 lg:p-24"
+        className="my-24 mb-[1000px] flex h-96 flex-col p-6 sm:p-8 lg:p-12 xl:p-16 2xl:p-24"
       >
         <motion.ul
           className="flex w-full flex-row flex-wrap gap-6 rounded-lg bg-slate-100 p-2 text-slate-400 lg:w-fit lg:p-5 dark:bg-zinc-800"

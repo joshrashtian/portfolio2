@@ -5,7 +5,7 @@ import { BiMath, BiSolidSchool } from "react-icons/bi";
 export const Degrees: GeneralModalProps[] = [
   {
     title: "College of the Canyons",
-    degree: "Associate's Degree For Transfer - Computer Science",
+    degree: "Associate's Degrees in Computer Science, Physics and Mathematics",
     icon: IoSchool,
     location: "Valencia, CA",
     svg: () => (
@@ -51,25 +51,43 @@ export const Degrees: GeneralModalProps[] = [
     description: "Learned Calculus, Physics, Java, React",
     descriptionIcon: BiMath,
     time: "June 2023 - May 2026",
-    data: {},
-    skills: ["ReactJS", "Java", "JavaScript", "Calculus", "Physics", "Spanish"],
+    data: {
+      degrees: [
+        "Associate's Degree in Computer Science",
+        "Associate's Degree in Mathematics",
+        "Associate's Degree in Physics",
+      ],
+    },
+    skills: [
+      "ReactJS",
+      "Java",
+      "JavaScript",
+      "Calculus",
+      "Physics",
+      "Spanish / Espanol",
+    ],
     classes: [
-      "Introduction to Java",
-      "Data Structures / Algorithms",
+      "Data Structures and Algorithms",
       "Discrete Structures",
       "Calculus I-III",
       "Mechanics and Solids of Physics",
       "Electromagnetism Physics",
     ],
+
     clubs: [
       {
-        role: "Lead of Web Developer / ICC Representative ",
+        role: "President / Lead of Web Developer / ICC Representative ",
         name: "COC Tech Club",
-        responsibilities:
-          "Lead the development of the Club's Website, Inter-Club Council Representative.",
+        responsibilities: "President of the Club",
+      },
+      {
+        role: "Head of Computer Science & Engineering",
+        name: "MESA Skills Lab",
+        responsibilities: "Creation of labs, education, and outreach.",
       },
     ],
   },
+
   {
     title: "West Ranch High School",
     degree: "High School Diploma",

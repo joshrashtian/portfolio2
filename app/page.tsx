@@ -78,7 +78,7 @@ export default function Home() {
       {/* PAGE SECTIONS */}
       <motion.section
         ref={HeroRef}
-        className="relative flex min-h-[100vh] flex-col p-4 text-center lg:justify-end lg:gap-10 lg:px-24"
+        className="relative flex min-h-[100vh] flex-col justify-center p-4 text-center lg:gap-6 lg:px-8 xl:px-16 2xl:px-24"
       >
         <ImageStack />
         <article className="mx-auto max-w-5xl rounded-3xl bg-white/5 p-6 text-slate-100">

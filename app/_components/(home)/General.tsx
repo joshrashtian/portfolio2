@@ -27,6 +27,7 @@ import { IconType } from "react-icons";
 import { Degrees } from "@/app/utils/eduindex";
 import { WorkIndex } from "@/app/utils/workindex";
 import { DiLinux } from "react-icons/di";
+import Link from "next/link";
 
 const Mono = Ubuntu_Mono({
   weight: ["400", "700"],
@@ -40,7 +41,10 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
     tabs[0],
   );
   return (
-    <motion.section ref={ref} className="p-10 lg:p-24">
+    <motion.section
+      ref={ref}
+      className="px-6 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16 xl:px-16 xl:py-20 2xl:px-24 2xl:py-24"
+    >
       <div className="relative flex w-full items-center justify-center space-x-4 rounded-full">
         {/* moving highlight */}
         <AnimatePresence>
@@ -469,38 +473,57 @@ function Education() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0, x: 100 }}
-      className={`flex flex-col gap-3 px-4 pb-4`}
+      className="flex flex-col gap-4 px-2 pb-4 sm:px-4"
     >
       {Degrees.map((item, index) => {
         return (
-          <li
-            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl first:rounded-t-none dark:bg-zinc-700/50"
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="group relative flex flex-col gap-4 rounded-2xl bg-gradient-to-br from-zinc-100/80 to-zinc-200/60 p-4 shadow-lg transition-all duration-300 hover:scale-[1.005] hover:shadow-xl sm:flex-row sm:items-center sm:gap-6 sm:p-6 dark:from-zinc-700/60 dark:to-zinc-800/40"
             key={item.degree}
           >
-            <ul className="ml-4 text-4xl">
-              {item.svg ? <item.svg /> : <item.icon />}
-            </ul>
-            <article className="drop-shadow-glow leading-snug">
-              <h6 className="text-lg font-bold">{item.title}</h6>
-              <p className="text-base font-extralight">
-                {item.degree} : {item.location}
+            {/* Icon Container */}
+            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-3 shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sm:h-20 sm:w-20 dark:from-purple-400/30 dark:to-blue-400/30">
+              <div className="text-2xl text-purple-600 sm:text-3xl dark:text-purple-400">
+                {item.svg ? <item.svg /> : <item.icon />}
+              </div>
+            </div>
+
+            {/* Content */}
+            <article className="flex-1 space-y-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <h6 className="text-lg font-bold text-zinc-800 sm:text-xl dark:text-zinc-100">
+                  {item.title}
+                </h6>
+                <p className="text-sm font-medium text-purple-600 sm:text-base dark:text-purple-400">
+                  {item.time}
+                </p>
+              </div>
+
+              <p className="text-sm font-semibold text-zinc-700 sm:text-base dark:text-zinc-300">
+                {item.degree}
               </p>
-              <p className="flex flex-row items-center gap-1 text-base font-thin">
-                <item.descriptionIcon />
+
+              <p className="text-xs text-zinc-600 sm:text-sm dark:text-zinc-400">
+                📍 {item.location}
+              </p>
+
+              <p className="flex items-center gap-2 text-xs text-zinc-600 sm:text-sm dark:text-zinc-400">
+                <item.descriptionIcon className="text-purple-500" />
                 {item.description}
               </p>
-              <p className="absolute top-4 right-12 text-base font-extralight opacity-0 lg:opacity-100">
-                {item.time}
-              </p>
             </article>
+
+            {/* Action Button */}
             <button
-              onClick={() => {
-                modal.setOpen(item);
-              }}
+              onClick={() => modal.setOpen(item)}
+              className="absolute top-3 right-3 rounded-full bg-white/80 p-2 shadow-md transition-all duration-300 hover:bg-purple-500 hover:text-white sm:relative sm:top-0 sm:right-0 sm:bg-purple-500/10 sm:text-purple-600 sm:hover:bg-purple-500 sm:hover:text-white dark:bg-zinc-800/80 dark:hover:bg-purple-600 dark:sm:bg-purple-400/20 dark:sm:text-purple-400"
             >
-              <IoOpenOutline className="absolute top-4 right-4 text-lg" />
+              <IoOpenOutline className="text-lg" />
             </button>
-          </li>
+          </motion.li>
         );
       })}
     </motion.ol>
@@ -517,33 +540,67 @@ function Work() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0, x: 100 }}
-      className={`flex flex-col gap-3`}
+      className="flex flex-col gap-4 px-2 pb-4 sm:px-4"
     >
+      <Link
+        href="/projects"
+        className="flex flex-col gap-4 rounded-2xl bg-gradient-to-br from-zinc-100/80 to-zinc-200/60 p-4 shadow-lg transition-all duration-300 hover:scale-[1.005] hover:shadow-xl sm:flex-row sm:items-center sm:gap-6 sm:p-6 dark:from-zinc-700/60 dark:to-zinc-800/40"
+      >
+        <IoOpenOutline />
+        <p className="text-sm font-medium sm:text-base">
+          Want to see some of my personal and passion projects as well as some
+          in depth case studies on those projects? Click here!
+        </p>
+      </Link>
       {WorkIndex.map((item, index) => {
         return (
-          <li
-            className="relative flex flex-row items-center gap-8 rounded-4xl bg-zinc-200/40 p-5 px-5 text-3xl dark:bg-zinc-700/50"
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="group relative flex flex-col gap-4 rounded-2xl bg-gradient-to-br from-zinc-100/80 to-zinc-200/60 p-4 shadow-lg transition-all duration-300 hover:scale-[1.005] hover:shadow-xl sm:flex-row sm:items-center sm:gap-6 sm:p-6 dark:from-zinc-700/60 dark:to-zinc-800/40"
             key={item.degree}
           >
-            <ul className="ml-4 text-4xl">
-              <item.icon />
-            </ul>
-            <article className="drop-shadow-glow leading-snug">
-              <h6 className="text-lg font-bold">{item.title}</h6>
-              <p className="text-base font-extralight">{item.degree}</p>
-              <p className="flex flex-row items-center gap-1 text-base font-thin">
-                <item.descriptionIcon />
+            {/* Icon Container */}
+            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-green-500/20 to-teal-500/20 p-3 shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg sm:h-20 sm:w-20 dark:from-green-400/30 dark:to-teal-400/30">
+              <div className="text-2xl text-green-600 sm:text-3xl dark:text-green-400">
+                <item.icon />
+              </div>
+            </div>
+
+            {/* Content */}
+            <article className="flex-1 space-y-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <h6 className="text-lg font-bold text-zinc-800 sm:text-xl dark:text-zinc-100">
+                  {item.title}
+                </h6>
+                <p className="text-sm font-medium text-green-600 sm:text-base dark:text-green-400">
+                  {item.time}
+                </p>
+              </div>
+
+              <p className="text-sm font-semibold text-zinc-700 sm:text-base dark:text-zinc-300">
+                {item.degree}
+              </p>
+
+              <p className="text-xs text-zinc-600 sm:text-sm dark:text-zinc-400">
+                📍 {item.location}
+              </p>
+
+              <p className="flex items-center gap-2 text-xs text-zinc-600 sm:text-sm dark:text-zinc-400">
+                <item.descriptionIcon className="text-green-500" />
                 {item.description}
               </p>
             </article>
+
+            {/* Action Button */}
             <button
-              onClick={() => {
-                modal.setOpen(item);
-              }}
+              onClick={() => modal.setOpen(item)}
+              className="absolute top-3 right-3 rounded-full bg-white/80 p-2 shadow-md transition-all duration-300 hover:bg-green-500 hover:text-white sm:relative sm:top-0 sm:right-0 sm:bg-green-500/10 sm:text-green-600 sm:hover:bg-green-500 sm:hover:text-white dark:bg-zinc-800/80 dark:hover:bg-green-600 dark:sm:bg-green-400/20 dark:sm:text-green-400"
             >
-              <IoOpenOutline className="absolute top-4 right-4 text-lg" />
+              <IoOpenOutline className="text-lg" />
             </button>
-          </li>
+          </motion.li>
         );
       })}
     </motion.ol>
@@ -583,57 +640,127 @@ export function GeneralProvider({ children }: { children: any }): any {
             animate={{ y: 0 }}
             transition={{ duration: 0.7 }}
             exit={{ y: "100%" }}
-            className="font-nenue fixed top-0 left-0 z-30 flex h-full w-full flex-col bg-white p-40 dark:bg-zinc-800"
+            className="fixed top-0 left-0 z-50 flex h-full w-full flex-col bg-gradient-to-br from-white to-zinc-50 p-4 sm:p-8 lg:p-12 dark:from-zinc-800 dark:to-zinc-900"
           >
-            {open.svg ? (
-              <open.svg className="scale-110" />
-            ) : (
-              <open.icon className="text-5xl" />
+            {/* Header */}
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-3 shadow-lg sm:h-20 sm:w-20 dark:from-purple-400/30 dark:to-blue-400/30">
+                  {open.svg ? (
+                    <open.svg className="h-8 w-8 text-purple-600 sm:h-10 sm:w-10 dark:text-purple-400" />
+                  ) : (
+                    <open.icon className="h-8 w-8 text-purple-600 sm:h-10 sm:w-10 dark:text-purple-400" />
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <h1 className="text-2xl font-bold text-zinc-800 sm:text-3xl lg:text-4xl dark:text-zinc-100">
+                    {open.title}
+                  </h1>
+                  <h2 className="text-lg font-semibold text-purple-600 sm:text-xl lg:text-2xl dark:text-purple-400">
+                    {open.degree}
+                  </h2>
+                </div>
+              </div>
+              <button
+                className="rounded-full bg-zinc-200/80 p-2 text-2xl transition-all duration-300 hover:bg-red-500 hover:text-white sm:p-3 sm:text-3xl dark:bg-zinc-700/80 dark:hover:bg-red-600"
+                onClick={() => setOpen(null)}
+              >
+                <IoClose />
+              </button>
+            </div>
+
+            {/* Time and Location */}
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-lg font-medium text-zinc-600 sm:text-xl dark:text-zinc-400">
+                📅 {open.time}
+              </p>
+              <p className="text-lg font-medium text-zinc-600 sm:text-xl dark:text-zinc-400">
+                📍 {open.location}
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-zinc-300 to-transparent dark:via-zinc-600" />
+
+            {/* Description */}
+            {open.description && (
+              <div className="mb-6">
+                <p className="text-base text-zinc-700 sm:text-lg dark:text-zinc-300">
+                  {open.description}
+                </p>
+              </div>
             )}
-            <div className="flex flex-row items-end justify-between">
-              <ol className="flex flex-col">
-                <h1 className="text-3xl font-bold">{open.title}</h1>
-                <h2 className="text-2xl font-semibold">{open.degree}</h2>
-              </ol>
-              <h2 className="text-2xl">{open.time}</h2>
-            </div>
-            <div className="my-4 h-0.5 w-full bg-zinc-800 dark:bg-white" />
-            <h5>{open.description}</h5>
-            <div className="grid grid-cols-2 gap-2">
-              {open.classes && (
-                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6 dark:bg-zinc-900/80">
-                  <h6 className="text-xl font-bold">Class Highlights</h6>
-                  {open.classes.map((e: string) => (
-                    <p
-                      className="rounded-lg bg-zinc-200/30 p-4 px-8 dark:bg-zinc-700/30"
-                      key={e}
-                    >
-                      {e}
-                    </p>
-                  ))}
-                </div>
-              )}
-              {open.clubs && (
-                <div className="flex flex-col gap-1 rounded-lg bg-zinc-100/60 p-3 px-6 dark:bg-zinc-900/80">
-                  <h6 className="text-xl font-bold">Roles on Campus</h6>
-                  {open.clubs.map((e) => (
-                    <div
-                      key={e.role}
-                      className="rounded-lg bg-zinc-200/30 p-4 px-8 dark:bg-zinc-700/30"
-                    >
-                      <p className="font-bold">{e.name}</p>
-                      <p>{e.role}</p>
+
+            {/* Content Grid */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                {open.classes && (
+                  <div className="rounded-2xl bg-gradient-to-br from-purple-50/80 to-blue-50/60 p-6 shadow-lg dark:from-purple-900/20 dark:to-blue-900/20">
+                    <h6 className="mb-4 text-xl font-bold text-purple-800 sm:text-2xl dark:text-purple-200">
+                      🎓 Class Highlights
+                    </h6>
+                    <div className="space-y-3">
+                      {open.classes.map((e: string) => (
+                        <div
+                          key={e}
+                          className="rounded-xl bg-white/60 p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-800/60"
+                        >
+                          <p className="text-sm font-medium text-zinc-700 sm:text-base dark:text-zinc-300">
+                            {e}
+                          </p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                )}
+
+                {open.clubs && (
+                  <div className="rounded-2xl bg-gradient-to-br from-green-50/80 to-teal-50/60 p-6 shadow-lg dark:from-green-900/20 dark:to-teal-900/20">
+                    <h6 className="mb-4 text-xl font-bold text-green-800 sm:text-2xl dark:text-green-200">
+                      👥 Roles on Campus
+                    </h6>
+                    <div className="space-y-3">
+                      {open.clubs.map((e) => (
+                        <div
+                          key={e.role}
+                          className="rounded-xl bg-white/60 p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-800/60"
+                        >
+                          <p className="font-bold text-green-700 sm:text-lg dark:text-green-300">
+                            {e.name}
+                          </p>
+                          <p className="text-sm font-medium text-zinc-600 sm:text-base dark:text-zinc-400">
+                            {e.role}
+                          </p>
+                          {e.responsibilities && (
+                            <p className="mt-2 text-xs text-zinc-500 sm:text-sm dark:text-zinc-500">
+                              {e.responsibilities}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {open.skills && (
+                  <div className="rounded-2xl bg-gradient-to-br from-orange-50/80 to-red-50/60 p-6 shadow-lg lg:col-span-2 dark:from-orange-900/20 dark:to-red-900/20">
+                    <h6 className="mb-4 text-xl font-bold text-orange-800 sm:text-2xl dark:text-orange-200">
+                      🛠️ Skills & Technologies
+                    </h6>
+                    <div className="flex flex-wrap gap-2">
+                      {open.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full bg-white/60 px-3 py-1 text-xs font-medium text-orange-700 shadow-sm transition-all duration-300 hover:shadow-md sm:text-sm dark:bg-zinc-800/60 dark:text-orange-300"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-            <button
-              className="absolute top-12 right-12 z-40 text-3xl"
-              onClick={() => setOpen(null)}
-            >
-              <IoClose />
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
