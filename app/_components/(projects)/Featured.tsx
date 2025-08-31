@@ -45,6 +45,38 @@ const FeaturedProjects = () => {
             </ul>
           </ul>
         </FeaturedCard>
+        <FeaturedCard
+          href="/projects/mesamobile"
+          className="group flex flex-col justify-between border-2 bg-linear-to-br from-orange-50 to-zinc-100 dark:from-orange-950 dark:to-zinc-800"
+        >
+          <ul className="relative h-72 w-full rounded-lg">
+            <Link
+              href={"https://mesaconnect.io"}
+              className="absolute right-2 bottom-2 z-50 translate-y-3 text-3xl text-white opacity-0 drop-shadow-2xl duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              <IoNavigate />
+            </Link>
+            <ul className="absolute z-40 h-full w-full bg-linear-to-t from-black/40 via-transparent to-zinc-500/40" />
+            <Image
+              src={require("../../(assets)/images/mesaconnectbanner.png")}
+              fill
+              objectFit="cover"
+              className="z-30"
+              alt="mesa"
+            />
+          </ul>
+          <ul className="flex flex-row items-center">
+            <Image
+              src={require("@/app/(assets)/images/icons/mesalogo.png")}
+              alt="logo"
+              width={76}
+              height={56}
+            />
+            <ul className="lg:p-3">
+              <FeaturedCard.Title>MESAMobile</FeaturedCard.Title>
+            </ul>
+          </ul>
+        </FeaturedCard>
       </ul>
     </section>
   );

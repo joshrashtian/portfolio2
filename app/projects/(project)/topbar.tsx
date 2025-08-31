@@ -16,6 +16,12 @@ const index = [
     img: MesaIcon,
     linkin: "https://www.linkedin.com/company/mesa-connect",
   },
+  {
+    id: "mesamobile",
+    name: "MESA Mobile",
+    link: "https://apps.apple.com/us/app/mesamobile/id6504261825",
+    img: MesaIcon,
+  },
 ];
 
 const TopBarProjects = () => {

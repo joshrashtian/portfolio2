@@ -16,6 +16,8 @@ export type ProjectType = {
   tools?: string[];
   gameRoute?: string;
   gameId?: string;
+  iosLink?: string;
+  androidLink?: string;
   gameIcons?: IconType[];
 };
 
@@ -86,8 +88,10 @@ export const ProjectDetails: ProjectType[] = [
     name: "MESA Mobile",
     icon: require("../(assets)/images/icons/mesalogo.png"),
     type: "Mobile App",
-    dates: "In-Development",
+    dates: [new Date("2025-8-27")],
     priority: true,
+    iosLink: "https://apps.apple.com/us/app/mesamobile/id6504261825",
+   
     link: "https://mesaconnect.io",
     desc: "Social Media Platform for Community College Students in STEM to communicate and learn, teach, and socialize together.",
     tools: ["React Native", "Supabase", "Expo"],
