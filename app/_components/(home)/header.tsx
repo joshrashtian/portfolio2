@@ -12,76 +12,134 @@ import {
 } from "react-icons/io5";
 import { useHeader } from "@/app/contexts/HeaderMenuContext";
 import { useDarkMode } from "@/app/contexts/DarkModeContext";
+
 const Header = () => {
   const Menu = useHeader();
   const { scrollY } = useScroll();
 
   const shadowOpacity = useTransform(scrollY, [0, 400, 800], [0, 0.3, 1]);
+  const headerScale = useTransform(scrollY, [0, 500], [1, 0.95]);
+  const headerY = useTransform(scrollY, [0, 500], [0, 10]);
+
   return (
-    <div className="fixed top-0 left-0 z-30 flex h-20 w-full flex-row items-center justify-center lg:top-4">
+    <div className="fixed top-0 left-0 z-30 flex w-full flex-row items-center justify-center">
       <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
-        style={{ boxShadow: shadowOpacity }}
-        className="relative flex h-20 w-full items-center justify-between gap-3 bg-slate-100/70 p-3 drop-shadow-lg backdrop-blur-xl md:rounded-3xl lg:h-16 lg:w-1/2 lg:px-10 dark:bg-zinc-700/80"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, delay: 0.2, ease: "easeOut" }}
+        style={{
+          boxShadow: shadowOpacity,
+          scale: headerScale,
+          y: headerY,
+        }}
+        className="flex w-full flex-row items-center justify-between gap-6 bg-transparent p-2 px-4"
       >
-        <Link href={"/"} className="flex flex-row gap-1">
-          <Image
-            width={52}
-            height={40}
-            alt="icon"
-            className="h-8 w-8 self-center transition-transform hover:scale-110"
-            src={require("../../(assets)/jjr.png")}
-          />
+        {/* Logo Section */}
+        <Link href={"/"} className="group flex flex-row items-center gap-3">
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="relative"
+          >
+            <Image
+              width={52}
+              height={40}
+              alt="icon"
+              className="h-10 w-10 self-center transition-all duration-300"
+              src={require("../../(assets)/jjr.png")}
+            />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </motion.div>
+          <span className="hidden text-lg font-bold text-gray-800 lg:block dark:text-white">
+            Josh Rashtian
+          </span>
         </Link>
 
-        <motion.ul className="flex h-full items-center justify-end text-white mix-blend-difference lg:gap-7 lg:px-10">
-          <ul className="hidden gap-7 duration-300 xl:flex">
+        {/* Navigation Links */}
+        <motion.nav
+          className="flex h-full flex-1 items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <ul className="hidden gap-8 duration-300 xl:flex">
             <Link
               href="/journey"
-              className="group z-40 flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-teal-800 lg:gap-2 dark:hover:text-teal-300"
+              className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
             >
-              {" "}
-              <IoPerson className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
-              journey
+              <motion.div
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-2 text-white shadow-lg"
+              >
+                <IoPerson className="text-sm" />
+              </motion.div>
+              <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-blue-600 dark:text-gray-200 dark:group-hover:text-blue-400">
+                Journey
+              </span>
             </Link>
+
             <Link
-              className="group z-40 flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
+              className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/projects"
             >
-              {" "}
-              <IoHammer className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
-              projects
+              <motion.div
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-2 text-white shadow-lg"
+              >
+                <IoHammer className="text-sm" />
+              </motion.div>
+              <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-orange-600 dark:text-gray-200 dark:group-hover:text-orange-400">
+                Projects
+              </span>
             </Link>
+
             <Link
-              className="group z-40 flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
+              className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/blog"
             >
-              {" "}
-              <IoBook className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
-              journal
+              <motion.div
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 p-2 text-white shadow-lg"
+              >
+                <IoBook className="text-sm" />
+              </motion.div>
+              <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-green-600 dark:text-gray-200 dark:group-hover:text-green-400">
+                Journal
+              </span>
             </Link>
+
             <Link
-              className="group z-40 flex flex-row items-center p-0.5 transition-all duration-300 hover:scale-105 hover:text-orange-800 lg:gap-2 dark:hover:text-orange-400"
+              className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/projects/game"
             >
-              {" "}
-              <IoGameController className="rounded-full p-0.5 duration-700 group-hover:scale-125 group-hover:bg-white" />{" "}
-              games
+              <motion.div
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-2 text-white shadow-lg"
+              >
+                <IoGameController className="text-sm" />
+              </motion.div>
+              <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-purple-600 dark:text-gray-200 dark:group-hover:text-purple-400">
+                Games
+              </span>
             </Link>
           </ul>
-        </motion.ul>
+        </motion.nav>
 
-        <button
+        {/* Menu Button */}
+        <motion.button
           onClick={() => {
             Menu.toggleMenu();
           }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="rounded-xl bg-gradient-to-r from-gray-100 to-gray-200 p-3 shadow-lg transition-all duration-300 hover:from-orange-100 hover:to-red-100 dark:from-gray-800 dark:to-gray-700 dark:hover:from-orange-800/50 dark:hover:to-red-800/50"
         >
-          <IoMenu
-            className={`text-2xl duration-300 hover:scale-105 hover:text-orange-500`}
-          />
-        </button>
+          <IoMenu className="text-xl text-gray-700 transition-colors duration-300 hover:text-orange-600 dark:text-gray-200 dark:hover:text-orange-400" />
+        </motion.button>
       </motion.header>
     </div>
   );
