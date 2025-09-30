@@ -22,7 +22,7 @@ const Header = () => {
   const headerY = useTransform(scrollY, [0, 500], [0, 10]);
 
   return (
-    <div className="fixed top-0 left-0 z-30 flex w-full flex-row items-center justify-center">
+    <div className="font-nenue fixed top-0 left-0 z-30 flex w-full flex-row items-center justify-center">
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,39 +57,16 @@ const Header = () => {
 
         {/* Navigation Links */}
         <motion.nav
-          className="flex h-full flex-1 items-center justify-center"
+          className="flex h-full flex-1 items-center justify-end"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <ul className="hidden gap-8 duration-300 xl:flex">
             <Link
-              href="/journey"
-              className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
-            >
-              <motion.div
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-2 text-white shadow-lg"
-              >
-                <IoPerson className="text-sm" />
-              </motion.div>
-              <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-blue-600 dark:text-gray-200 dark:group-hover:text-blue-400">
-                Journey
-              </span>
-            </Link>
-
-            <Link
               className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/projects"
             >
-              <motion.div
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="rounded-full bg-gradient-to-r from-orange-500 to-red-500 p-2 text-white shadow-lg"
-              >
-                <IoHammer className="text-sm" />
-              </motion.div>
               <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-orange-600 dark:text-gray-200 dark:group-hover:text-orange-400">
                 Projects
               </span>
@@ -99,13 +76,6 @@ const Header = () => {
               className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/blog"
             >
-              <motion.div
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="rounded-full bg-gradient-to-r from-green-500 to-teal-500 p-2 text-white shadow-lg"
-              >
-                <IoBook className="text-sm" />
-              </motion.div>
               <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-green-600 dark:text-gray-200 dark:group-hover:text-green-400">
                 Journal
               </span>
@@ -115,13 +85,6 @@ const Header = () => {
               className="group relative flex flex-row items-center gap-2 rounded-xl px-4 py-2 transition-all duration-1000 hover:bg-zinc-400/20"
               href="/projects/game"
             >
-              <motion.div
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-2 text-white shadow-lg"
-              >
-                <IoGameController className="text-sm" />
-              </motion.div>
               <span className="font-medium text-gray-700 transition-colors duration-300 group-hover:text-purple-600 dark:text-gray-200 dark:group-hover:text-purple-400">
                 Games
               </span>
@@ -129,7 +92,6 @@ const Header = () => {
           </ul>
         </motion.nav>
 
-        {/* Menu Button */}
         <motion.button
           onClick={() => {
             Menu.toggleMenu();

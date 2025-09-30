@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <Link
               href="/resume.pdf"
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-400 px-4 py-2 font-medium text-white duration-300 hover:scale-105 hover:border-purple-500 hover:opacity-90 hover:ring-2 hover:ring-purple-500 hover:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-lg bg-zinc-600 px-4 py-2 font-medium text-white duration-300 hover:scale-105 hover:border-purple-500 hover:opacity-90 hover:ring-2 hover:ring-purple-500 hover:ring-offset-2"
             >
               <FaDownload /> Download Resume
             </Link>

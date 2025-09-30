@@ -36,14 +36,18 @@ export default function TitleComponent() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 30 }}
           transition={{
-            duration: 0.3,
+            duration: 0.5,
             stiffness: 100,
             damping: 10,
             type: "spring",
             ease: "easeIn",
           }}
+          whileHover={{
+            color: "#E08E45",
+          }}
           whileDrag={{
             scale: 1.1,
+            color: "#6B2737",
           }}
           drag
           dragConstraints={{
@@ -52,8 +56,14 @@ export default function TitleComponent() {
             right: 0,
             bottom: 0,
           }}
+          onDragEnd={() => {
+            setIndex((prev) => (prev + 1) % textVariants.length);
+          }}
+          style={{
+            color: "#314158",
+          }}
           dragElastic={0.1}
-          className="animate-gradient bg-300% active:drop-shadow-3xl h-20 translate-y-7 bg-gradient-to-r from-[#8126af] via-red-500 to-blue-600 bg-clip-text text-left text-4xl font-bold text-transparent drop-shadow-lg select-none active:mix-blend-difference lg:translate-y-0 lg:text-7xl"
+          className="drop-shadow-3xl h-20 translate-y-7 text-left text-4xl font-bold drop-shadow-lg select-none lg:translate-y-0 lg:text-7xl"
         >
           {textVariants[index]}
         </motion.h1>
