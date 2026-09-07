@@ -42,23 +42,6 @@ export default function TitleComponent() {
             type: "spring",
             ease: "easeIn",
           }}
-          whileHover={{
-            color: "#E08E45",
-          }}
-          whileDrag={{
-            scale: 1.1,
-            color: "#6B2737",
-          }}
-          drag
-          dragConstraints={{
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
-          onDragEnd={() => {
-            setIndex((prev) => (prev + 1) % textVariants.length);
-          }}
           style={{
             color: "#314158",
           }}

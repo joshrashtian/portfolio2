@@ -51,7 +51,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
           <motion.div
             key={state}
             layoutId="highlight"
-            className="animate-gradient absolute inset-0 w-full rounded-t-full bg-gradient-to-r from-zinc-200 to-zinc-400 shadow-lg duration-300"
+            className="animate-gradient absolute inset-0 w-full rounded-t-full bg-gradient-to-r from-zinc-200 to-zinc-400 shadow-lg duration-300 dark:from-zinc-800 dark:to-zinc-900"
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
           />
         </AnimatePresence>
@@ -72,7 +72,7 @@ const General = forwardRef((props, ref: React.Ref<HTMLElement>) => {
         ))}
       </div>
 
-      <div className="h-fit overflow-x-hidden rounded-b-3xl bg-zinc-100 p-2 duration-300">
+      <div className="h-fit overflow-x-hidden rounded-b-3xl bg-zinc-100 p-2 duration-300 dark:bg-zinc-900">
         {/* content */}
         <AnimatePresence mode="wait">
           {state === "Skills" && (

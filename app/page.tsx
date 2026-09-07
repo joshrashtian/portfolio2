@@ -5,7 +5,7 @@ import General from "./_components/(home)/General";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
-import { FaDownload } from "react-icons/fa6";
+import { FaDownload, FaFile } from "react-icons/fa6";
 import { IoCode, IoSchool, IoPin } from "react-icons/io5";
 import Link from "next/link";
 import Skills from "./_components/(home)/Skillset";
@@ -81,7 +81,7 @@ export default function Home() {
         className="relative flex min-h-[100vh] flex-col justify-center p-4 text-center lg:gap-6 lg:px-8 xl:px-16 2xl:px-24"
       >
         <ImageStack />
-        <article className="mx-auto max-w-5xl rounded-3xl bg-white/5 p-6 text-slate-100">
+        <article className="rounded-3xlp-6 mx-auto max-w-5xl text-slate-100">
           <ul
             className={`relative flex w-full flex-col items-center justify-center gap-3`}
           >
@@ -107,9 +107,10 @@ export default function Home() {
             </div>
             <Link
               href="/resume.pdf"
+              target="_blank"
               className="inline-flex items-center gap-2 rounded-lg bg-zinc-600 px-4 py-2 font-medium text-white duration-300 hover:scale-105 hover:border-purple-500 hover:opacity-90 hover:ring-2 hover:ring-purple-500 hover:ring-offset-2"
             >
-              <FaDownload /> Download Resume
+              <FaFile /> View Resume
             </Link>
           </ul>
         </article>
